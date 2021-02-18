@@ -1,4 +1,4 @@
-import mcwss from './node-mcwss'
+import mcwss from './node-bewss'
 const wssserver = new mcwss()
 
 // User connected to server
@@ -23,4 +23,5 @@ wssserver.on('ServerConnected', () => {
 
 })
 
+// Starts server on Port 1111
 wssserver.startServer(1111)

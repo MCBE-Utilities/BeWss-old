@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events'
-import Server from '../../node-mcwss'
+import Server from '../../node-bewss'
 
 import executeCommand from './executeCommand'
 

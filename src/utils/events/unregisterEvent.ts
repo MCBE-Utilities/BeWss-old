@@ -1,4 +1,4 @@
-import Server from '../../node-mcwss'
+import Server from '../../node-bewss'
 import { v4 as uuidv4 } from 'uuid'
 
 class unregisterEvent {
