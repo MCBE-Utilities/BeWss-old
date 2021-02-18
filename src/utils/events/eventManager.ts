@@ -19,7 +19,7 @@ class eventManager extends EventEmitter {
     this.logger = this.server.getLogger()
   }
 
-  public onEnable(): void {
+  public async onEnable(): Promise<void> {
     this.wsserver.on('message', (packet) => {
       const pasredPacket = JSON.parse(packet)
       if (pasredPacket.header.messagePurpose != 'event') return
@@ -27,7 +27,7 @@ class eventManager extends EventEmitter {
     })
   }
 
-  public onDisable(): void {
+  public async onDisable(): Promise<void> {
     this.unregisterAllEvents()
   }
 

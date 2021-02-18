@@ -3,11 +3,15 @@ import Server from '../../node-bewss'
 
 import executeCommand from './executeCommand'
 
+import Agent from './agent'
+
 class commandManager extends EventEmitter {
   private server
   private wsserver
   private logger
   private previousCommand
+
+  private agentCommands
 
   constructor(server: Server) {
     super()
@@ -16,7 +20,9 @@ class commandManager extends EventEmitter {
     this.logger = this.server.getLogger()
   }
 
-  public onEnable(): void {
+  public async onEnable(): Promise<void>  {
+    this.agentCommands = new Agent(this.server)
+    this.agentCommands.onEnabled()
     this.server.getEventManager().registerEvent('SlashCommandExecuted')
     this.wsserver.on('message', (packet) => {
       const pasredPacket = JSON.parse(packet)
@@ -25,8 +31,12 @@ class commandManager extends EventEmitter {
     })
   }
 
-  public onDisable(): void {
+  public async onDisable(): Promise<void> {
     this.logger.info('Disabled')
+  }
+
+  public async getAgentCommands(): Promise<void> {
+    return await this.agentCommands
   }
 
   public executeCommand(command: string): void {
