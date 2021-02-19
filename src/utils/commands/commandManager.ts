@@ -11,8 +11,6 @@ class commandManager extends EventEmitter {
   private logger
   private previousCommand
 
-  private agentCommands
-
   constructor(server: Server) {
     super()
     this.server = server
@@ -21,8 +19,6 @@ class commandManager extends EventEmitter {
   }
 
   public async onEnable(): Promise<void>  {
-    this.agentCommands = new Agent(this.server)
-    this.agentCommands.onEnabled()
     this.server.getEventManager().registerEvent('SlashCommandExecuted')
     this.wsserver.on('message', (packet) => {
       const pasredPacket = JSON.parse(packet)
@@ -35,8 +31,8 @@ class commandManager extends EventEmitter {
     this.logger.info('Disabled')
   }
 
-  public async getAgentCommands(): Promise<void> {
-    return await this.agentCommands
+  public async getAgentCommands(): Promise<Agent> {
+    return new Agent(this.server)
   }
 
   public executeCommand(command: string): void {
