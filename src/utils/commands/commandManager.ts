@@ -31,7 +31,7 @@ class commandManager extends EventEmitter {
     this.logger.info('Disabled')
   }
 
-  public async getAgentCommands(): Promise<Agent> {
+  public getAgentCommands(): Agent {
     return new Agent(this.server)
   }
 

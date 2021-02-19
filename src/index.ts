@@ -6,7 +6,7 @@ const wssserver = new mcwss()
 wssserver.on('ServerConnected', async () => {
 
   const agent = await wssserver.getCommandManager().getAgentCommands()
-  console.log(agent)
+  console.log(await agent.agentGetPosition())
 })
 
 // Starts server on Port 1111

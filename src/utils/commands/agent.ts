@@ -18,10 +18,11 @@ class Agent {
   }
 
   public async agentGetPosition(): Promise<void> {
-    this.server.getCommandManager().executeCommand('agent getposition')
-    this.server.getCommandManager().on('commandPacket', (packet) => {
-      const pasredPacket = JSON.parse(packet)
-      console.log("Agent Getposition")
+    return new Promise((res) => {
+      this.server.getCommandManager().executeCommand('agent getposition')
+      this.server.getCommandManager().on('commandPacket', (packet) => {
+        res(JSON.parse(packet).body.position)
+      })
     })
   }
   
