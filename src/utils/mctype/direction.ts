@@ -1,5 +1,5 @@
 enum direction {
-  Forward = "foward",
+  Forward = "forward",
   Back = "back",
   Right = "right",
   Left = "left",

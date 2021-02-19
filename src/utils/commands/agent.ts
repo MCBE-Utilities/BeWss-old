@@ -1,6 +1,5 @@
 import Server from '../../node-bewss'
-import commandManager from './commandManager'
-import direction from '../mctype/direction'
+import Direction from '../mctype/direction'
 
 class Agent {
   private server
@@ -26,28 +25,58 @@ class Agent {
     })
   }
   
-  public agentMove(direction: direction): void {
-    //
+  public async agentMove(direction: string): Promise<Direction> {
+    return new Promise((res) => {
+      this.server.getCommandManager().executeCommand(`agent move ${direction}`)
+      this.server.getCommandManager().on('commandPacket', (packet) => {
+        res(JSON.parse(packet).body.statusMessage)
+      })
+    })
   }
   
-  public agentTurn(direction: direction): void {
-    //
+  public async agentTurn(direction: string): Promise<Direction> {
+    return new Promise((res) => {
+      this.server.getCommandManager().executeCommand(`agent turn ${direction}`)
+      this.server.getCommandManager().on('commandPacket', (packet) => {
+        res(JSON.parse(packet).body.statusMessage)
+      })
+    })
   }
   
-  public agentAttack(direction: direction): void {
-    //
+  public async agentAttack(direction: string): Promise<Direction> {
+    return new Promise((res) => {
+      this.server.getCommandManager().executeCommand(`agent attack ${direction}`)
+      this.server.getCommandManager().on('commandPacket', (packet) => {
+        res(JSON.parse(packet).body.statusMessage)
+      })
+    })
   }
   
-  public agentPlace(direction: direction): void {
-    //
+  public async agentPlace(direction: string): Promise<Direction> {
+    return new Promise((res) => {
+      this.server.getCommandManager().executeCommand(`agent place 1 ${direction}`)
+      this.server.getCommandManager().on('commandPacket', (packet) => {
+        res(JSON.parse(packet).body.statusMessage)
+      })
+    })
   }
   
-  public agentDestroy(direction: direction): void {
-    //
+  public async agentDestroy(direction: string): Promise<Direction> {
+    return new Promise((res) => {
+      this.server.getCommandManager().executeCommand(`agent destroy ${direction}`)
+      this.server.getCommandManager().on('commandPacket', (packet) => {
+        res(JSON.parse(packet).body.statusMessage)
+      })
+    })
   }
   
-  public agentTill(direction: direction): void {
-    //
+  public async agentTill(direction: string): Promise<Direction> {
+    return new Promise((res) => {
+      this.server.getCommandManager().executeCommand(`agent till ${direction}`)
+      this.server.getCommandManager().on('commandPacket', (packet) => {
+        res(JSON.parse(packet).body.statusMessage)
+      })
+    })
   }
 
 }
