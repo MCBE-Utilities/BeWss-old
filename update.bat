@@ -9,3 +9,5 @@ if %errorlevel% neq 0 (
 ) 
 echo ^> npm i
 call npm i
+
+if not exist "dist" call npm run build
