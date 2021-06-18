@@ -33,7 +33,9 @@ class consoleManager {
       this.bewss.getEventManager().emit(parsedCommand[0], data.replace('-', ''))
     })
     for (const command of this.commands.values()) {
-      command.onEnabled()
+      if (command) {
+        command.onEnabled()
+      }
     }
 
     return
@@ -42,7 +44,9 @@ class consoleManager {
   async onDisabled(): Promise<void> {
     this.readline.close()
     for (const command of this.commands.values()) {
-      command.onDisabled()
+      if (command) {
+        command.onDisabled()
+      }
     }
 
     return
