@@ -1,8 +1,12 @@
 {
-  "name": "websocket",
+  "name": "bewss",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tool to make interfacing with websockets on MCBE easy!",
   "main": "dist/index.js",
+  "engines": {
+    "node": "<=14.0.0"
+  },
+  "engineStrict": true,
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/index.ts",
