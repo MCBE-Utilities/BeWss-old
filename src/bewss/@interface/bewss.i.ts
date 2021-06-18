@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
-interface bewss {
+
+export interface bewssOptions {
+  /**
+   * @default 8080
+   */
+  port?: number
+}
+export interface bewss {
+  new (options?: bewssOptions)
   getLogger(): logger
   getServerManager(): serverManager
   getConsoleManager(): consoleManager
@@ -8,30 +16,30 @@ interface bewss {
   getEventManager(): eventManager
 }
 
-interface logger {
+export interface logger {
   success(content: string): void
   info(content: string): void
   warn(content: string): void
   error(content: string): void
 }
 
-interface serverManager {
+export interface serverManager {
   new(bewss: bewss)
   getServer(): any
 }
 
-interface consoleManager {
+export interface consoleManager {
   new(bewss: bewss)
   getCommandName(): Array<string>
   registerCommand(command: string): void
 }
 
-interface commandManager {
+export interface commandManager {
   new(bewss: bewss)
   executeCommand(command: string): object
 }
 
-interface EventValues {
+export interface EventValues {
   PlayerMessage: [unknown]
   SlashCommandExecuted: [unknown]
   BlockBroken: [unknown]
@@ -49,7 +57,7 @@ interface EventValues {
   PlayerLeave: [unknown] // Doesnt work
 }
 
-interface eventManager {
+export interface eventManager {
   new(bewss: bewss)
   onEnabled(): Promise<void>
   onDisabled(): Promise<void>

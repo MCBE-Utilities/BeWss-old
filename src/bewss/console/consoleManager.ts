@@ -1,15 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import bewss from "../bewss"
 import readline from "readline"
 import getFiles from "../util/getFiles"
+import path from "path"
 
+interface exampleCommand {
+  new (bewss: bewss)
+  onEnabled(): Promise<void>
+  onDisabled(): Promise<void>
+}
 class consoleManager {
   private bewss: bewss
-  private commands = {
-    command: new Map(),
-  }
-  private commandNames: Array<string> = []
+  private commands = new Map<string, exampleCommand | undefined>()
   private readline: readline.Interface
 
   constructor (bewss: bewss) {
@@ -27,42 +29,45 @@ class consoleManager {
       if (data.startsWith('/') && this.bewss.getServerManager().getServer() == undefined) return this.bewss.getLogger().error('A user must be connect before running a Bedrock command.')
       if (data.startsWith('/')) return this.bewss.getEventManager().emit('ConsoleCommandExecuted', data)
       const parsedCommand: Array<string> = data.replace('-', '').split(' ')
-      if (!this.commandNames.includes(parsedCommand[0])) return this.bewss.getLogger().error('This command doesn\'t exsist!')
+      if (!this.getCommandNames().includes(parsedCommand[0])) return this.bewss.getLogger().error('This command doesn\'t exist!')
       this.bewss.getEventManager().emit(parsedCommand[0], data.replace('-', ''))
     })
-    this.commands.command.forEach((x: any) => {
-      x.onEnabled()
-    })
+    for (const command of this.commands.values()) {
+      command.onEnabled()
+    }
+
+    return
   }
 
   async onDisabled(): Promise<void> {
     this.readline.close()
-    this.commands.command.forEach((x: any) => {
-      x.onDisabled()
-    })
+    for (const command of this.commands.values()) {
+      command.onDisabled()
+    }
+
+    return
   }
 
   private async loadDefaultCommands(): Promise<void> {
-    const commands: any = await getFiles(__dirname + '/commands')
-    await commands.forEach((x: string) => {
-      if (x.endsWith('.ts')) return
-      const CommandClass = require(x)
+    const commandFiles: string[] = await getFiles(path.resolve(__dirname, "commands"))
+    for (const file of commandFiles) {
+      if (file.endsWith('.ts')) return
+      const CommandClass = require(file)
       const newCommand = new CommandClass(this.bewss)
       if (newCommand.commandName == undefined) return this.bewss.getLogger().error('[Commands] Your command must contain an commandName!')
-      this.commandNames.push(newCommand.commandName)
-      this.commands.command.set(newCommand.commandName, newCommand)
-    })
+      this.commands.set(newCommand.commandName, newCommand)
+    }
 
     return
   }
 
   registerCommand(command: string): void {
-    if (this.commandNames.includes(command)) return this.bewss.getLogger().error(`The command "${command}" is an already registered command!`)
-    this.commandNames.push(command)
+    if (this.getCommandNames().includes(command)) return this.bewss.getLogger().error(`The command "${command}" is an already a registered command!`)
+    this.commands.set(command, undefined)
   }
 
   getCommandNames(): Array<string> {
-    return this.commandNames
+    return Array.from(this.commands.keys())
   }
 
 }

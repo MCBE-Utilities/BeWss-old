@@ -5,25 +5,14 @@ import bewss from '../bewss'
 import { EventEmitter } from 'events'
 import getFiles from '../util/getFiles'
 import { v4 as uuidv4 } from 'uuid'
+import { EventValues } from '../@interface/bewss.i'
+import path from 'path'
 
-interface EventValues {
-  PlayerMessage: [unknown]
-  SlashCommandExecuted: [unknown]
-  BlockBroken: [unknown]
-  BlockPlaced: [unknown]
-  EntitySpawned: [unknown]
-  ItemAcquired: [unknown]
-  ItemCrafted: [unknown]
-  ItemDestroyed: [unknown]
-  ItemDropped: [unknown] // Doesnt work
-  ItemUsed: [unknown]
-  MobInteracted: [unknown]
-  MobKilled: [unknown]
-  PlayerDied: [unknown]
-  PlayerJoin: [unknown] // Doesnt work
-  PlayerLeave: [unknown] // Doesnt work
+interface exampleEvent {
+  new(bewss: bewss)
+  onEnabled(): Promise<void>
+  onDisabled(): Promise<void>
 }
-
 interface eventManager {
   new(bewss: bewss)
   onEnabled(): Promise<void>
@@ -49,9 +38,7 @@ interface eventManager {
 
 class eventManager extends EventEmitter {
   private bewss: bewss
-  private events = {
-    event: new Map(),
-  }
+  private events =  new Map<string, exampleEvent>()
 
   constructor(bewss: bewss) {
     super()
@@ -59,17 +46,17 @@ class eventManager extends EventEmitter {
   }
 
   async onEnabled(): Promise<void> {
-    await this.setMaxListeners(50)
+    this.setMaxListeners(50)
     await this.loadDefaultEvents()
-    this.events.event.forEach((x: any) => {
-      x.onEnabled()
-    })
+    for (const event of this.events.values()) {
+      event.onEnabled()
+    }
   }
 
   async onDisabled(): Promise<void> {
-    this.events.event.forEach((x: any) => {
-      x.onDisabled()
-    })
+    for (const event of this.events.values()) {
+      event.onDisabled()
+    }
   }
 
   async registerEvent(event: string): Promise<void> {
@@ -105,16 +92,14 @@ class eventManager extends EventEmitter {
   }
 
   private async loadDefaultEvents(): Promise<void> {
-    const events: any = await getFiles(__dirname + '/events')
-    await events.forEach((x: string) => {
-      if (x.endsWith('.ts')) return
-      const EventClass = require(x)
+    const eventFiles: string[] = await getFiles(path.resolve(__dirname, 'events'))
+    for (const event of eventFiles) {
+      if (event.endsWith('.ts')) return
+      const EventClass = require(event)
       const newEvent = new EventClass(this.bewss)
       if (newEvent.eventName == undefined) return this.bewss.getLogger().error('[Events] Your event must contain an eventName!')
-      this.events.event.set(newEvent.eventName, newEvent)
-    })
-
-    return
+      this.events.set(newEvent.eventName, newEvent)
+    }
   }
 
 }

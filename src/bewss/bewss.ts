@@ -4,7 +4,7 @@ import eventManager from "./events/eventManager"
 import Logger from "./logger/logger"
 import pluginManager from "./plugin/pluginManager"
 import serverManager from "./server/serverManager"
-
+import { bewssOptions } from './@interface/bewss.i'
 class bewss {
   private server
   private logger: Logger
@@ -14,10 +14,16 @@ class bewss {
   private commandManager: commandManager
   private pluginManager: pluginManager
   private eventManager: eventManager
+  private port = 8080
 
-  constructor() {
+  constructor(options?: bewssOptions) {
+    if (options) {
+      this.port = options.port
+        ? options.port
+        : 8080
+    }
     this.logger = new Logger()
-    this.serverManager = new serverManager(this, 8080)
+    this.serverManager = new serverManager(this, this.port)
     this.consoleManager = new consoleManager(this)
     this.commandManager = new commandManager(this)
     this.pluginManager = new pluginManager(this)

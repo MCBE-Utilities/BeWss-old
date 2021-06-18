@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 class commandManager {
   private bewss: bewss
-  private previousCommand: any
+  private previousCommand: { command: string, requestId: string }
 
   constructor (bewss: bewss) {
     this.bewss = bewss
@@ -14,7 +14,7 @@ class commandManager {
   async onEnabled(): Promise<void> {
     this.bewss.getEventManager().on('ConsoleCommandExecuted', (data: string) => {
       const res = this.executeCommand(data)
-      this.previousCommand = res
+      this.previousCommand = res || undefined
     })
     this.bewss.getEventManager().on('SlashCommandExecuted', (packet: any) => {
       if (this.previousCommand == undefined) return
@@ -30,7 +30,7 @@ class commandManager {
     //
   }
 
-  executeCommand(command: string): any {
+  executeCommand(command: string): { command: string, requestId: string } | void {
     if (this.bewss.getServerManager().getServer() == undefined) return this.bewss.getLogger().error('A user must be connect before running a Bedrock command.')
     const requestId = uuidv4()
     this.bewss.getServerManager().getServer()
