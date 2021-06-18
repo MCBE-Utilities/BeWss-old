@@ -18,7 +18,7 @@ class serverManager {
     await this.createServer()
     this.ws.on('listening', () => {
       this.bewss.getEventManager().emit('wss-listening')
-      this.bewss.getLogger().info(`Websocket server started! To connect to your server, do /connect 127.0.0.1:${this.port} in your Minecraft world.`)
+      this.bewss.getLogger().info(`Websocket server started! To connect to your server do "/connect 127.0.0.1:${this.port}" in your Minecraft world.`)
     })
     this.ws.on('connection', (wss: Server) => {
       this.server = wss
@@ -36,7 +36,7 @@ class serverManager {
   }
 
   private async createServer(): Promise<void> {
-    return new Promise((res: any) => {
+    return new Promise((res) => {
       try {
         this.ws = new Server({ port: this.port })
       } catch (error) {

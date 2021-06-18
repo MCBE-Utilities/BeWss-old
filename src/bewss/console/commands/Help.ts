@@ -12,10 +12,9 @@ class Help {
   async onEnabled(): Promise<void> {
     this.bewss.getEventManager().on(this.commandName, () => {
       this.bewss.getLogger().info('Node BeWSS by PMK744\nHere is a list of commands:')
-      this.bewss.getConsoleManager().getCommandNames()
-        .forEach((command: string) => {
-          console.log(` -${command}`)
-        })
+      for (const command of this.bewss.getConsoleManager().getCommandNames()) {
+        console.log(` -${command}`)
+      }
     })
   }
 

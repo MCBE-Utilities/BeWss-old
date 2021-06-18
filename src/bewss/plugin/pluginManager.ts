@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import chalk from 'chalk'
 import moment from 'moment'
 import bewss from "../bewss"
@@ -9,11 +7,38 @@ import fs from "fs"
 import fse from "fs-extra"
 import childProcess from "child_process"
 
+interface examplePlugin {
+  new (bewss: bewss)
+  onEnabled(): Promise<void>
+  onDisabled(): Promise<void>
+}
+
+interface examplePluginConfig {
+  name: string
+  version: string
+  description: string
+  devMode: boolean
+  main: string
+  scripts: {
+    build: string
+    dev: string
+    start: string
+    [key: string]: string
+  }
+  author: string
+  license: string
+  dependencies: {
+    [key: string]: string
+  }
+  devdependencies: {
+    [key: string]: string
+  }
+  [key: string]: unknown
+}
+
 class pluginManager {
   private bewss: bewss
-  private plugins = {
-    plugin: new Map(),
-  }
+  private plugins = new Map<string, examplePlugin>()
 
   constructor (bewss: bewss) {
     this.bewss = bewss
@@ -21,87 +46,122 @@ class pluginManager {
 
   async onEnabled(): Promise<void> {
     await this.loadPlugins()
-    await this.plugins.plugin.forEach((plugin: any) => {
+    for (const plugin of this.plugins.values()) {
       plugin.onEnabled()
-    })
+    }
 
     return
   }
 
   async onDisabled(): Promise<void> {
-    this.plugins.plugin.forEach((plugin: any) => {
+    for (const plugin of this.plugins.values()) {
       plugin.onDisabled()
-    })
+    }
+
+    return
   }
 
   async loadPlugins(): Promise<void> {
-    return new Promise(async (res: any) => {
+    return new Promise(async (res) => {
       const folders: Array<string> = []
 
-      const pluginFolder = fs.readdirSync(__dirname + '../../../../../plugins')
-      pluginFolder.forEach((file: string) => {
-        if (file.includes('.')) return
+      const pluginFolder = fs.readdirSync(path.resolve(process.cwd(), `../plugins`))
+      for (const file of pluginFolder) {
+        if (!fs.statSync(path.resolve(process.cwd(), `../plugins/${file}`)).isDirectory()) continue
         folders.push(file)
-      })
+      }
   
-      if (folders.length == 0) {
+      if (folders.length < 1) {
         this.info('No plugins found!')
         res()
       }
 
-      await folders.forEach(async (folder: string) => {
-        if (!fs.existsSync(path.resolve(__dirname + `../../../../../plugins/${folder}/package.json`))) return this.error('Your plugin must include a package.json!')
-        const pluginPath = `../../../../../plugins/${folder}`
-        const config = require(path.resolve(__dirname + `${pluginPath}/package.json`))
-        const mainEntry = path.resolve(__dirname + `${pluginPath}/${config.main}/`)
-        fse.copySync(path.resolve(__dirname + '../../../../src/bewss/@interface'), path.resolve(__dirname + `${pluginPath}/src/@interface`))
-        if (!fs.existsSync(path.resolve(__dirname + pluginPath + "/node_modules"))) await this.updatePlugin(pluginPath, config)
-        if (!fs.existsSync(path.resolve(__dirname + pluginPath + "/dist"))) await this.buildPlugin(pluginPath, config)
-        if (config.devMode == true || config.devMode == undefined) {
-          this.warn(`[${config.name}] Is running in devMode. Be sure to disable devMode in package.json before production!`)
-          await this.buildPlugin(pluginPath, config)
+      for (const folder of folders) {
+        try {
+          const pluginPath = path.resolve(process.cwd(), `../plugins/${folder}`)
+          if (!fs.existsSync(path.resolve(pluginPath, 'package.json'))) return this.error(`plugins/${folder} missing package.json. Cannot load plugin!`)
+          const config: examplePluginConfig = require(path.resolve(pluginPath, 'package.json'))
+          const mainEntry = path.resolve(pluginPath, config.main)
+          fse.copySync(path.resolve(process.cwd(), 'src/bewss/@interface'), path.resolve(`${pluginPath}/src/@interface`))
+          let neededUpdate = false
+          let succeededUpdate = true
+          if (!fs.existsSync(path.resolve(pluginPath, "node_modules"))) {
+            neededUpdate = true
+            succeededUpdate = await this.updatePlugin(pluginPath, config)
+          }
+          if (neededUpdate && !succeededUpdate) return this.warn(`Skipping plugin "${config.name}" due to errors during installing dependencies`)
+          let buildSuc = true
+          let alrbuilt = false
+          if (!fs.existsSync(path.resolve(pluginPath, "dist"))) {
+            const resp = await this.buildPlugin(pluginPath, config)
+            buildSuc = resp
+            alrbuilt = resp
+          }
+          if (!config.devMode === false && !alrbuilt) {
+            this.warn(`[${config.name}] devMode enabled, set devMode to false in package.json to disable`)
+            buildSuc = await this.buildPlugin(pluginPath, config)
+          }
+          if (buildSuc) {
+            const PluginClass = require(mainEntry)
+            const newPlugin = new PluginClass(this.bewss)
+            this.info(`Successfully loaded ${config.name}!`)
+            this.plugins.set(config.name, newPlugin)
+          } else {
+            this.warn(`Skipping plugin "${config.name}" due to errors during building`)
+          }
+        } catch (error) {
+          this.error("Failed to load plugin " + `plugins/${folder}, ` + "Recieved Error(s):\n", error)
         }
-        const PluginClass = require(mainEntry)
-        const newPlugin = new PluginClass(this.bewss)
-        this.info(`Successfully loaded ${config.name}!`)
-        this.plugins.plugin.set(config.name, newPlugin)
+      }
+
+      res()
+    })
+  }
+
+  private async updatePlugin(pluginPath: string, config: examplePluginConfig): Promise<boolean> {
+    return new Promise((res) => {
+      this.info(`[${config.name}] Installing dependencies...`)
+      childProcess.exec('npm i', {
+        cwd: path.resolve(pluginPath),
+      }, (err, stdout) => {
+        if (err) {
+          this.error(`[${config.name}] Failed to install dependencies. Recieved Error:\n`, stdout)
+          res(false)
+        } else {
+          this.info(`[${config.name}] Finished installing dependencies!`)
+          res(true)
+        }
       })
-      setTimeout(() => res(), 100)
     })
   }
 
-  private async updatePlugin(pluginPath: string, config: any): Promise<void> {
-    this.info(`[${config.name}] Installing node packages...`)
-    await childProcess.execSync('npm i', {
-      stdio: 'ignore',
-      cwd: path.resolve(__dirname + pluginPath),
+  private async buildPlugin(pluginPath: string, config: examplePluginConfig): Promise<boolean> {
+    return new Promise((res) => {
+      this.info(`[${config.name}] Building plugin...`)
+      childProcess.exec('npm run build', {
+        cwd: path.resolve(pluginPath), 
+      }, (err, stdout) => {
+        if (err) {
+          this.error(`[${config.name}] Failed to build. Recieved Error(s):\n`, stdout)
+          res(false)
+        } else {
+          this.info(`[${config.name}] Build complete!`)
+          res(true)
+        }
+      })
     })
-    this.info(`[${config.name}] Installing node packages complete!`)
-
-    return
   }
 
-  private async buildPlugin(pluginPath: string, config: any): Promise<void> {
-    this.info(`[${config.name}] Building plugin...`)
-    await childProcess.execSync('npm run build', {
-      stdio: 'ignore',
-      cwd: path.resolve(__dirname + pluginPath), 
-    })
-    this.info(`[${config.name}] Build complete!`)
-
-    return
+  private info(...content: unknown[]): void {
+    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginManager]")} ${chalk.cyan("[Info]")}`, ...content)
   }
 
-  private info(content: string): void {
-    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginManager]")} ${chalk.cyan("[Info]")} ${content}`)
+  private warn(...content: unknown[]): void {
+    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginManager]")} ${chalk.yellow("[Warn]")}`, ...content)
   }
 
-  private warn(content: string): void {
-    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginManager]")} ${chalk.yellow("[Warn]")} ${content}`)
-  }
-
-  private error(content: string): void {
-    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginManager]")} ${chalk.red("[Error]")} ${content}`)
+  private error(...content: unknown[]): void {
+    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginManager]")} ${chalk.red("[Error]")}`, ...content)
   }
 
 }

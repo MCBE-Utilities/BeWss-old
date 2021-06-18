@@ -1,17 +1,15 @@
 # Node-BEWSS
-
+Node-BEWSS is a tool to make interfacing with websockets on MCBE easy!
 ## Minecraft Websockets
-Minecraft has websocket connection commands that may be used to connect to a websocket server. These commands are `/connect` and `/wsserver`.
-Both these commands have the same effect. Once connected to a websocket, the connection will last until the server closes it or until the
-player completely exits the game. The connection will last when a player merely leaves a world, and will thus last when joining a server.
+Minecraft Bedrock Edition uses websockets for interprocess communication we can connect to these sockets with the commands `/connect` and `/wsserver` in-game (both of these commands have the same effect). Once connected to the websocket, the connection will not close until either the game is closed or some other 3rd part interruption. The connection will however stay open when say a player leaves a singleplayer world and joins another server.
 Websockets in Minecraft can be used for simple command communication between a player and a server. Additionally, the server can choose to
 listen for certain events sent by the client and act upon receiving them.
 
 In order to be able to execute the `/connect` and `/wsserver` commands, cheats must be enabled. This means that connecting on third party
-servers is not possible, and only on the dedicated server when cheats are enabled. It is possible to connect on a singleplayer world and
+servers is not possible, and only on the dedicated servers when cheats are enabled. It is possible to connect on a singleplayer world and
 join a server after that, but commands executed by the websocket server will not work. Events will still be sent by the client however.
 
-Node-BEWSS is based off of [mcwss](https://github.com/Sandertv/mcwss) but written in JavaScript.
+Node-BEWSS is based off of [mcwss](https://github.com/Sandertv/mcwss) but written in Typescript.
 
 ## Getting started
 
