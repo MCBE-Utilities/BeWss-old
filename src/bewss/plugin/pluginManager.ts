@@ -65,7 +65,13 @@ class pluginManager {
     return new Promise(async (res) => {
       const folders: Array<string> = []
 
-      const pluginFolder = fs.readdirSync(path.resolve(process.cwd(), `../plugins`))
+      const pluginFolderPath = path.resolve(process.cwd(), `../plugins`)
+      if (!fs.existsSync(pluginFolderPath)) {
+        this.warn("Plugins dir not found skipping plugin manager. To use plugins please create a dir named \"plugins\" in this location:", '"' + path.resolve(process.cwd(), `../`) + '"')
+        res()
+      }
+      const pluginFolder = fs.readdirSync(pluginFolderPath)
+
       for (const file of pluginFolder) {
         if (!fs.statSync(path.resolve(process.cwd(), `../plugins/${file}`)).isDirectory()) continue
         folders.push(file)
@@ -102,10 +108,14 @@ class pluginManager {
             buildSuc = await this.buildPlugin(pluginPath, config)
           }
           if (buildSuc) {
-            const PluginClass = require(mainEntry)
-            const newPlugin = new PluginClass(this.bewss)
-            this.info(`Successfully loaded ${config.name}!`)
-            this.plugins.set(config.name, newPlugin)
+            try {
+              const PluginClass = require(mainEntry)
+              const newPlugin = new PluginClass(this.bewss)
+              this.info(`Successfully loaded ${config.name}!`)
+              this.plugins.set(config.name, newPlugin)
+            } catch (error) {
+              this.error(`"${config.name}"` + "Uncaught Exception(s):\n", error)
+            }
           } else {
             this.warn(`Skipping plugin "${config.name}" due to errors during building`)
           }
