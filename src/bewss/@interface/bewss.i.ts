@@ -16,11 +16,56 @@ export interface bewss {
   getEventManager(): eventManager
 }
 
+export interface pluginApi {
+  new (bewss: bewss, config: examplePluginConfig, path: string)
+  getLogger(color?: colors): logger
+  getServerManager(): serverManager
+  getConsoleManager(): consoleManager
+  getCommandManager(): commandManager
+  getEventManager(): eventManager
+  setColor(color: colors): void
+}
+
+export interface examplePluginConfig {
+  name: string
+  version: string
+  description: string
+  devMode: boolean
+  main: string
+  scripts: {
+    build: string
+    dev: string
+    start: string
+    [key: string]: string
+  }
+  author: string
+  license: string
+  dependencies: {
+    [key: string]: string
+  }
+  devdependencies: {
+    [key: string]: string
+  }
+  [key: string]: unknown
+}
+
+type colors = (
+  "black" |
+  "red" |
+  "green" |
+  "yellow" |
+  "blue" |
+  "magenta" |
+  "cyan" |
+  "white" |
+  "gray"
+)
+
 export interface logger {
-  success(content: string): void
-  info(content: string): void
-  warn(content: string): void
-  error(content: string): void
+  success(...content: unknown[]): void
+  info(...content: unknown[]): void
+  warn(...content: unknown[]): void
+  error(...content: unknown[]): void
 }
 
 export interface serverManager {
