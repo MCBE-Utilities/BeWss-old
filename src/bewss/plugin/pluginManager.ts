@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import chalk from 'chalk'
 import moment from 'moment'
@@ -197,7 +199,7 @@ class pluginManager {
   getByValue(map: Map<unknown, unknown>, searchValue: any): any {
     for (const [k, v] of map.entries()) {
       if (v === searchValue)
-      return k
+        return k
     }
   }
 

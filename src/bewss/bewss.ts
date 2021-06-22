@@ -56,6 +56,10 @@ class bewss {
     return this.logger
   }
 
+  getPluginManager(): pluginManager {
+    return this.pluginManager
+  }
+
   getServerManager(): serverManager {
     return this.serverManager
   }
