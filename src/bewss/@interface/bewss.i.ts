@@ -59,6 +59,7 @@ export interface EventValues {
   PlayerTransform: [PlayerTransform]
   PlayerTeleported: [PlayerTeleported]
   BossKilled: [BossKilled]
+  RawEvent: [unknown] // Fires when any event is fired.
 }
 
 interface eventHeader {

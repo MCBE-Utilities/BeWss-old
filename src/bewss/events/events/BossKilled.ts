@@ -1,5 +1,4 @@
 import bewss from "src/bewss/bewss"
-import { EventValues } from "../../@interface/bewss.i"
 
 class BossKilled {
   private bewss: bewss
