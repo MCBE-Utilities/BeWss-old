@@ -8,6 +8,7 @@ import path, { resolve } from "path"
 import fs from "fs"
 import fse from "fs-extra"
 import childProcess from "child_process"
+import { threadId } from 'node:worker_threads'
 
 interface examplePlugin {
   new (bewss: bewss)
@@ -188,9 +189,44 @@ class pluginManager {
   }
 
   async reloadAll(): Promise<void> {
-    const plugins = this.plugins.keys()
+    const plugins = [...this.plugins.keys()]
     for (const plugin of plugins) {
       await this.reload(plugin)
+    }
+
+    return Promise.resolve()
+  }
+
+  async reIndex(): Promise<void> {
+    const pluginsDirs: string[] = []
+    for (const item of fs.readdirSync(this.pluginsPath)) {
+      if (!fs.statSync(path.resolve(this.pluginsPath, item)).isDirectory()) continue
+      pluginsDirs.push(item)
+    }
+
+    if (pluginsDirs.length < 1) {
+      this.info('No plugins found! Unregistering all currently registered')
+      
+      for (const plugin of this.plugins.keys()) {
+        this.unregister(plugin)
+      }
+
+      return Promise.resolve()
+    }
+
+    const currentPlugins = Array.from(this.plugins.keys())
+
+    for (const plugin of pluginsDirs) {
+      if (currentPlugins.includes(plugin)) continue
+
+      this.info(`[ReIndex] New Plugin Found "${plugin}"`)
+      await this.register(resolve(this.pluginsPath, plugin))
+    }
+    for (const plugin of currentPlugins) {
+      if (pluginsDirs.includes(plugin)) continue
+
+      this.info(`[ReIndex] Could not resolve "${plugin}".. Unregistering`)
+      this.unregister(plugin)
     }
 
     return Promise.resolve()
