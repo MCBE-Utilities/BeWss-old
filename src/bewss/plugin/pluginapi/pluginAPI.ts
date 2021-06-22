@@ -8,6 +8,7 @@ import {
   default as Logger,
   colors,
 } from './logger'
+import playerManager from "src/bewss/player/playerManager"
 class pluginAPI {
   private bewss: bewss
   public config: examplePluginConfig
@@ -42,6 +43,10 @@ class pluginAPI {
 
   getCommandManager(): commandManager {
     return this.bewss.getCommandManager()
+  }
+
+  getPlayerManager(): playerManager {
+    return this.bewss.getPlayerManager()
   }
 
   getEventManager(): eventManager {
