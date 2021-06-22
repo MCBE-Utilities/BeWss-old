@@ -55,6 +55,9 @@ export interface EventValues {
   PlayerDied: [unknown]
   PlayerJoin: [unknown] // Doesnt work
   PlayerLeave: [unknown] // Doesnt work
+  PlayerTravelled: [unknown]
+  PlayerTransform: [unknown]
+  PlayerTeleported: [unknown]
 }
 
 export interface eventManager {
