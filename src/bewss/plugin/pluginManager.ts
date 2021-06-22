@@ -8,7 +8,6 @@ import path, { resolve } from "path"
 import fs from "fs"
 import fse from "fs-extra"
 import childProcess from "child_process"
-import { threadId } from 'node:worker_threads'
 
 interface examplePlugin {
   new (bewss: bewss)

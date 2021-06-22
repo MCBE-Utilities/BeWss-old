@@ -6,7 +6,6 @@ import pluginManager from "./plugin/pluginManager"
 import serverManager from "./server/serverManager"
 import { bewssOptions } from './@interface/bewss.i'
 class bewss {
-  private server
   private logger: Logger
 
   private serverManager: serverManager
