@@ -92,6 +92,8 @@ export interface playerManager {
   getPlayerList(): Promise<Array<string>>
   sendMessage(target: string, content: string): void
   getPlayerPosition(target: string): playerPosition
+  getTags(target: string): Promise<Array<string>>
+  hasTag(target: string, tag: string): Promise<boolean>
 }
 
 export interface playerPosition {

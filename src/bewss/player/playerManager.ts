@@ -58,6 +58,31 @@ class playerManager {
       })
     })
   }
+
+  getTags(target: string): Promise<Array<string>> {
+    return new Promise((res) => {
+      const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" list`) as { command: string, requestId: string }
+      this.bewss.getEventManager().on('SlashCommandExecuted', (packet: any) => {
+        if (command.requestId != packet.header.requestId) return
+        const raw: Array<string> = packet.body.statusMessage.split(' ')
+        const tags: Array<string> = []
+        for (const string of raw) {
+          if (string.startsWith("§a")) tags.push(string.replace('§a', '').replace('§r', '')
+            .replace(',', ''))
+        }
+        res(tags)
+      })
+    })
+  }
+
+  hasTag(target: string, tag: string): Promise<boolean> {
+    return new Promise(async (res) => {
+      const tags = await this.getTags(target)
+      if (!tags.includes(tag)) res(false)
+      res(true)
+    })
+  }
+
 }
 
 export default playerManager
