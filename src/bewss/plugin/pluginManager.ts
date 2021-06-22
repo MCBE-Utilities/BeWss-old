@@ -8,7 +8,7 @@ import path, { resolve } from "path"
 import fs from "fs"
 import fse from "fs-extra"
 import childProcess from "child_process"
-import pluginApi from './pluginapi/pluginApi'
+import pluginApi from './pluginapi/pluginAPI'
 import { examplePluginConfig } from '../@interface/bewss.i'
 
 interface examplePlugin {

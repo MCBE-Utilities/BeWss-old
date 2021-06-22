@@ -1,6 +1,6 @@
 import chalk from "chalk"
 import moment from "moment"
-import pluginAPI from "./pluginApi"
+import pluginAPI from "./pluginAPI"
 
 export type colors = (
   "black" |
