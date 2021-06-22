@@ -1,12 +1,12 @@
 import bewss from "src/bewss/bewss"
 
-class Exit {
+class Quit {
   private bewss: bewss
   private commandName: string
 
   constructor(bewss: bewss) {
     this.bewss = bewss
-    this.commandName = 'exit'
+    this.commandName = 'quit'
   }
 
   async onEnabled(): Promise<void> {
@@ -21,4 +21,4 @@ class Exit {
 
 }
 
-module.exports = Exit
+module.exports = Quit
