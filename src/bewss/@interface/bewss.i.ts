@@ -58,7 +58,7 @@ export interface EventValues {
   PlayerTravelled: [PlayerTravelled]
   PlayerTransform: [PlayerTransform]
   PlayerTeleported: [PlayerTeleported]
-  BossKilled: [{body: object, header: object}]
+  BossKilled: [BossKilled]
 }
 
 interface eventHeader {
@@ -665,6 +665,41 @@ interface PlayerTeleported {
       PlayerGameMode: number
       TeleportationCause: number
       TeleportationItem: number
+      Seq: number
+      ServerId: string
+      UserId: string
+      WorldFeature: number
+      WorldSessionId: string
+      editionType: string
+      isTrial: number
+      locale: string
+      vrMode: boolean
+    }
+  }
+  header: eventHeader
+}
+
+interface BossKilled {
+  body: {
+    eventName: string
+    measurements: null
+    properties: {
+      AcountType: number
+      Biome: number
+      Build: string
+      BuildNum: string
+      BuildPlat: number
+      Cheevos: boolean
+      ClientId: string
+      CurrentNumDevices: number
+      Difficulty: string
+      Dim: number
+      DnAPlat: string
+      DnAIgnore: boolean
+      Mode: number
+      NetworkType: number
+      Plat: string
+      PlayerGameMode: number
       Seq: number
       ServerId: string
       UserId: string
