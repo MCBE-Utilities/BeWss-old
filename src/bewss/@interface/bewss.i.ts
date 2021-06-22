@@ -91,10 +91,17 @@ export interface playerManager {
   getLocalPlayerName(): string
   getPlayerList(): Promise<Array<string>>
   sendMessage(target: string, content: string): void
-  getPlayerPosition(target: string): playerPosition
+  sendTitleraw(target: string, content: string, title: titles): void
+  getPlayerPosition(target: string): playerPosition | undefined
   getTags(target: string): Promise<Array<string>>
   hasTag(target: string, tag: string): Promise<boolean>
 }
+
+export type titles = (
+  "actionbar" |
+  "title" |
+  "subtitle"
+)
 
 export interface playerPosition {
   dimension: number
