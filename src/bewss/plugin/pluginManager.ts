@@ -293,8 +293,43 @@ class pluginManager {
 
       return false
     }
-    if (config.dependencies && Object.keys(config.dependencies).filter(i => i !== "ts-node" && i !== "typescript").length === 0) {
-      this.info(`Congrats @${config.author || config.name || path}, your plugin does not use any dependencies other than the needed ones!`)
+    if (!config.dependencies && !config.devdependencies) {
+      this.info(`WOW @${config.author || config.name || path}, your plugin has absolutely no depedencies! However, you should probably add "@types/node" as a devdependency.`)
+    }
+
+    if (!config.devdependencies) {
+      this.warn(`plugin "${config.name || path}" does not have @types/node. This is known to cause issues for some people. Please add "@types/node" as a devdependency to your project`)
+    }
+
+    if (config.devdependencies) {
+      const devDependencies = Object.keys(config.devdependencies)
+      if (!devDependencies.includes("@types/node")) {
+        this.warn(`plugin "${config.name || path}" does not have @types/node. This is known to cause issues for some people. Please add "@types/node" as a devdependency to your project`)
+      }
+    }
+
+    if (config.devdependencies && !config.dependencies) {
+      const devDependencies = Object.keys(config.devdependencies)
+      const filterTypes = devDependencies.filter(d => d !== "@types/node")
+      if (filterTypes.length < 1) {
+        this.info(`Great job @${config.author || config.name || path}! your plugin has absolutely no depedencies!`)
+      }
+    }
+
+    if (config.dependencies) {
+      const dependencies = Object.keys(config.dependencies)
+      const dependencyFilter = dependencies.filter(i => i !== "ts-node" && i !== "typescript")
+      let onlyTypes = true
+      if (config.devdependencies) {
+        const devDependencies = Object.keys(config.devdependencies)
+        const filterTypes = devDependencies.filter(d => d !== "@types/node")
+        if (filterTypes .length > 1) {
+          onlyTypes = false
+        }
+      }
+      if (dependencyFilter.length < 1 && onlyTypes) {
+        this.info(`Congrats @${config.author || config.name || path}, your plugin does not use any dependencies other than the needed ones!`)
+      }
     } 
 
     return true
