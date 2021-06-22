@@ -68,7 +68,8 @@ class pluginManager {
       const pluginFolderPath = path.resolve(process.cwd(), `../plugins`)
       if (!fs.existsSync(pluginFolderPath)) {
         this.warn("Plugins dir not found skipping plugin manager. To use plugins please create a dir named \"plugins\" in this location:", '"' + path.resolve(process.cwd(), `../`) + '"')
-        res()
+        
+        return res()
       }
       const pluginFolder = fs.readdirSync(pluginFolderPath)
 
