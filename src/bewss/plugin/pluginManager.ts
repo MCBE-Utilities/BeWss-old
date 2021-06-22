@@ -49,13 +49,13 @@ class pluginManager {
 
   async onEnabled(): Promise<void> {
     await this.loadAll()
-    for (const [path, { config, plugin }] of this.plugins.entries()) {
-      try {
-        plugin.onEnabled()
-      } catch (error) {
-        this.error(`Plugin "${config.name || path}". Uncaught Exception(s):\n`, error)
-      }
-    }
+    // for (const [path, { config, plugin }] of this.plugins.entries()) {
+    //   try {
+    //     plugin.onEnabled()
+    //   } catch (error) {
+    //     this.error(`Plugin "${config.name || path}". Uncaught Exception(s):\n`, error)
+    //   }
+    // }
 
     return
   }
@@ -144,12 +144,19 @@ class pluginManager {
         }
         try {
           const plugin: examplePlugin = require(entryPoint)
-          const newPlugin = new plugin(this.bewss)
+          const newPlugin: examplePlugin = new plugin(this.bewss)
           this.info(`Successfully loaded plugin "${config.name || path}"`)
           this.plugins.set(path, {
             config,
             plugin: newPlugin, 
           })
+
+          try {
+            newPlugin.onEnabled()
+          } catch (error) {
+            this.error(`Plugin "${config.name || path}". Uncaught Exception(s):\n`, error)
+          }
+
         } catch (error) {
           this.error(`Plugin "${config.name || path}". Uncaught Exception(s):\n`, error)
         }
@@ -168,9 +175,14 @@ class pluginManager {
     if (!plugin) return
     const path: string = this.getByValue(this.plugins, plugin)
     if (!path) return
-    delete require.cache[require.resolve(resolve(path))]
-    delete require.cache[require.resolve(resolve(path, "package.json"))]
-    delete require.cache[require.resolve(resolve(path, plugin.config.main))]
+  
+    plugin.plugin.onDisabled()
+
+    try {
+      delete require.cache[require.resolve(resolve(path))]
+      delete require.cache[require.resolve(resolve(path, "package.json"))]
+      delete require.cache[require.resolve(resolve(path, plugin.config.main))]
+    } catch {}
 
     this.plugins.delete(path)
 
@@ -216,13 +228,18 @@ class pluginManager {
     const currentPlugins = Array.from(this.plugins.keys())
 
     for (const plugin of pluginsDirs) {
-      if (currentPlugins.includes(plugin)) continue
+      const path = resolve(this.pluginsPath, plugin)
+      if (currentPlugins.includes(path)) continue
 
       this.info(`[ReIndex] New Plugin Found "${plugin}"`)
-      await this.register(resolve(this.pluginsPath, plugin))
+      await this.register(path)
+    }
+    const pluginDirz: string[] = []
+    for (const dir of pluginsDirs) {
+      pluginDirz.push(resolve(this.pluginsPath, dir))
     }
     for (const plugin of currentPlugins) {
-      if (pluginsDirs.includes(plugin)) continue
+      if (pluginDirz.includes(plugin)) continue
 
       this.info(`[ReIndex] Could not resolve "${plugin}".. Unregistering`)
       this.unregister(plugin)
