@@ -8,35 +8,16 @@ import path, { resolve } from "path"
 import fs from "fs"
 import fse from "fs-extra"
 import childProcess from "child_process"
+import pluginApi from './pluginapi/pluginApi'
+import { examplePluginConfig } from '../@interface/bewss.i'
 
 interface examplePlugin {
-  new (bewss: bewss)
+  new (pluginApi: pluginApi)
   onEnabled(): Promise<void>
   onDisabled(): Promise<void>
 }
 
-interface examplePluginConfig {
-  name: string
-  version: string
-  description: string
-  devMode: boolean
-  main: string
-  scripts: {
-    build: string
-    dev: string
-    start: string
-    [key: string]: string
-  }
-  author: string
-  license: string
-  dependencies: {
-    [key: string]: string
-  }
-  devdependencies: {
-    [key: string]: string
-  }
-  [key: string]: unknown
-}
+
 class pluginManager {
   private bewss: bewss
   private plugins = new Map<string, { config: examplePluginConfig, plugin: examplePlugin }>() // path: { config, plugin }
@@ -144,7 +125,7 @@ class pluginManager {
         }
         try {
           const plugin: examplePlugin = require(entryPoint)
-          const newPlugin: examplePlugin = new plugin(this.bewss)
+          const newPlugin: examplePlugin = new plugin(new pluginApi(this.bewss, config, path))
           this.info(`Successfully loaded plugin "${config.name || path}"`)
           this.plugins.set(path, {
             config,
