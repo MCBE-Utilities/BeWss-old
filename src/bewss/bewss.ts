@@ -4,6 +4,7 @@ import eventManager from "./events/eventManager"
 import Logger from "./logger/logger"
 import pluginManager from "./plugin/pluginManager"
 import serverManager from "./server/serverManager"
+import playerManager from "./player/playerManager"
 import { bewssOptions } from './@interface/bewss.i'
 class bewss {
   private logger: Logger
@@ -12,6 +13,7 @@ class bewss {
   private consoleManager: consoleManager
   private commandManager: commandManager
   private pluginManager: pluginManager
+  private playerManager: playerManager
   private eventManager: eventManager
   private port = 8080
 
@@ -26,6 +28,7 @@ class bewss {
     this.consoleManager = new consoleManager(this)
     this.commandManager = new commandManager(this)
     this.pluginManager = new pluginManager(this)
+    this.playerManager = new playerManager(this)
     this.eventManager = new eventManager(this)
     this.onEnabled()
   }
@@ -35,9 +38,8 @@ class bewss {
     this.serverManager.onEnabled()
     this.consoleManager.onEnabled()
     this.commandManager.onEnabled()
-    this.eventManager.on('wss-connected', () => {
-      this.eventManager.onEnabled()
-    })
+    this.playerManager.onEnabled()
+    this.eventManager.onEnabled()
   }
 
   async onDisabled(): Promise<void> {
@@ -45,6 +47,7 @@ class bewss {
     this.serverManager.onDisabled()
     this.consoleManager.onDisabled()
     this.commandManager.onDisabled()
+    this.playerManager.onDisabled()
     this.eventManager.onDisabled()
     setTimeout(() => {
       console.log('')
@@ -69,6 +72,10 @@ class bewss {
 
   getCommandManager(): commandManager {
     return this.commandManager
+  }
+
+  getPlayerManager(): playerManager {
+    return this.playerManager
   }
 
   getEventManager(): eventManager {

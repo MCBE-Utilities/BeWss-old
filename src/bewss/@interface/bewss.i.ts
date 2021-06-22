@@ -14,6 +14,7 @@ export interface bewss {
   getConsoleManager(): consoleManager
   getCommandManager(): commandManager
   getEventManager(): eventManager
+  getPlayerManager(): playerManager
 }
 
 export interface pluginApi {
@@ -23,6 +24,7 @@ export interface pluginApi {
   getConsoleManager(): consoleManager
   getCommandManager(): commandManager
   getEventManager(): eventManager
+  getPlayerManager(): playerManager
   setColor(color: colors): void
 }
 
@@ -82,6 +84,25 @@ export interface consoleManager {
 export interface commandManager {
   new(bewss: bewss)
   executeCommand(command: string): object
+}
+
+export interface playerManager {
+  new(bewss: bewss)
+  getLocalPlayerName(): string
+  getPlayerList(): Promise<Array<string>>
+  sendMessage(target: string, content: string): void
+  getPlayerPosition(target: string): playerPosition
+}
+
+export interface playerPosition {
+  dimension: number
+  position: {
+    x: number
+    y: number
+    z: number
+  }
+  uniqueId: string
+  yRot: number
 }
 
 export interface EventValues {
