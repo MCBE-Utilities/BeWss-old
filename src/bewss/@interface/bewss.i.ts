@@ -43,7 +43,7 @@ export interface examplePluginConfig {
   dependencies: {
     [key: string]: string
   }
-  devdependencies: {
+  devDependencies: {
     [key: string]: string
   }
   [key: string]: unknown

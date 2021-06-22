@@ -101,7 +101,7 @@ class pluginManager {
         let buildSuccess = true
         let alreadyBuilt = false
 
-        if (!fs.existsSync(resolve(path, "node_modules")) && (config.dependencies || config.devdependencies)) {
+        if (!fs.existsSync(resolve(path, "node_modules")) && (config.dependencies || config.devDependencies)) {
           neededUpdate = true
           succeededUpdate = await this.update(path, config)
         }
@@ -241,9 +241,9 @@ class pluginManager {
       this.info(`Installing dependencies for "${config.name || path}"`)
       childProcess.exec('npm i', {
         cwd: path,
-      }, (err, out) => {
+      }, (err, out, s) => {
         if (err) {
-          this.error(`Failed to install dependencies for "${config.name || path}". Recieved Error(s):\n`, out)
+          this.error(`Failed to install dependencies for "${config.name || path}". Recieved Error(s):\n`, out, s)
           res(false)
         } else {
           this.info(`Finished installing dependencies for "${config.name || path}"`)
@@ -293,23 +293,23 @@ class pluginManager {
 
       return false
     }
-    if (!config.dependencies && !config.devdependencies) {
+    if (!config.dependencies && !config.devDependencies) {
       this.info(`WOW @${config.author || config.name || path}, your plugin has absolutely no depedencies! However, you should probably add "@types/node" as a devdependency.`)
     }
 
-    if (!config.devdependencies) {
+    if (!config.devDependencies) {
       this.warn(`plugin "${config.name || path}" does not have @types/node. This is known to cause issues for some people. Please add "@types/node" as a devdependency to your project`)
     }
 
-    if (config.devdependencies) {
-      const devDependencies = Object.keys(config.devdependencies)
+    if (config.devDependencies) {
+      const devDependencies = Object.keys(config.devDependencies)
       if (!devDependencies.includes("@types/node")) {
         this.warn(`plugin "${config.name || path}" does not have @types/node. This is known to cause issues for some people. Please add "@types/node" as a devdependency to your project`)
       }
     }
 
-    if (config.devdependencies && !config.dependencies) {
-      const devDependencies = Object.keys(config.devdependencies)
+    if (config.devDependencies && !config.dependencies) {
+      const devDependencies = Object.keys(config.devDependencies)
       const filterTypes = devDependencies.filter(d => d !== "@types/node")
       if (filterTypes.length < 1) {
         this.info(`Great job @${config.author || config.name || path}! your plugin has absolutely no depedencies!`)
@@ -320,8 +320,8 @@ class pluginManager {
       const dependencies = Object.keys(config.dependencies)
       const dependencyFilter = dependencies.filter(i => i !== "ts-node" && i !== "typescript")
       let onlyTypes = true
-      if (config.devdependencies) {
-        const devDependencies = Object.keys(config.devdependencies)
+      if (config.devDependencies) {
+        const devDependencies = Object.keys(config.devDependencies)
         const filterTypes = devDependencies.filter(d => d !== "@types/node")
         if (filterTypes .length > 1) {
           onlyTypes = false
