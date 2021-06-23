@@ -855,6 +855,7 @@ interface agentManager {
   transferItem(slot: number, amount: number, destslot: number): Promise<genericAgent>
   dropItem(slot: number, amount: number, direction: directions): Promise<genericAgent>
   turn(direction: directions): Promise<genericAgent>
+  move(direction: directions): Promise<genericAgent>
   attack(direction: directions): Promise<genericAgent>
   place(slot: number, direction: directions): Promise<genericAgent>
   destroy(direction: directions): Promise<genericAgent>

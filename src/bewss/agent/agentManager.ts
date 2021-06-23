@@ -143,6 +143,18 @@ class agentManager {
     })
   }
 
+  move(direction: directions): Promise<genericAgent> {
+    return new Promise((res) => {
+      const command = this.bewss.getCommandManager().executeCommand(`/agent move ${direction}`) as commandResponse
+      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
+        if (command == undefined) return res(undefined)
+        console.log(packet)
+
+        return res(packet)
+      })
+    })
+  }
+
   attack(direction: directions): Promise<genericAgent> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/agent attack ${direction}`) as commandResponse
