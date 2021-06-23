@@ -88,7 +88,7 @@ class scoreboardManager {
 
   updateScore(target: string, operation: operations, objective: string, amount: number): Promise<genericScoreboard> {
     return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/scoreboard players ${operation} ${target} ${objective} ${amount}`) as commandResponse
+      const command = this.bewss.getCommandManager().executeCommand(`/scoreboard players ${operation} "${target}" ${objective} ${amount}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericScoreboard) => {
         if (command == undefined || command.requestId != packet.header.requestId) return res(undefined)
   
@@ -99,7 +99,7 @@ class scoreboardManager {
 
   getScore(target: string, objective: string): Promise<getScore> {
     return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/scoreboard players list ${target}`) as commandResponse
+      const command = this.bewss.getCommandManager().executeCommand(`/scoreboard players list "${target}"`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', async (packet: getScore) => {
         if (command == undefined || command.requestId != packet.header.requestId) return res(undefined)
         const objectiveName = await this.getObjectiveName(objective)
