@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  playerPosition, titles, 
+  playerPosition, titles, messageType, titlerawComponets,
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 
@@ -15,7 +15,7 @@ class playerManager {
   async onEnabled(): Promise<void> {
     this.bewss.getEventManager().on('wss-connected', () => {
       const command = this.bewss.getCommandManager().executeCommand('/getlocalplayername') as { command: string, requestId: string }
-      this.bewss.getEventManager().on('SlashCommandExecutedConsole', (packet: any) => {
+      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: any) => {
         if (command.requestId != packet.header.requestId) return
         this.localePlayerName = packet.body.localplayername
       })
@@ -41,21 +41,44 @@ class playerManager {
     })
   }
 
-  sendMessage(target: string, content: string): void {
-    if (target == "@s") target = this.localePlayerName
-    if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
-      this.bewss.getCommandManager().executeCommand(`/tellraw ${target} {"rawtext":[{"text":"${content}"}]}`)
-    } else {
-      this.bewss.getCommandManager().executeCommand(`/tellraw "${target}" {"rawtext":[{"text":"${content}"}]}`)
+  sendMessage(type: messageType , target: string, content: string | Array<titlerawComponets>): void {
+    if (type == "text") {
+      if (target == "@s") target = this.localePlayerName
+      if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
+        this.bewss.getCommandManager().executeCommand(`/tellraw ${target} {"rawtext":[{"text":"${content}"}]}`)
+      } else {
+        this.bewss.getCommandManager().executeCommand(`/tellraw "${target}" {"rawtext":[{"text":"${content}"}]}`)
+      }
+    }
+
+    if (type == "json") {
+      if (target == "@s") target = this.localePlayerName
+      if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
+        this.bewss.getCommandManager().executeCommand(`/tellraw ${target} {"rawtext":${JSON.stringify(content)}}`)
+      } else {
+        this.bewss.getCommandManager().executeCommand(`/tellraw "${target}" {"rawtext":${JSON.stringify(content)}}`)
+      }
     }
   }
 
-  sendTitleraw(target: string, content: string, title: titles): void {
-    if (target == "@s") target = this.localePlayerName
-    if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
-      this.bewss.getCommandManager().executeCommand(`/titleraw ${target} ${title} {"rawtext":[{"text":"${content}"}]}`)
-    } else {
-      this.bewss.getCommandManager().executeCommand(`/titleraw "${target}" ${title} {"rawtext":[{"text":"${content}"}]}`)
+  sendTitle(type: messageType, target: string, content: string | Array<titlerawComponets>, title: titles): void {
+    if (type == "text") {
+      if (target == "@s") target = this.localePlayerName
+      if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
+        this.bewss.getCommandManager().executeCommand(`/titleraw ${target} ${title} {"rawtext":[{"text":"${content}"}]}`)
+      } else {
+        this.bewss.getCommandManager().executeCommand(`/titleraw "${target}" ${title} {"rawtext":[{"text":"${content}"}]}`)
+      }
+    }
+
+    if (type == "json") {
+      if (target == "@s") target = this.localePlayerName
+      console.log(JSON.stringify(content))
+      if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
+        this.bewss.getCommandManager().executeCommand(`/titleraw ${target} ${title} {"rawtext":${JSON.stringify(content)}}`)
+      } else {
+        this.bewss.getCommandManager().executeCommand(`/titleraw "${target}" ${title} {"rawtext":${JSON.stringify(content)}}`)
+      }
     }
   }
 

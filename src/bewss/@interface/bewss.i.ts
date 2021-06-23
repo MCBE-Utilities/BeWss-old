@@ -95,8 +95,8 @@ export interface playerManager {
   new(bewss: bewss)
   getLocalPlayerName(): string
   getPlayerList(): Promise<Array<string>>
-  sendMessage(target: string, content: string): void
-  sendTitleraw(target: string, content: string, title: titles): void
+  sendMessage(type: messageType , target: string, content: string | Array<titlerawComponets>): void
+  sendTitle(type: messageType, target: string, content: string | Array<titlerawComponets>, title: titles): void
   getPlayerPosition(target: string): playerPosition | undefined
   getTags(target: string): Promise<Array<string>>
   hasTag(target: string, tag: string): Promise<boolean>
@@ -107,6 +107,24 @@ export type titles = (
   "title" |
   "subtitle"
 )
+
+export type messageType = (
+  "json" | 
+  "text"
+)
+
+type selector = (
+  "@s" | "@p" | "@r" | "@a" | "@e" 
+  )
+
+export interface titlerawComponets {
+    text?: string
+    selecter?: selector | string
+    score?: {
+      name: selector | string
+      objective: string
+    }
+}
 
 export interface playerPosition {
   dimension: number
