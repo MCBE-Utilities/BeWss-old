@@ -993,8 +993,46 @@ export interface genericAgent extends SlashCommandExecutedConsole {
 }
 
 // ScoreboardManager Responses
-export interface createObjective extends SlashCommandExecutedConsole {
-  body: {}
+
+export type displays = (
+  "belowname" |
+  "list" |
+  "sidebar"
+)
+
+export type layouts = (
+  "ascending" | "descending"  | ""
+)
+
+export type operations = (
+  "add" |
+  "remove" |
+  "set"
+)
+
+export interface genericScoreboard extends SlashCommandExecutedConsole {
+  body: {
+    statusCode: string
+    statusMessage: string
+  }
+}
+
+export interface getObjectives extends SlashCommandExecutedConsole {
+  body: {
+    statusCode: string
+    statusMessage: string
+    objectives: Array<Array<string>>
+  }
+}
+
+export interface getScore extends SlashCommandExecutedConsole {
+  body: {
+    statusCode: string
+    statusMessage: string
+    score: number
+    objective: string
+    objectiveName: string
+  }
 }
 
 export default bewss
