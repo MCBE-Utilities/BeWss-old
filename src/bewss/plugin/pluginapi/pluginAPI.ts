@@ -2,14 +2,16 @@ import commandManager from "src/bewss/command/commandManager"
 import consoleManager from "src/bewss/console/consoleManager"
 import eventManager from "src/bewss/events/eventManager"
 import serverManager from "src/bewss/server/serverManager"
+import playerManager from "src/bewss/player/playerManager"
+import agentManager from "src/bewss/agent/agentManager"
+import scoreboardManager from "src/bewss/scoreboard/scoreboardManager"
 import bewss from "../../bewss"
 import { examplePluginConfig } from '../../@interface/bewss.i'
 import {
   default as Logger,
   colors,
 } from './logger'
-import playerManager from "src/bewss/player/playerManager"
-import agentManager from "src/bewss/agent/agentManager"
+
 class pluginAPI {
   private bewss: bewss
   public config: examplePluginConfig
@@ -52,6 +54,10 @@ class pluginAPI {
 
   getAgentManager(): agentManager {
     return this.bewss.getAgentManager()
+  }
+
+  getScoreboardManager(): scoreboardManager {
+    return this.bewss.getScoreboardManager()
   }
 
   getEventManager(): eventManager {
