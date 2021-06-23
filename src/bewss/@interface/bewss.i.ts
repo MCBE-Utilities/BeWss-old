@@ -161,6 +161,8 @@ export interface EventValues {
   PlayerTeleported: [PlayerTeleported]
   BossKilled: [BossKilled]
   RawEvent: [unknown] // Fires when any event is fired.
+  AgentCommand: [AgentCommand]
+  AgentCreated: [AgentCreated]
 }
 
 interface eventHeader {
@@ -819,6 +821,81 @@ interface BossKilled {
   header: eventHeader
 }
 
+interface AgentCommand {
+  body: {
+    eventName: string
+    measurements: null
+    properties: {
+      AccountType: number
+      ActiveSessionID: string
+      AppSessionID: string
+      Biome: number
+      BuildNum: string
+      BuildPlat: string
+      Cheevos: boolean
+      ClientId: string
+      CurrentNumDevices: number
+      DeviceSessionId: string
+      Difficulty: string
+      Dim: number
+      DnAPlat: string
+      GlobalMultiplayerCorrelationId: string
+      Mode: number
+      NetworkType: number
+      Plat: string
+      PlayerGameMode: number
+      Result: string
+      Seq: number
+      ServerId: string
+      UserId: string
+      WorldFeature: number
+      WorldSessionId: string
+      editionType: string
+      isTrial: number
+      local: string
+      vrMode: boolean
+    }
+  }
+  header: eventHeader
+}
+
+interface AgentCreated {
+  body: {
+    eventName: string
+    measurements: null
+    properties: {
+      AccountType: number
+      ActiveSessionID: string
+      AppSessionID: string
+      Biome: number
+      BuildNum: string
+      BuildPlat: string
+      Cheevos: boolean
+      ClientId: string
+      CurrentNumDevices: number
+      DeviceSessionId: string
+      Difficulty: string
+      Dim: number
+      DnAPlat: string
+      GlobalMultiplayerCorrelationId: string
+      Mode: number
+      NetworkType: number
+      Plat: string
+      PlayerGameMode: number
+      Seq: number
+      ServerId: string
+      UserId: string
+      WorldFeature: number
+      WorldSessionId: string
+      editionType: string
+      isTrial: number
+      local: string
+      vrMode: boolean
+    }
+  }
+  header: eventHeader
+}
+
 export interface eventManager {
   new(bewss: bewss)
   onEnabled(): Promise<void>
@@ -844,7 +921,7 @@ export interface eventManager {
 
 interface agentManager {
   new(bewss: bewss)
-  crete(): Promise<createAgent>
+  create(): Promise<createAgent>
   getPosition(): Promise<getPositionAgent>
   teleport(x: number, y: number, z: number): Promise<teleportAgent>
   inspect(direction: directions): Promise<genericAgent>

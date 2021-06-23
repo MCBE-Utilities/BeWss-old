@@ -11,7 +11,7 @@ class agentManager {
   }
 
   async onEnabled(): Promise<void> {
-    // TODO: Add events for agent commands executed
+    //
   }
 
   async onDisabled(): Promise<void> {
