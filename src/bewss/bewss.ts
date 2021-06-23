@@ -7,6 +7,7 @@ import pluginManager from "./plugin/pluginManager"
 import serverManager from "./server/serverManager"
 import playerManager from "./player/playerManager"
 import agentManager from "./agent/agentManager"
+import scoreboardManager from './scoreboard/scoreboardManager'
 
 class bewss {
   private logger: Logger
@@ -17,6 +18,7 @@ class bewss {
   private pluginManager: pluginManager
   private playerManager: playerManager
   private agentManager: agentManager
+  private scoreboardManager: scoreboardManager
   private eventManager: eventManager
   private port = 8080
 
@@ -33,6 +35,7 @@ class bewss {
     this.pluginManager = new pluginManager(this)
     this.playerManager = new playerManager(this)
     this.agentManager = new agentManager(this)
+    this.scoreboardManager = new scoreboardManager(this)
     this.eventManager = new eventManager(this)
     this.onEnabled()
   }
@@ -44,6 +47,7 @@ class bewss {
     this.commandManager.onEnabled()
     this.playerManager.onEnabled()
     this.agentManager.onEnabled()
+    this.scoreboardManager.onEnabled()
     this.eventManager.onEnabled()
   }
 
@@ -54,6 +58,7 @@ class bewss {
     this.commandManager.onDisabled()
     this.playerManager.onDisabled()
     this.agentManager.onDisabled()
+    this.scoreboardManager.onDisabled()
     this.eventManager.onDisabled()
     setTimeout(() => {
       console.log('')
@@ -86,6 +91,10 @@ class bewss {
 
   getAgentManager(): agentManager {
     return this.agentManager
+  }
+
+  getScoreboardManager(): scoreboardManager {
+    return this.scoreboardManager
   }
 
   getEventManager(): eventManager {

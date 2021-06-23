@@ -992,4 +992,9 @@ export interface genericAgent extends SlashCommandExecutedConsole {
   }
 }
 
+// ScoreboardManager Responses
+export interface createObjective extends SlashCommandExecutedConsole {
+  body: {}
+}
+
 export default bewss
