@@ -100,7 +100,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent getitemcount ${slot}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -112,7 +111,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent transfer ${slot} ${amount} ${destslot}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -124,7 +122,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent drop ${slot} ${amount} ${direction}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -136,7 +133,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent turn ${direction}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -148,7 +144,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent move ${direction}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -160,7 +155,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent attack ${direction}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -172,7 +166,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent place ${slot} ${direction}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -184,7 +177,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent destroy ${direction}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -196,7 +188,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent collect ${item}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
@@ -208,7 +199,6 @@ class agentManager {
       const command = this.bewss.getCommandManager().executeCommand(`/agent till ${direction}`) as commandResponse
       this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
         if (command == undefined) return res(undefined)
-        console.log(packet)
 
         return res(packet)
       })
