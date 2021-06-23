@@ -86,6 +86,11 @@ export interface commandManager {
   executeCommand(command: string): object
 }
 
+export interface commandResponse {
+  command: string
+  requestId: string
+}
+
 export interface playerManager {
   new(bewss: bewss)
   getLocalPlayerName(): string
@@ -117,6 +122,7 @@ export interface playerPosition {
 export interface EventValues {
   PlayerMessage: [PlayerMessage]
   SlashCommandExecuted: [SlashCommandExecuted]
+  SlashCommandExecutedConsole: [SlashCommandExecutedConsole]
   BlockBroken: [BlockBroken]
   BlockPlaced: [BlockPlaced]
   EntitySpawned: [EntitySpawned]
@@ -218,6 +224,9 @@ interface SlashCommandExecuted {
       vrMode: boolean
     }
   }
+  header: eventHeader
+}
+interface SlashCommandExecutedConsole {
   header: eventHeader
 }
 
@@ -811,6 +820,58 @@ export interface eventManager {
     event: Exclude<S, keyof EventValues>,
     ...args: unknown[]
   ): boolean
+}
+
+// Agent Command Responses
+interface commandHeader {
+  messagePurpose: string
+  requestId: string
+  version: number
+}
+
+export type directions = (
+  "forward" |
+  "back" |
+  "right" |
+  "left" |
+  "up" |
+  "down"
+)
+
+export interface createAgent extends SlashCommandExecutedConsole {
+  body: {
+    details: string
+    statusCode: number
+    statusMessage: string
+  }
+  header: commandHeader
+}
+
+export interface getPositionAgent extends SlashCommandExecutedConsole {
+  body: {
+    position: {
+      x: number
+      y: number
+      z: number
+    }
+    statusCode: number
+    statusMessage: string
+    'y-rot': number
+  }
+}
+
+export interface teleportAgent extends SlashCommandExecutedConsole {
+  body: {
+    statusCode: number
+    statusMessage: string
+  }
+}
+
+export interface genericAgent extends SlashCommandExecutedConsole {
+  body: {
+    statusCode: number
+    statusMessage: string
+  }
 }
 
 export default bewss

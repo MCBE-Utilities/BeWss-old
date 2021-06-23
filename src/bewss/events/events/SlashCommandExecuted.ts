@@ -14,7 +14,11 @@ class SlashCommandExecuted {
     this.bewss.getServerManager().getServer()
       .on('message', (packet: string) => {
         const parsedPacket = JSON.parse(packet)
-        this.bewss.getEventManager().emit('SlashCommandExecuted', parsedPacket)
+        if (parsedPacket.header.requestId == '00000000-0000-0000-0000-000000000000') {
+          this.bewss.getEventManager().emit('SlashCommandExecuted', parsedPacket)
+        } else {
+          this.bewss.getEventManager().emit('SlashCommandExecutedConsole', parsedPacket)
+        }
       })
   }
 

@@ -15,7 +15,7 @@ class playerManager {
   async onEnabled(): Promise<void> {
     this.bewss.getEventManager().on('wss-connected', () => {
       const command = this.bewss.getCommandManager().executeCommand('/getlocalplayername') as { command: string, requestId: string }
-      this.bewss.getEventManager().on('SlashCommandExecuted', (packet: any) => {
+      this.bewss.getEventManager().on('SlashCommandExecutedConsole', (packet: any) => {
         if (command.requestId != packet.header.requestId) return
         this.localePlayerName = packet.body.localplayername
       })
@@ -33,7 +33,7 @@ class playerManager {
   getPlayerList(): Promise<Array<string>> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand('/list') as { command: string, requestId: string }
-      this.bewss.getEventManager().once('SlashCommandExecuted', (packet: any) => {
+      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: any) => {
         if (command.requestId != packet.header.requestId) return
         const playersString: string = packet.body.players
         res(playersString.split(', '))
@@ -62,7 +62,7 @@ class playerManager {
   getPlayerPosition(target: string): Promise<playerPosition | undefined> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/querytarget "${target}"`) as { command: string, requestId: string }
-      this.bewss.getEventManager().once('SlashCommandExecuted', (packet: any) => {
+      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: any) => {
         if (command.requestId != packet.header.requestId || packet == undefined) return res(undefined)
         if (packet.body.details == undefined) return res(undefined)
         res(JSON.parse(packet.body.details)[0])
@@ -73,7 +73,7 @@ class playerManager {
   getTags(target: string): Promise<Array<string>> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" list`) as { command: string, requestId: string }
-      this.bewss.getEventManager().once('SlashCommandExecuted', (packet: any) => {
+      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: any) => {
         if (command.requestId != packet.header.requestId) return
         const raw: Array<string> = packet.body.statusMessage.split(' ')
         const tags: Array<string> = []

@@ -1,3 +1,4 @@
+import { bewssOptions } from './@interface/bewss.i'
 import commandManager from "./command/commandManager"
 import consoleManager from "./console/consoleManager"
 import eventManager from "./events/eventManager"
@@ -5,7 +6,8 @@ import Logger from "./logger/logger"
 import pluginManager from "./plugin/pluginManager"
 import serverManager from "./server/serverManager"
 import playerManager from "./player/playerManager"
-import { bewssOptions } from './@interface/bewss.i'
+import agentManager from "./agent/agentManager"
+
 class bewss {
   private logger: Logger
 
@@ -14,6 +16,7 @@ class bewss {
   private commandManager: commandManager
   private pluginManager: pluginManager
   private playerManager: playerManager
+  private agentManager: agentManager
   private eventManager: eventManager
   private port = 8080
 
@@ -29,6 +32,7 @@ class bewss {
     this.commandManager = new commandManager(this)
     this.pluginManager = new pluginManager(this)
     this.playerManager = new playerManager(this)
+    this.agentManager = new agentManager(this)
     this.eventManager = new eventManager(this)
     this.onEnabled()
   }
@@ -39,6 +43,7 @@ class bewss {
     this.consoleManager.onEnabled()
     this.commandManager.onEnabled()
     this.playerManager.onEnabled()
+    this.agentManager.onEnabled()
     this.eventManager.onEnabled()
   }
 
@@ -48,6 +53,7 @@ class bewss {
     this.consoleManager.onDisabled()
     this.commandManager.onDisabled()
     this.playerManager.onDisabled()
+    this.agentManager.onDisabled()
     this.eventManager.onDisabled()
     setTimeout(() => {
       console.log('')
@@ -76,6 +82,10 @@ class bewss {
 
   getPlayerManager(): playerManager {
     return this.playerManager
+  }
+
+  getAgentManager(): agentManager {
+    return this.agentManager
   }
 
   getEventManager(): eventManager {

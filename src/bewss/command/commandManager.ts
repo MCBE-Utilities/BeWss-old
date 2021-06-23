@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import bewss from "../bewss"
 import { v4 as uuidv4 } from 'uuid'
+import { commandResponse } from "../@interface/bewss.i"
 
 class commandManager {
   private bewss: bewss
@@ -16,7 +17,7 @@ class commandManager {
       const res = this.executeCommand(data)
       this.previousCommand = res || undefined
     })
-    this.bewss.getEventManager().on('SlashCommandExecuted', (packet: any) => {
+    this.bewss.getEventManager().on('SlashCommandExecutedConsole', (packet: any) => {
       if (this.previousCommand == undefined) return
       if (this.previousCommand.requestId != packet.header.requestId) return
       if (this.previousCommand.command.startsWith('/me')) return this.bewss.getLogger().info(`[External] Message Sent`)
@@ -30,7 +31,7 @@ class commandManager {
     //
   }
 
-  executeCommand(command: string): { command: string, requestId: string } | void {
+  executeCommand(command: string): commandResponse | void {
     if (this.bewss.getServerManager().getServer() == undefined) return this.bewss.getLogger().error('A user must be connect before running a Bedrock command.')
     const requestId = uuidv4()
     this.bewss.getServerManager().getServer()
@@ -51,7 +52,7 @@ class commandManager {
     return {
       command: command,
       requestId: requestId,
-    }
+    } as commandResponse
   }
 
 }
