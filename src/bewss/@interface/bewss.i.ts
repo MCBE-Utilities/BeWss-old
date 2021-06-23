@@ -15,6 +15,7 @@ export interface bewss {
   getCommandManager(): commandManager
   getEventManager(): eventManager
   getAgentManager(): agentManager
+  getScoreboardManager(): scoreboardManager
   getPlayerManager(): playerManager
 }
 
@@ -27,6 +28,7 @@ export interface pluginApi {
   getEventManager(): eventManager
   getPlayerManager(): playerManager
   getAgentManager(): agentManager
+  getScoreboardManager(): scoreboardManager
   setColor(color: colors): void
 }
 
@@ -102,6 +104,17 @@ export interface playerManager {
   getPlayerPosition(target: string): playerPosition | undefined
   getTags(target: string): Promise<Array<string>>
   hasTag(target: string, tag: string): Promise<boolean>
+}
+
+export interface scoreboardManager {
+  new(bewss: bewss)
+  createObjective(objective: string, displayname?: string): Promise<genericScoreboard>
+  removeObject(objective: string): Promise<genericScoreboard>
+  setdisplay(objective: string, display: displays, layout?: layouts | ""): Promise<genericScoreboard>
+  getObjectives(): Promise<getObjectives>
+  getObjectiveName(objective: string): Promise<string>
+  updateScore(target: string, operation: operations, objective: string, amount: number): Promise<genericScoreboard>
+  getScore(target: string, objective: string): Promise<getScore>
 }
 
 export type titles = (
