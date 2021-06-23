@@ -14,6 +14,7 @@ export interface bewss {
   getConsoleManager(): consoleManager
   getCommandManager(): commandManager
   getEventManager(): eventManager
+  getAgentManager(): agentManager
   getPlayerManager(): playerManager
 }
 
@@ -25,6 +26,7 @@ export interface pluginApi {
   getCommandManager(): commandManager
   getEventManager(): eventManager
   getPlayerManager(): playerManager
+  getAgentManager(): agentManager
   setColor(color: colors): void
 }
 
@@ -838,6 +840,26 @@ export interface eventManager {
     event: Exclude<S, keyof EventValues>,
     ...args: unknown[]
   ): boolean
+}
+
+interface agentManager {
+  new(bewss: bewss)
+  crete(): Promise<createAgent>
+  getPosition(): Promise<getPositionAgent>
+  teleport(x: number, y: number, z: number): Promise<teleportAgent>
+  inspect(direction: directions): Promise<genericAgent>
+  inspectData(direction: directions): Promise<genericAgent>
+  setItem(slot: number, item: string, amount: number, data: number): Promise<genericAgent>
+  getItem(slot: number): Promise<genericAgent>
+  getItemCount(slot: number): Promise<genericAgent>
+  transferItem(slot: number, amount: number, destslot: number): Promise<genericAgent>
+  dropItem(slot: number, amount: number, direction: directions): Promise<genericAgent>
+  turn(direction: directions): Promise<genericAgent>
+  attack(direction: directions): Promise<genericAgent>
+  place(slot: number, direction: directions): Promise<genericAgent>
+  destroy(direction: directions): Promise<genericAgent>
+  collect(item: string): Promise<genericAgent>
+  till(direction: directions): Promise<genericAgent>
 }
 
 // Agent Command Responses
