@@ -72,8 +72,8 @@ class commandManager extends EventEmitter{
     if (packet.body.statusMessage.includes('There are ')) return this.emit('ListCommandExecuted', packet)
     if (packet.body.statusMessage.includes('Target data: ')) return this.emit('QueryTargetCommandExecuted', packet)
     if (packet.body.statusMessage.includes('tag')) return this.emit('TagCommandExecuted', packet)
-    if (packet.body.statusMessage.includes('objective')) return this.emit('ScoreboardObjectiveCommandExecuted', packet)
-    if (packet.body.statusMessage.includes('players') || packet.body.statusMessage.includes('Set [')) return this.emit('ScoreboardPlayerCommandExecuted', packet)
+    if (packet.body.statusMessage.includes('players') || packet.body.statusMessage.includes('Set [') || packet.body.statusMessage.includes('tracked objective')) return this.emit('ScoreboardPlayerCommandExecuted', packet)
+    if (packet.body.statusMessage.includes('objective') && !packet.body.statusMessage.includes('%')) return this.emit('ScoreboardObjectiveCommandExecuted', packet)
   }
 
   executeCommand(command: string): commandResponse | void {
