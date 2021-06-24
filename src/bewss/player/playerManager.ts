@@ -24,6 +24,8 @@ class playerManager {
 
   async onDisabled(): Promise<void> {
     this.localePlayerName = ""
+    
+    return Promise.resolve()
   }
 
   getLocalPlayerName(): string {

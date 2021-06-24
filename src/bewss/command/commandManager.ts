@@ -44,7 +44,7 @@ class commandManager extends EventEmitter{
   constructor (bewss: bewss) {
     super()
     this.bewss = bewss
-    this.setMaxListeners(9999999999999999999999999)
+    this.setMaxListeners(Infinity)
   }
 
   async onEnabled(): Promise<void> {
@@ -64,7 +64,7 @@ class commandManager extends EventEmitter{
   }
 
   async onDisabled(): Promise<void> {
-    //
+    return Promise.resolve()
   }
 
   private commandEvent(packet: any): void | boolean {

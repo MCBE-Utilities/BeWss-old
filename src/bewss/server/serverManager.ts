@@ -33,6 +33,8 @@ class serverManager {
     this.ws.close()
     this.bewss.getEventManager().emit('wss-closed')
     this.bewss.getLogger().info('Websocket server closed.')
+    
+    return Promise.resolve()
   }
 
   private async createServer(): Promise<void> {

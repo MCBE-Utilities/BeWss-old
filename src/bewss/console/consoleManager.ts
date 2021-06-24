@@ -49,7 +49,7 @@ class consoleManager {
       }
     }
 
-    return
+    return Promise.resolve()
   }
 
   private async loadDefaultCommands(): Promise<void> {

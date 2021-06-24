@@ -52,17 +52,19 @@ class bewss {
   }
 
   async onDisabled(): Promise<void> {
-    this.pluginManager.onDisabled()
-    this.serverManager.onDisabled()
-    this.consoleManager.onDisabled()
-    this.commandManager.onDisabled()
-    this.playerManager.onDisabled()
-    this.agentManager.onDisabled()
-    this.scoreboardManager.onDisabled()
-    this.eventManager.onDisabled()
+    await this.pluginManager.onDisabled()
+    await this.serverManager.onDisabled()
+    await this.consoleManager.onDisabled()
+    await this.commandManager.onDisabled()
+    await this.playerManager.onDisabled()
+    await this.agentManager.onDisabled()
+    await this.scoreboardManager.onDisabled()
+    await this.eventManager.onDisabled()
+    
+    // Give Small Time Before Exit
     setTimeout(() => {
-      console.log('')
-    }, 2000)
+      process.exit(0)
+    }, 1500)
   }
 
   getLogger(): Logger {

@@ -17,7 +17,7 @@ class agentManager {
   }
 
   async onDisabled(): Promise<void> {
-    //
+    return Promise.resolve()
   }
 
   create(): Promise<createAgent> {

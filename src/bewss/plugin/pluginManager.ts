@@ -30,6 +30,7 @@ class pluginManager {
 
   async onEnabled(): Promise<void> {
     await this.loadAll()
+    // Located in register loop now for reindexing purposes
     // for (const [path, { config, plugin }] of this.plugins.entries()) {
     //   try {
     //     plugin.onEnabled()
@@ -38,7 +39,7 @@ class pluginManager {
     //   }
     // }
 
-    return
+    return 
   }
 
   async onDisabled(): Promise<void> {
@@ -50,7 +51,7 @@ class pluginManager {
       }
     }
 
-    return
+    return Promise.resolve()
   }
 
   async loadAll(): Promise<void> {

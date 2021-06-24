@@ -59,6 +59,8 @@ class eventManager extends EventEmitter {
     for (const event of this.events.values()) {
       event.onDisabled()
     }
+
+    return Promise.resolve()
   }
 
   async registerEvent(event: string): Promise<void> {
