@@ -33,7 +33,7 @@ class playerManager {
   getPlayerList(): Promise<Array<string>> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand('/list') as { command: string, requestId: string }
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: any) => {
+      this.bewss.getCommandManager().on('ListCommandExecuted', (packet: any) => {
         if (command.requestId != packet.header.requestId) return
         const playersString: string = packet.body.players
         res(playersString.split(', '))
@@ -82,10 +82,10 @@ class playerManager {
     }
   }
 
-  getPlayerPosition(target: string): Promise<playerPosition | undefined> {
+  getPlayerPosition(target: string): Promise<playerPosition> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/querytarget "${target}"`) as { command: string, requestId: string }
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: any) => {
+      this.bewss.getCommandManager().on('QueryTargetCommandExecuted', (packet: any) => {
         if (command.requestId != packet.header.requestId || packet == undefined) return res(undefined)
         if (packet.body.details == undefined) return res(undefined)
         res(JSON.parse(packet.body.details)[0])
@@ -96,7 +96,7 @@ class playerManager {
   getTags(target: string): Promise<Array<string>> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" list`) as { command: string, requestId: string }
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: any) => {
+      this.bewss.getCommandManager().on('TagCommandExecuted', (packet: any) => {
         if (command.requestId != packet.header.requestId) return
         const raw: Array<string> = packet.body.statusMessage.split(' ')
         const tags: Array<string> = []

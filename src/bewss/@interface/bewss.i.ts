@@ -88,6 +88,21 @@ export interface consoleManager {
 export interface commandManager {
   new(bewss: bewss)
   executeCommand(command: string): object
+  on<K extends keyof CommandValues>(event: K, callback: (...args: CommandValues[K]) => void): this
+  on<S extends string | symbol>(
+    event: Exclude<S, keyof CommandValues>,
+    callback: (...args: unknown[]) => void,
+  ): this
+  once<K extends keyof CommandValues>(event: K, callback: (...args: CommandValues[K]) => void): this
+  once<S extends string | symbol>(
+    event: Exclude<S, keyof CommandValues>,
+    callback: (...args: unknown[]) => void,
+  ): this
+  emit<K extends keyof CommandValues>(event: K, ...args: CommandValues[K]): boolean
+  emit<S extends string | symbol>(
+    event: Exclude<S, keyof CommandValues>,
+    ...args: unknown[]
+  ): boolean
 }
 
 export interface commandResponse {
@@ -150,6 +165,15 @@ export interface playerPosition {
   }
   uniqueId: string
   yRot: number
+}
+
+export interface CommandValues {
+  AgentCommandExecued: [unknown]
+  ListCommandExecuted: [unknown]
+  QueryTargetCommandExecuted: [unknown]
+  TagCommandExecuted: [unknown]
+  ScoreboardObjectiveCommandExecuted: [unknown]
+  ScoreboardPlayerCommandExecuted: [unknown]
 }
 
 export interface EventValues {

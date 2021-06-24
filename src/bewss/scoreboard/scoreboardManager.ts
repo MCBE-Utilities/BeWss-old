@@ -21,7 +21,7 @@ class scoreboardManager {
   createObjective(objective: string, displayname?: string): Promise<genericScoreboard> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives add ${objective} dummy "${displayname}"`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericScoreboard) => {
+      this.bewss.getCommandManager().on('ScoreboardObjectiveCommandExecuted', (packet: genericScoreboard) => {
         if (command == undefined || command.requestId != packet.header.requestId) return res(undefined)
   
         return res(packet)
@@ -32,7 +32,7 @@ class scoreboardManager {
   removeObject(objective: string): Promise<genericScoreboard> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives remove ${objective}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericScoreboard) => {
+      this.bewss.getCommandManager().on('ScoreboardObjectiveCommandExecuted', (packet: genericScoreboard) => {
         if (command == undefined || command.requestId != packet.header.requestId) return res(undefined)
   
         return res(packet)
@@ -44,7 +44,7 @@ class scoreboardManager {
     return new Promise((res) => {
       if (layout == undefined) layout = ""
       const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives setdisplay ${display} ${objective} ${layout}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericScoreboard) => {
+      this.bewss.getCommandManager().on('ScoreboardObjectiveCommandExecuted', (packet: genericScoreboard) => {
         if (command == undefined || command.requestId != packet.header.requestId) return res(undefined)
   
         return res(packet)
@@ -55,7 +55,7 @@ class scoreboardManager {
   getObjectives(): Promise<getObjectives> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives list`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: getObjectives) => {
+      this.bewss.getCommandManager().on('ScoreboardObjectiveCommandExecuted', (packet: getObjectives) => {
         if (command == undefined || command.requestId != packet.header.requestId) return res(undefined)
         const raw: Array<string> = packet.body.statusMessage.split('\n')
         const objectives: Array<Array<string>> = []
@@ -89,7 +89,7 @@ class scoreboardManager {
   updateScore(target: string, operation: operations, objective: string, amount: number): Promise<genericScoreboard> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/scoreboard players ${operation} "${target}" ${objective} ${amount}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericScoreboard) => {
+      this.bewss.getCommandManager().on('ScoreboardPlayerCommandExecuted', (packet: genericScoreboard) => {
         if (command == undefined || command.requestId != packet.header.requestId) return res(undefined)
   
         return res(packet)
@@ -100,7 +100,7 @@ class scoreboardManager {
   getScore(target: string, objective: string): Promise<getScore> {
     return new Promise((res) => {
       const command = this.bewss.getCommandManager().executeCommand(`/scoreboard players list "${target}"`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', async (packet: getScore) => {
+      this.bewss.getCommandManager().on('ScoreboardPlayerCommandExecuted', async (packet: getScore) => {
         if (command == undefined || command.requestId != packet.header.requestId) return res(undefined)
         const objectiveName = await this.getObjectiveName(objective)
         let score: number
