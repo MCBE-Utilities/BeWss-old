@@ -6,7 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import util from 'util'
 
-const logDir = path.resolve(process.cwd(), '../', 'logs')
+const logDir = path.resolve(process.cwd(), './', 'logs')
 const lastSessionLog = path.resolve(logDir, 'last-session.log')
 const allLog = path.resolve(logDir, 'all.log')
 

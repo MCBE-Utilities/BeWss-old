@@ -3,16 +3,26 @@
   "version": "1.0.0",
   "description": "Tool to make interfacing with websockets on MCBE easy!",
   "main": "dist/index.js",
+  "bin": "dist/index.js",
   "engines": {
     "node": "<=14.0.0"
   },
   "engineStrict": true,
   "scripts": {
     "build": "tsc",
-    "buildapp": "pkg dist/index.js",
+    "buildapp": "pkg .",
     "dev": "ts-node src/index.ts",
     "start": "node dist/index.js",
     "lint": "eslint src/**"
+  },
+  "pkg": {
+    "assets": "src/bewss/@interface/bewss.i.ts",
+    "targets": [
+      "node14-linux-x64",
+      "node14-macos-x64",
+      "node14-windows-x64"
+    ],
+    "outputPath": "build"
   },
   "keywords": [],
   "author": "",

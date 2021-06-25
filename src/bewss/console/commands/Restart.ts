@@ -2,7 +2,7 @@ import bewss from "src/bewss/bewss"
 
 class Restart {
   private bewss: bewss
-  private commandName: string
+  public commandName: string
 
   constructor(bewss: bewss) {
     this.bewss = bewss

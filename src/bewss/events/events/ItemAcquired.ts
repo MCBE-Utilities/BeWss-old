@@ -2,7 +2,7 @@ import bewss from "src/bewss/bewss"
 
 class ItemAcquired {
   private bewss: bewss
-  private eventName: string
+  public eventName: string
 
   constructor(bewss: bewss) {
     this.bewss = bewss

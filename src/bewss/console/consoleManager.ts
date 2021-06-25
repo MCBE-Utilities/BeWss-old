@@ -1,11 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import bewss from "../bewss"
 import readline from "readline"
-import getFiles from "../util/getFiles"
-import path from "path"
+import {
+  Help,
+  Quit,
+  Reindex,
+  Reload,
+  Restart,
+  Start,
+  Stop,
+} from "./commands/index"
 
-interface exampleCommand {
-  new (bewss: bewss)
+export interface exampleCommand {
   onEnabled(): Promise<void>
   onDisabled(): Promise<void>
 }
@@ -53,14 +59,20 @@ class consoleManager {
   }
 
   private async loadDefaultCommands(): Promise<void> {
-    const commandFiles: string[] = await getFiles(path.resolve(__dirname, "commands"))
-    for (const file of commandFiles) {
-      if (file.endsWith('.ts') || file.includes('index')) continue
-      const CommandClass = require(file)
-      const newCommand = new CommandClass(this.bewss)
-      if (newCommand.commandName == undefined) return this.bewss.getLogger().error('[Commands] Your command must contain an commandName!')
-      this.commands.set(newCommand.commandName, newCommand)
-    }
+    const helpCommand = new Help(this.bewss)
+    this.commands.set(helpCommand.commandName, helpCommand)
+    const quitCommand = new Quit(this.bewss)
+    this.commands.set(quitCommand.commandName, quitCommand)
+    const reindexCommand = new Reindex(this.bewss)
+    this.commands.set(reindexCommand.commandName, reindexCommand)
+    const reloadCommand = new Reload(this.bewss)
+    this.commands.set(reloadCommand.commandName, reloadCommand)
+    const restartCommand = new Restart(this.bewss)
+    this.commands.set(restartCommand.commandName, restartCommand)
+    const startCommand = new Start(this.bewss)
+    this.commands.set(startCommand.commandName, startCommand)
+    const stopCommand = new Stop(this.bewss)
+    this.commands.set(stopCommand.commandName, stopCommand)
 
     return
   }

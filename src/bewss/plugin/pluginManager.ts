@@ -6,7 +6,7 @@ import moment from 'moment'
 import bewss from "../bewss"
 import path, { resolve } from "path"
 import fs from "fs"
-import fse from "fs-extra"
+// import fse from "fs-extra"
 import childProcess from "child_process"
 import pluginApi from './pluginapi/pluginAPI'
 import { examplePluginConfig } from '../@interface/bewss.i'
@@ -22,7 +22,7 @@ class pluginManager {
   private bewss: bewss
   private plugins = new Map<string, { config: examplePluginConfig, plugin: examplePlugin }>() // path: { config, plugin }
   public root = path.resolve(process.cwd())
-  public pluginsPath = path.resolve(this.root, '../plugins')
+  public pluginsPath = path.resolve(this.root, './plugins')
 
   constructor(bewss: bewss) {
     this.bewss = bewss
@@ -30,14 +30,6 @@ class pluginManager {
 
   async onEnabled(): Promise<void> {
     await this.loadAll()
-    // Located in register loop now for reindexing purposes
-    // for (const [path, { config, plugin }] of this.plugins.entries()) {
-    //   try {
-    //     plugin.onEnabled()
-    //   } catch (error) {
-    //     this.error(`Plugin "${config.name || path}". Uncaught Exception(s):\n`, error)
-    //   }
-    // }
 
     return 
   }
@@ -95,7 +87,7 @@ class pluginManager {
         const config: examplePluginConfig = await import(confPath)
         if (!this.verifyConfig(path, config)) return res()
         const entryPoint = resolve(path, config.main)
-        fse.copySync(resolve(process.cwd(), 'src/bewss/@interface'), resolve(path, "src", "@interface"))
+        // fse.copySync(resolve(process.cwd(), 'src/bewss/@interface'), resolve(path, "src", "@interface"))
 
         let neededUpdate = false
         let succeededUpdate = false

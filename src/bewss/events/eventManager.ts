@@ -3,13 +3,34 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import bewss from '../bewss'
 import { EventEmitter } from 'events'
-import getFiles from '../util/getFiles'
 import { v4 as uuidv4 } from 'uuid'
 import { EventValues } from '../@interface/bewss.i'
-import path from 'path'
+import {
+  AgentCommand,
+  AgentCreated,
+  BlockBroken,
+  BlockPlaced,
+  BossKilled,
+  EntitySpawned,
+  ItemAcquired,
+  ItemCrafted,
+  ItemDestroyed,
+  ItemDropped,
+  ItemUsed,
+  MobInteracted,
+  MobKilled,
+  PlayerDied,
+  PlayerJoin,
+  PlayerLeave,
+  PlayerMessage,
+  PlayerTeleported,
+  PlayerTransform,
+  PlayerTravelled,
+  RawEvent,
+  SlashCommandExecuted,
+} from "./events/index"
 
 interface exampleEvent {
-  new(bewss: bewss)
   onEnabled(): Promise<void>
   onDisabled(): Promise<void>
 }
@@ -96,14 +117,50 @@ class eventManager extends EventEmitter {
   }
 
   private async loadDefaultEvents(): Promise<void> {
-    const eventFiles: string[] = await getFiles(path.resolve(__dirname, 'events'))
-    for (const event of eventFiles) {
-      if (event.endsWith('.ts') || event.includes('index')) return
-      const EventClass = require(event)
-      const newEvent = new EventClass(this.bewss)
-      if (newEvent.eventName == undefined) return this.bewss.getLogger().error('[Events] Your event must contain an eventName!')
-      this.events.set(newEvent.eventName, newEvent)
-    }
+    const agentCommand = new AgentCommand(this.bewss)
+    this.events.set(agentCommand.eventName, agentCommand)
+    const agentCreated = new AgentCreated(this.bewss)
+    this.events.set(agentCreated.eventName, agentCreated)
+    const blockBroken = new BlockBroken(this.bewss)
+    this.events.set(blockBroken.eventName, blockBroken)
+    const blockPlaced = new BlockPlaced(this.bewss)
+    this.events.set(blockPlaced.eventName, blockPlaced)
+    const bossKilled = new BossKilled(this.bewss)
+    this.events.set(bossKilled.eventName, bossKilled)
+    const entitySpawned = new EntitySpawned(this.bewss)
+    this.events.set(entitySpawned.eventName, entitySpawned)
+    const itemAcquired = new ItemAcquired(this.bewss)
+    this.events.set(itemAcquired.eventName, itemAcquired)
+    const itemCrafted = new ItemCrafted(this.bewss)
+    this.events.set(itemCrafted.eventName, itemCrafted)
+    const itemDestroyed = new ItemDestroyed(this.bewss)
+    this.events.set(itemDestroyed.eventName, itemDestroyed)
+    const itemDropped = new ItemDropped(this.bewss)
+    this.events.set(itemDropped.eventName, itemDropped)
+    const itemUsed = new ItemUsed(this.bewss)
+    this.events.set(itemUsed.eventName, itemUsed)
+    const mobInteracted = new MobInteracted(this.bewss)
+    this.events.set(mobInteracted.eventName, mobInteracted)
+    const mobKilled = new MobKilled(this.bewss)
+    this.events.set(mobKilled.eventName, mobKilled)
+    const playerDied = new PlayerDied(this.bewss)
+    this.events.set(playerDied.eventName, playerDied)
+    const playerJoin = new PlayerJoin(this.bewss)
+    this.events.set(playerJoin.eventName, playerJoin)
+    const playerLeave = new PlayerLeave(this.bewss)
+    this.events.set(playerLeave.eventName, playerLeave)
+    const playerMessage = new PlayerMessage(this.bewss)
+    this.events.set(playerMessage.eventName, playerMessage)
+    const playerTeleported = new PlayerTeleported(this.bewss)
+    this.events.set(playerTeleported.eventName, playerTeleported)
+    const playerTransform = new PlayerTransform(this.bewss)
+    this.events.set(playerTransform.eventName, playerTransform)
+    const playerTravelled = new PlayerTravelled(this.bewss)
+    this.events.set(playerTravelled.eventName, playerTravelled)
+    const rawEvent = new RawEvent(this.bewss)
+    this.events.set(rawEvent.eventName, rawEvent)
+    const slashCommandExecuted = new SlashCommandExecuted(this.bewss)
+    this.events.set(slashCommandExecuted.eventName, slashCommandExecuted)
   }
 
 }

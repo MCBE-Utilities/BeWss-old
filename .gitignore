@@ -1,6 +1,7 @@
 node_modules
-/dist
+dist
 .env
 .vscode
 npm
 nul
+build

@@ -2,7 +2,7 @@ import bewss from "src/bewss/bewss"
 
 class Reindex {
   private bewss: bewss
-  private commandName: string
+  public commandName: string
 
   constructor(bewss: bewss) {
     this.bewss = bewss
