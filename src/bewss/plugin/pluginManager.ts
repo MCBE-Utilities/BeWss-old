@@ -284,11 +284,11 @@ class pluginManager {
 
       return false
     }
-    if (!config.scripts.start) {
-      this.error(`plugin "${config.name || path}" missing main scripts.start in package.json. Cannot start plugin without needed scripts!`)
+    // if (!config.scripts.start) {
+    //   this.error(`plugin "${config.name || path}" missing main scripts.start in package.json. Cannot start plugin without needed scripts!`)
 
-      return false
-    }
+    //   return false
+    // }
     if (!config.dependencies && !config.devDependencies) {
       this.info(`WOW @${config.author || config.name || path}, your plugin has absolutely no depedencies! However, you should probably add "@types/node" as a devdependency.`)
     }
