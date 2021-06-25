@@ -6,9 +6,9 @@ import moment from 'moment'
 import bewss from "../bewss"
 import path, { resolve } from "path"
 import fs from "fs"
-// import fse from "fs-extra"
 import childProcess from "child_process"
 import pluginApi from './pluginapi/pluginAPI'
+import axios from 'axios'
 import { examplePluginConfig } from '../@interface/bewss.i'
 
 interface examplePlugin {
@@ -21,6 +21,7 @@ interface examplePlugin {
 class pluginManager {
   private bewss: bewss
   private plugins = new Map<string, { config: examplePluginConfig, plugin: examplePlugin }>() // path: { config, plugin }
+  private latestInterface = "https://raw.githubusercontent.com/PMK744/Node-BEWSS/main/src/bewss/%40interface/bewss.i.ts"
   public root = path.resolve(process.cwd())
   public pluginsPath = path.resolve(this.root, './plugins')
 
@@ -87,7 +88,9 @@ class pluginManager {
         const config: examplePluginConfig = await import(confPath)
         if (!this.verifyConfig(path, config)) return res()
         const entryPoint = resolve(path, config.main)
-        // fse.copySync(resolve(process.cwd(), 'src/bewss/@interface'), resolve(path, "src", "@interface"))
+        const request = await axios.get(this.latestInterface)
+        if (!fs.existsSync(resolve(path, "src", "@interface"))) fs.mkdirSync(resolve(path, "src", "@interface"))
+        fs.writeFileSync(resolve(path, "src", "@interface", "bewss.i.ts"), request.data)
 
         let neededUpdate = false
         let succeededUpdate = false

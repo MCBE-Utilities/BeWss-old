@@ -29,6 +29,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/uuid": "^8.3.0",
+    "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "child_process": "^1.0.2",
     "events": "^3.2.0",

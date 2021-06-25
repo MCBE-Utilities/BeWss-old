@@ -5,3 +5,5 @@ dist
 npm
 nul
 build
+plugins
+logs
