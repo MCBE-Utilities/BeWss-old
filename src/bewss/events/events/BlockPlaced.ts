@@ -26,4 +26,4 @@ class BlockPlaced {
 
 }
 
-module.exports = BlockPlaced
+export = BlockPlaced

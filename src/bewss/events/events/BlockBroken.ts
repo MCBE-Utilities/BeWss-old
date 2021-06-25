@@ -26,4 +26,4 @@ class BlockBroken {
 
 }
 
-module.exports = BlockBroken
+export = BlockBroken

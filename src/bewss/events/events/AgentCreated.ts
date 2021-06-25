@@ -26,4 +26,4 @@ class AgentCreated {
 
 }
 
-module.exports = AgentCreated
+export = AgentCreated

@@ -26,4 +26,4 @@ class ItemAcquired {
 
 }
 
-module.exports = ItemAcquired
+export = ItemAcquired

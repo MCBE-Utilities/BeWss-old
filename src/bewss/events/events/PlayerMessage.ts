@@ -26,4 +26,4 @@ class PlayerMessage {
 
 }
 
-module.exports = PlayerMessage
+export = PlayerMessage

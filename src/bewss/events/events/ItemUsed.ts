@@ -26,4 +26,4 @@ class ItemUsed {
 
 }
 
-module.exports = ItemUsed
+export = ItemUsed

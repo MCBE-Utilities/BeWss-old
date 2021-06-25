@@ -98,7 +98,7 @@ class eventManager extends EventEmitter {
   private async loadDefaultEvents(): Promise<void> {
     const eventFiles: string[] = await getFiles(path.resolve(__dirname, 'events'))
     for (const event of eventFiles) {
-      if (event.endsWith('.ts')) return
+      if (event.endsWith('.ts') || event.includes('index')) return
       const EventClass = require(event)
       const newEvent = new EventClass(this.bewss)
       if (newEvent.eventName == undefined) return this.bewss.getLogger().error('[Events] Your event must contain an eventName!')

@@ -26,4 +26,4 @@ class MobInteracted {
 
 }
 
-module.exports = MobInteracted
+export = MobInteracted

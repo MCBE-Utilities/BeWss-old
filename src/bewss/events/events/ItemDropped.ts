@@ -26,4 +26,4 @@ class ItemDropped {
 
 }
 
-module.exports = ItemDropped
+export = ItemDropped

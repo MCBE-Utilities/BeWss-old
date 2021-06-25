@@ -26,4 +26,4 @@ class ItemDestroyed {
 
 }
 
-module.exports = ItemDestroyed
+export = ItemDestroyed

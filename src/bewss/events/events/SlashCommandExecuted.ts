@@ -28,4 +28,4 @@ class SlashCommandExecuted {
 
 }
 
-module.exports = SlashCommandExecuted
+export = SlashCommandExecuted

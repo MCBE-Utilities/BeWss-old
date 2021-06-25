@@ -26,4 +26,4 @@ class AgentCommand {
 
 }
 
-module.exports = AgentCommand
+export = AgentCommand

@@ -26,4 +26,4 @@ class PlayerTransform {
 
 }
 
-module.exports = PlayerTransform
+export = PlayerTransform

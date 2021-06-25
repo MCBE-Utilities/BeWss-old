@@ -26,4 +26,4 @@ class PlayerJoin {
 
 }
 
-module.exports = PlayerJoin
+export = PlayerJoin

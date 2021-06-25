@@ -26,4 +26,4 @@ class PlayerLeave {
 
 }
 
-module.exports = PlayerLeave
+export = PlayerLeave

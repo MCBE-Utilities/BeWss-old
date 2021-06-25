@@ -26,4 +26,4 @@ class BossKilled {
 
 }
 
-module.exports = BossKilled
+export = BossKilled

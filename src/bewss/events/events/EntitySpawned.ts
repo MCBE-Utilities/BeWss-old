@@ -26,4 +26,4 @@ class EntitySpawned {
 
 }
 
-module.exports = EntitySpawned
+export = EntitySpawned

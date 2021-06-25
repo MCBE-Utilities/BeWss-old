@@ -26,4 +26,4 @@ class PlayerDied {
 
 }
 
-module.exports = PlayerDied
+export = PlayerDied

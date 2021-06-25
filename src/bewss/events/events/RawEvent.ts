@@ -24,4 +24,4 @@ class RawEvent {
 
 }
 
-module.exports = RawEvent
+export = RawEvent

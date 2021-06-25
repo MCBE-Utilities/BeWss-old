@@ -26,4 +26,4 @@ class PlayerTeleported {
 
 }
 
-module.exports = PlayerTeleported
+export = PlayerTeleported

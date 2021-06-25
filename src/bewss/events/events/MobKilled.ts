@@ -26,4 +26,4 @@ class MobKilled {
 
 }
 
-module.exports = MobKilled
+export = MobKilled

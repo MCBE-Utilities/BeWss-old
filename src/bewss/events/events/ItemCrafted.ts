@@ -26,4 +26,4 @@ class ItemCrafted {
 
 }
 
-module.exports = ItemCrafted
+export = ItemCrafted
