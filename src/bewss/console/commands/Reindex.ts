@@ -22,4 +22,4 @@ class Reindex {
 
 }
 
-module.exports = Reindex
+export = Reindex

@@ -55,7 +55,7 @@ class consoleManager {
   private async loadDefaultCommands(): Promise<void> {
     const commandFiles: string[] = await getFiles(path.resolve(__dirname, "commands"))
     for (const file of commandFiles) {
-      if (file.endsWith('.ts')) return
+      if (file.endsWith('.ts') || file.includes('index')) continue
       const CommandClass = require(file)
       const newCommand = new CommandClass(this.bewss)
       if (newCommand.commandName == undefined) return this.bewss.getLogger().error('[Commands] Your command must contain an commandName!')

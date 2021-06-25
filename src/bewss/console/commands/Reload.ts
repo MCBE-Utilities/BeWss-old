@@ -22,4 +22,4 @@ class Reload {
 
 }
 
-module.exports = Reload
+export = Reload

@@ -21,4 +21,4 @@ class Quit {
 
 }
 
-module.exports = Quit
+export = Quit

@@ -21,4 +21,4 @@ class Stop {
 
 }
 
-module.exports = Stop
+export = Stop

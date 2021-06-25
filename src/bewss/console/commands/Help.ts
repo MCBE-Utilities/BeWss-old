@@ -24,4 +24,4 @@ class Help {
 
 }
 
-module.exports = Help
+export = Help

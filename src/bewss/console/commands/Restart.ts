@@ -24,4 +24,4 @@ class Restart {
 
 }
 
-module.exports = Restart
+export = Restart

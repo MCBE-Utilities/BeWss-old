@@ -21,4 +21,4 @@ class Start {
 
 }
 
-module.exports = Start
+export = Start
