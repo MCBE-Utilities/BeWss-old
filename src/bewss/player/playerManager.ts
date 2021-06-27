@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  playerPosition, titles, messageType, titlerawComponets,
+  playerPosition, titles, messageType, titlerawComponets, commandResponse,
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 
@@ -13,12 +13,10 @@ class playerManager {
   }
 
   async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on('wss-connected', () => {
-      const command = this.bewss.getCommandManager().executeCommand('/getlocalplayername') as { command: string, requestId: string }
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: any) => {
-        if (command.requestId != packet.header.requestId) return
-        this.localePlayerName = packet.body.localplayername
-      })
+    this.bewss.getEventManager().on('wss-connected', async () => {
+      const command = this.bewss.getCommandManager().executeCommand('/getlocalplayername') as commandResponse
+      const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+      this.localePlayerName = response.body.localplayername
     })
   }
 
@@ -32,15 +30,12 @@ class playerManager {
     return this.localePlayerName
   }
 
-  getPlayerList(): Promise<Array<string>> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand('/list') as { command: string, requestId: string }
-      this.bewss.getCommandManager().on('ListCommandExecuted', (packet: any) => {
-        if (command.requestId != packet.header.requestId) return
-        const playersString: string = packet.body.players
-        res(playersString.split(', '))
-      })
-    })
+  async getPlayerList(): Promise<Array<string>> {
+    const command = this.bewss.getCommandManager().executeCommand('/list') as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    const playersString: string = response.body.players
+
+    return playersString.split(', ')
   }
 
   sendMessage(type: messageType , target: string, content: string | Array<titlerawComponets>): void {
@@ -84,39 +79,31 @@ class playerManager {
     }
   }
 
-  getPlayerPosition(target: string): Promise<playerPosition> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/querytarget "${target}"`) as { command: string, requestId: string }
-      this.bewss.getCommandManager().on('QueryTargetCommandExecuted', (packet: any) => {
-        if (command.requestId != packet.header.requestId || packet == undefined) return res(undefined)
-        if (packet.body.details == undefined) return res(undefined)
-        res(JSON.parse(packet.body.details)[0])
-      })
-    })
+  async getPlayerPosition(target: string): Promise<playerPosition> {
+    const command = this.bewss.getCommandManager().executeCommand(`/querytarget "${target}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+
+    return JSON.parse(response.body.details)[0]
   }
 
-  getTags(target: string): Promise<Array<string>> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" list`) as { command: string, requestId: string }
-      this.bewss.getCommandManager().on('TagCommandExecuted', (packet: any) => {
-        if (command.requestId != packet.header.requestId) return
-        const raw: Array<string> = packet.body.statusMessage.split(' ')
-        const tags: Array<string> = []
-        for (const string of raw) {
-          if (string.startsWith("§a")) tags.push(string.replace('§a', '').replace('§r', '')
-            .replace(',', ''))
-        }
-        res(tags)
-      })
-    })
+  async getTags(target: string): Promise<Array<string>> {
+    const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" list`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    const raw: Array<string> = response.body.statusMessage.split(' ')
+    const tags: Array<string> = []
+    for (const string of raw) {
+      if (string.startsWith("§a")) tags.push(string.replace('§a', '').replace('§r', '')
+        .replace(',', ''))
+    }
+
+    return tags
   }
 
-  hasTag(target: string, tag: string): Promise<boolean> {
-    return new Promise(async (res) => {
-      const tags = await this.getTags(target)
-      if (!tags.includes(tag)) res(false)
-      res(true)
-    })
+  async hasTag(target: string, tag: string): Promise<boolean> {
+    const tags = await this.getTags(target)
+    if (!tags.includes(tag)) return false
+
+    return true
   }
 
 }
