@@ -5,49 +5,14 @@ import { v4 as uuidv4 } from 'uuid'
 import {
   commandResponse, SlashCommandExecutedConsole, 
 } from "../@interface/bewss.i"
-import { EventEmitter } from 'events'
 
-interface commandManager {
-  new(bewss: bewss)
-  onEnabled(): Promise<void>
-  onDisabled(): Promise<void>
-  registerEvent(event: string): Promise<void>
-  unregisterEvent(event: string): Promise<void>
-  on<K extends keyof CommandValues>(event: K, callback: (...args: CommandValues[K]) => void): this
-  on<S extends string | symbol>(
-    event: Exclude<S, keyof CommandValues>,
-    callback: (...args: unknown[]) => void,
-  ): this
-  once<K extends keyof CommandValues>(event: K, callback: (...args: CommandValues[K]) => void): this
-  once<S extends string | symbol>(
-    event: Exclude<S, keyof CommandValues>,
-    callback: (...args: unknown[]) => void,
-  ): this
-  emit<K extends keyof CommandValues>(event: K, ...args: CommandValues[K]): boolean
-  emit<S extends string | symbol>(
-    event: Exclude<S, keyof CommandValues>,
-    ...args: unknown[]
-  ): boolean
-}
-
-export interface CommandValues {
-  AgentCommandExecued: [unknown]
-  ListCommandExecuted: [unknown]
-  QueryTargetCommandExecuted: [unknown]
-  TagCommandExecuted: [unknown]
-  ScoreboardObjectiveCommandExecuted: [unknown]
-  ScoreboardPlayerCommandExecuted: [unknown]
-}
-
-class commandManager extends EventEmitter{
+class commandManager {
   private bewss: bewss
   private previousCommand: { command: string, requestId: string }
   private commandCache: Array<{ request: string, response: any }> = []
 
   constructor (bewss: bewss) {
-    super()
     this.bewss = bewss
-    this.setMaxListeners(Infinity)
   }
 
   async onEnabled(): Promise<void> {

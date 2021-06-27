@@ -11,9 +11,7 @@ class agentManager {
   }
 
   async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on('AgentCommand', (packet) => {
-      this.bewss.getCommandManager().emit('AgentCommandExecuted', packet)
-    })
+    //
   }
 
   async onDisabled(): Promise<void> {
