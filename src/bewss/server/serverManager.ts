@@ -21,6 +21,7 @@ class serverManager {
   async onDisabled(): Promise<void> {
     this.ws.close()
     this.bewss.getEventManager().emit('wss-closed')
+    this.bewss.getEventManager().emit('wssclosed', this.server)
     this.bewss.getLogger().info('Websocket server closed.')
     this.server = undefined
     
@@ -39,6 +40,7 @@ class serverManager {
         this.server = wss
         this.server.setMaxListeners(50)
         this.bewss.getEventManager().emit('wss-connected')
+        this.bewss.getEventManager().emit('wssconnected', this.server)
         this.bewss.getLogger().info('User connected to the server!')
         this.bewss.getLogger().info('Do -help for a list of BeWss commands, do /help for a list of Bedrock commands.')
       })
