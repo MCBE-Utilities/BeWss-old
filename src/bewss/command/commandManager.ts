@@ -57,7 +57,6 @@ class commandManager extends EventEmitter{
     })
     this.bewss.getEventManager().on('SlashCommandExecutedConsole', (packet: any) => {
       this.cacheCommand(packet)
-      this.commandEvent(packet)
       if (this.previousCommand == undefined) return
       if (this.previousCommand.requestId != packet.header.requestId) return
       if (this.previousCommand.command.startsWith('/me')) return this.bewss.getLogger().info(`[External] Message Sent`)
@@ -76,15 +75,6 @@ class commandManager extends EventEmitter{
       request: packet.header.requestId,
       response: packet, 
     })
-  }
-
-  private commandEvent(packet: any): void | boolean {
-    if (packet.body.statusMessage == undefined) return
-    if (packet.body.statusMessage.includes('There are ')) return this.emit('ListCommandExecuted', packet)
-    if (packet.body.statusMessage.includes('Target data: ')) return this.emit('QueryTargetCommandExecuted', packet)
-    if (packet.body.statusMessage.includes('tag')) return this.emit('TagCommandExecuted', packet)
-    if (packet.body.statusMessage.includes('players') || packet.body.statusMessage.includes('Set [') || packet.body.statusMessage.includes('tracked objective')) return this.emit('ScoreboardPlayerCommandExecuted', packet)
-    if (packet.body.statusMessage.includes('objective') && !packet.body.statusMessage.includes('%')) return this.emit('ScoreboardObjectiveCommandExecuted', packet)
   }
 
   findResponse(requestId: string): Promise<SlashCommandExecutedConsole> {
