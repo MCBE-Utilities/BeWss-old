@@ -1,6 +1,6 @@
 {
   "name": "bewss",
-  "version": "1.0.0",
+  "version": "3.0.1",
   "description": "Tool to make interfacing with websockets on MCBE easy!",
   "main": "dist/index.js",
   "bin": "dist/index.js",
