@@ -87,7 +87,8 @@ export interface consoleManager {
 
 export interface commandManager {
   new(bewss: bewss)
-  executeCommand(command: string): object
+  executeCommand(command: string): commandResponse
+  findResponse(requestId: string): Promise<SlashCommandExecutedConsole>
   on<K extends keyof CommandValues>(event: K, callback: (...args: CommandValues[K]) => void): this
   on<S extends string | symbol>(
     event: Exclude<S, keyof CommandValues>,
@@ -285,7 +286,7 @@ interface SlashCommandExecuted {
   }
   header: eventHeader
 }
-interface SlashCommandExecutedConsole {
+export interface SlashCommandExecutedConsole {
   header: eventHeader
 }
 

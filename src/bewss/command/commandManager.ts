@@ -2,7 +2,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import bewss from "../bewss"
 import { v4 as uuidv4 } from 'uuid'
-import { commandResponse } from "../@interface/bewss.i"
+import {
+  commandResponse, SlashCommandExecutedConsole, 
+} from "../@interface/bewss.i"
 import { EventEmitter } from 'events'
 
 interface commandManager {
@@ -40,6 +42,7 @@ export interface CommandValues {
 class commandManager extends EventEmitter{
   private bewss: bewss
   private previousCommand: { command: string, requestId: string }
+  private commandCache: Array<{ request: string, response: any }> = []
 
   constructor (bewss: bewss) {
     super()
@@ -53,6 +56,7 @@ class commandManager extends EventEmitter{
       this.previousCommand = res || undefined
     })
     this.bewss.getEventManager().on('SlashCommandExecutedConsole', (packet: any) => {
+      this.cacheCommand(packet)
       this.commandEvent(packet)
       if (this.previousCommand == undefined) return
       if (this.previousCommand.requestId != packet.header.requestId) return
@@ -67,6 +71,13 @@ class commandManager extends EventEmitter{
     return Promise.resolve()
   }
 
+  private cacheCommand(packet: any): void {
+    this.commandCache.push({
+      request: packet.header.requestId,
+      response: packet, 
+    })
+  }
+
   private commandEvent(packet: any): void | boolean {
     if (packet.body.statusMessage == undefined) return
     if (packet.body.statusMessage.includes('There are ')) return this.emit('ListCommandExecuted', packet)
@@ -74,6 +85,18 @@ class commandManager extends EventEmitter{
     if (packet.body.statusMessage.includes('tag')) return this.emit('TagCommandExecuted', packet)
     if (packet.body.statusMessage.includes('players') || packet.body.statusMessage.includes('Set [') || packet.body.statusMessage.includes('tracked objective')) return this.emit('ScoreboardPlayerCommandExecuted', packet)
     if (packet.body.statusMessage.includes('objective') && !packet.body.statusMessage.includes('%')) return this.emit('ScoreboardObjectiveCommandExecuted', packet)
+  }
+
+  findResponse(requestId: string): Promise<SlashCommandExecutedConsole> {
+    return new Promise((res) => {
+      const inv = setInterval(() => {
+        const cache = this.commandCache.find(({ request }) => request === requestId)
+        if (cache == undefined) return
+        clearInterval(inv)
+
+        return res(cache.response)
+      }, 1)
+    })
   }
 
   executeCommand(command: string): commandResponse | void {
