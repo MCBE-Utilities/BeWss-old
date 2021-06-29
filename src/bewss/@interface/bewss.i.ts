@@ -89,21 +89,8 @@ export interface commandManager {
   new(bewss: bewss)
   executeCommand(command: string): commandResponse
   findResponse(requestId: string): Promise<SlashCommandExecutedConsole>
-  on<K extends keyof CommandValues>(event: K, callback: (...args: CommandValues[K]) => void): this
-  on<S extends string | symbol>(
-    event: Exclude<S, keyof CommandValues>,
-    callback: (...args: unknown[]) => void,
-  ): this
-  once<K extends keyof CommandValues>(event: K, callback: (...args: CommandValues[K]) => void): this
-  once<S extends string | symbol>(
-    event: Exclude<S, keyof CommandValues>,
-    callback: (...args: unknown[]) => void,
-  ): this
-  emit<K extends keyof CommandValues>(event: K, ...args: CommandValues[K]): boolean
-  emit<S extends string | symbol>(
-    event: Exclude<S, keyof CommandValues>,
-    ...args: unknown[]
-  ): boolean
+  registerCommand(command: string): void
+  getCommandNames(): Array<string>
 }
 
 export interface commandResponse {

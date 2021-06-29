@@ -5,17 +5,26 @@ import { v4 as uuidv4 } from 'uuid'
 import {
   commandResponse, SlashCommandExecutedConsole, 
 } from "../@interface/bewss.i"
+import {
+  Help,
+} from "./commands/index"
 
+export interface exampleCommand {
+  execute(sender: string, args: Array<string>): Promise<void>
+}
 class commandManager {
   private bewss: bewss
   private previousCommand: { command: string, requestId: string }
   private commandCache: Array<{ request: string, response: any }> = []
+  private commands = new Map<string, exampleCommand | undefined>()
 
   constructor (bewss: bewss) {
     this.bewss = bewss
   }
 
   async onEnabled(): Promise<void> {
+    await this.loadDefaultCommands()
+
     this.bewss.getEventManager().on('ConsoleCommandExecuted', (data: string) => {
       const res = this.executeCommand(data)
       this.previousCommand = res || undefined
@@ -29,6 +38,18 @@ class commandManager {
       
       return this.bewss.getLogger().info(packet.body.statusMessage)
     }) 
+    this.bewss.getEventManager().on('PlayerMessage', (packet) => {
+      if (!packet.body.properties.Message.startsWith('-')) return
+      const parsedCommand = this.parseCommand(packet.body.properties.Message)
+      if (!this.getCommandNames().includes(parsedCommand.command)) return this.bewss.getPlayerManager().sendMessage('text', packet.body.properties.Sender, '§dBeWss§r §l§7>§r §cThat command doesnt exsist. Do -help for a list of commands.')
+      const commandData = this.commands.get(parsedCommand.command)
+      if (commandData == undefined) return this.bewss.getEventManager().emit(parsedCommand.command, {
+        sender: packet.body.properties.Sender,
+        args:  parsedCommand.args,
+      })
+
+      return commandData.execute(packet.body.properties.Sender,  parsedCommand.args)
+    })
   }
 
   async onDisabled(): Promise<void> {
@@ -42,8 +63,19 @@ class commandManager {
     })
   }
 
+  private parseCommand(content: string): {command: string, args: Array<string>} {
+    const command = content.replace('-', '').split(' ')[0]
+    const args = content.replace(`-${command} `, '').split(' ')
+    
+    return {
+      command: command,
+      args: args,
+    }
+  }
+
   private async loadDefaultCommands(): Promise<void> {
-    //
+    const helpCommand = new Help(this.bewss)
+    this.commands.set(helpCommand.commandName, helpCommand)
   }
 
   findResponse(requestId: string): Promise<SlashCommandExecutedConsole> {
@@ -80,6 +112,15 @@ class commandManager {
       command: command,
       requestId: requestId,
     } as commandResponse
+  }
+
+  registerCommand(command: string): void {
+    if (this.getCommandNames().includes(command)) return this.bewss.getLogger().error(`The command "${command}" is an already a registered command!`)
+    this.commands.set(command, undefined)
+  }
+
+  getCommandNames(): Array<string> {
+    return Array.from(this.commands.keys())
   }
 
 }
