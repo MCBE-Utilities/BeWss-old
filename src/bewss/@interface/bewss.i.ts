@@ -1032,6 +1032,15 @@ export interface blockData {
   }
 }
 
+export interface topBlockData {
+  name: string
+  position: {
+    x: number
+    y: number
+    z: number
+  }
+}
+
 export interface testforblockCommand extends SlashCommandExecutedConsole {
    body: {
      matches: boolean
@@ -1043,6 +1052,18 @@ export interface testforblockCommand extends SlashCommandExecutedConsole {
      statusCode: number
      statusMessage: string
    }
+}
+
+export interface gettopsolidblockCommand extends SlashCommandExecutedConsole {
+  body: {
+    blockName: string
+    position: {
+      x: number
+      y: number
+      z: number
+    }
+    statusCode: number
+  }
 }
 
 // ScoreboardManager Responses

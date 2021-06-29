@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import {
   blockData,
-  commandResponse, testforblockCommand, 
+  commandResponse, gettopsolidblockCommand, testforblockCommand, topBlockData, 
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 import axios from "axios"
@@ -20,6 +20,16 @@ class worldManager {
 
   async onDisabled(): Promise<void> {
     //
+  }
+
+  async getSurfaceBlock(x: number, z: number): Promise<topBlockData> {
+    const command = this.bewss.getCommandManager().executeCommand(`/gettopsolidblock ${x} 255 ${z}`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as gettopsolidblockCommand
+    
+    return {
+      name: response.body.blockName,
+      position: response.body.position,
+    }
   }
 
   async getBlock(x: number, y: number, z: number): Promise<blockData> {
