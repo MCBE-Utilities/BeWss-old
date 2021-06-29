@@ -1020,6 +1020,31 @@ export interface genericAgent extends SlashCommandExecutedConsole {
   }
 }
 
+// WorldManager
+export interface blockData {
+  name: string
+  id: string
+  data: number
+  position: {
+    x: number
+    y: number
+    z: number
+  }
+}
+
+export interface testforblockCommand extends SlashCommandExecutedConsole {
+   body: {
+     matches: boolean
+     position: {
+       x: number
+       y: number
+       z: number
+     }
+     statusCode: number
+     statusMessage: string
+   }
+}
+
 // ScoreboardManager Responses
 
 export type displays = (
