@@ -9,7 +9,7 @@ class Quit {
     this.commandName = 'quit'
   }
 
-  async execute(args: Array<string>): Promise<void> {
+  async execute(): Promise<void> {
     this.bewss.onDisabled()
   }
 

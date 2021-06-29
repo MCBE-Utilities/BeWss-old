@@ -9,7 +9,7 @@ class Stop {
     this.commandName = 'stop'
   }
 
-  async execute(args: Array<string>): Promise<void> {
+  async execute(): Promise<void> {
     this.bewss.getServerManager().onDisabled()
   }
 
