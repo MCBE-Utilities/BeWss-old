@@ -28,7 +28,7 @@ class commandManager {
       if (this.previousCommand.command.startsWith('/say')) return this.bewss.getLogger().info(`[External] ${packet.body.message}`)
       
       return this.bewss.getLogger().info(packet.body.statusMessage)
-    })
+    }) 
   }
 
   async onDisabled(): Promise<void> {
@@ -40,6 +40,10 @@ class commandManager {
       request: packet.header.requestId,
       response: packet, 
     })
+  }
+
+  private async loadDefaultCommands(): Promise<void> {
+    //
   }
 
   findResponse(requestId: string): Promise<SlashCommandExecutedConsole> {

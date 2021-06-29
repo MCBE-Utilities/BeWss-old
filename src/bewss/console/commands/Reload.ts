@@ -9,15 +9,9 @@ class Reload {
     this.commandName = 'reload'
   }
 
-  async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on(this.commandName, async () => {
-      await this.bewss.getPluginManager().reloadAll()
-      this.bewss.getLogger().success('All plugins reloaded.')
-    })
-  }
-
-  async onDisabled(): Promise<void> {
-    //
+  async execute(args: Array<string>): Promise<void> {
+    await this.bewss.getPluginManager().reloadAll()
+    this.bewss.getLogger().success('All plugins reloaded.')
   }
 
 }

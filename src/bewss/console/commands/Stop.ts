@@ -9,14 +9,8 @@ class Stop {
     this.commandName = 'stop'
   }
 
-  async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on(this.commandName, () => {
-      this.bewss.getServerManager().onDisabled()
-    })
-  }
-
-  async onDisabled(): Promise<void> {
-    //
+  async execute(args: Array<string>): Promise<void> {
+    this.bewss.getServerManager().onDisabled()
   }
 
 }

@@ -12,8 +12,7 @@ import {
 } from "./commands/index"
 
 export interface exampleCommand {
-  onEnabled(): Promise<void>
-  onDisabled(): Promise<void>
+  execute(args: Array<string>): Promise<void>
 }
 class consoleManager {
   private bewss: bewss
@@ -34,28 +33,36 @@ class consoleManager {
       if (!data.startsWith('/') && !data.startsWith('-')) return this.bewss.getLogger().error('Invailed syntax! Use / to execute Bedrock commands, or use - to execute BEWSS commands.')
       if (data.startsWith('/') && this.bewss.getServerManager().getServer() == undefined) return this.bewss.getLogger().error('A user must be connect before running a Bedrock command.')
       if (data.startsWith('/')) return this.bewss.getEventManager().emit('ConsoleCommandExecuted', data)
-      const parsedCommand: Array<string> = data.replace('-', '').split(' ')
-      if (!this.getCommandNames().includes(parsedCommand[0])) return this.bewss.getLogger().error('This command doesn\'t exist!')
-      this.bewss.getEventManager().emit(parsedCommand[0], data.replace('-', ''))
+      const parsedCommand = this.parseCommand(data)
+      if (!this.getCommandNames().includes(parsedCommand.command)) return this.bewss.getLogger().error('This command doesn\'t exist!')
+      const commandData = this.commands.get(parsedCommand.command)
+      if (commandData == undefined) return this.bewss.getEventManager().emit(parsedCommand.command, parsedCommand.args)
+      
+      return commandData.execute(parsedCommand.args)
     })
-    for (const command of this.commands.values()) {
-      if (command) {
-        command.onEnabled()
-      }
-    }
 
     return
   }
 
   async onDisabled(): Promise<void> {
     this.readline.close()
-    for (const command of this.commands.values()) {
-      if (command) {
-        command.onDisabled()
-      }
-    }
+    //for (const command of this.commands.values()) {
+    //  if (command) {
+    //    command.onDisabled()
+    //  }
+    //}
 
     return Promise.resolve()
+  }
+
+  private parseCommand(content: string): {command: string, args: Array<string>} {
+    const command = content.replace('-', '').split(' ')[0]
+    const args = content.replace(`-${command} `, '').split(' ')
+    
+    return {
+      command: command,
+      args: args,
+    }
   }
 
   private async loadDefaultCommands(): Promise<void> {

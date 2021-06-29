@@ -9,14 +9,8 @@ class Start {
     this.commandName = 'start'
   }
 
-  async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on(this.commandName, () => {
-      this.bewss.getServerManager().onEnabled()
-    })
-  }
-
-  async onDisabled(): Promise<void> {
-    //
+  async execute(args: Array<string>): Promise<void> {
+    this.bewss.getServerManager().onEnabled()
   }
 
 }

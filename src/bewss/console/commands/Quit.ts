@@ -9,14 +9,8 @@ class Quit {
     this.commandName = 'quit'
   }
 
-  async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on(this.commandName, () => {
-      this.bewss.onDisabled()
-    })
-  }
-
-  async onDisabled(): Promise<void> {
-    //
+  async execute(args: Array<string>): Promise<void> {
+    this.bewss.onDisabled()
   }
 
 }

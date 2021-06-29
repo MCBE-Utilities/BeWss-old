@@ -9,15 +9,9 @@ class Reindex {
     this.commandName = 'reindex'
   }
 
-  async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on(this.commandName, async () => {
-      await this.bewss.getPluginManager().reIndex()
-      this.bewss.getLogger().success('Reindexed plugin folder.')
-    })
-  }
-
-  async onDisabled(): Promise<void> {
-    //
+  async execute(args: Array<string>): Promise<void> {
+    await this.bewss.getPluginManager().reIndex()
+    this.bewss.getLogger().success('Reindexed plugin folder.')
   }
 
 }

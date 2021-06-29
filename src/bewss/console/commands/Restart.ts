@@ -9,17 +9,11 @@ class Restart {
     this.commandName = 'restart'
   }
 
-  async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on(this.commandName, () => {
-      this.bewss.getServerManager().onDisabled()
-      setTimeout(() => {
-        this.bewss.getServerManager().onEnabled()
-      }, 1000)
-    })
-  }
-
-  async onDisabled(): Promise<void> {
-    //
+  async execute(args: Array<string>): Promise<void> {
+    this.bewss.getServerManager().onDisabled()
+    setTimeout(() => {
+      this.bewss.getServerManager().onEnabled()
+    }, 1000)
   }
 
 }
