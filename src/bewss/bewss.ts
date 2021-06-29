@@ -5,6 +5,7 @@ import eventManager from "./events/eventManager"
 import Logger from "./logger/logger"
 import pluginManager from "./plugin/pluginManager"
 import serverManager from "./server/serverManager"
+import worldManager from './world/worldManager'
 import playerManager from "./player/playerManager"
 import agentManager from "./agent/agentManager"
 import scoreboardManager from './scoreboard/scoreboardManager'
@@ -16,6 +17,7 @@ class bewss {
   private consoleManager: consoleManager
   private commandManager: commandManager
   private pluginManager: pluginManager
+  private worldManager: worldManager
   private playerManager: playerManager
   private agentManager: agentManager
   private scoreboardManager: scoreboardManager
@@ -33,6 +35,7 @@ class bewss {
     this.consoleManager = new consoleManager(this)
     this.commandManager = new commandManager(this)
     this.pluginManager = new pluginManager(this)
+    this.worldManager = new worldManager(this)
     this.playerManager = new playerManager(this)
     this.agentManager = new agentManager(this)
     this.scoreboardManager = new scoreboardManager(this)
@@ -45,6 +48,7 @@ class bewss {
     this.serverManager.onEnabled()
     this.consoleManager.onEnabled()
     this.commandManager.onEnabled()
+    this.worldManager.onEnabled()
     this.playerManager.onEnabled()
     this.agentManager.onEnabled()
     this.scoreboardManager.onEnabled()
@@ -56,6 +60,7 @@ class bewss {
     await this.serverManager.onDisabled()
     await this.consoleManager.onDisabled()
     await this.commandManager.onDisabled()
+    await this.worldManager.onDisabled()
     await this.playerManager.onDisabled()
     await this.agentManager.onDisabled()
     await this.scoreboardManager.onDisabled()
@@ -85,6 +90,10 @@ class bewss {
 
   getCommandManager(): commandManager {
     return this.commandManager
+  }
+
+  getWorldManager(): worldManager {
+    return this.worldManager
   }
 
   getPlayerManager(): playerManager {
