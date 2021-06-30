@@ -90,15 +90,16 @@ class playerManager {
   }
 
   async getPlayerPositionRealms(target: string): Promise<playerPositionRealms> {
-    const command = this.bewss.getCommandManager().executeCommand(`/execute "${target}" ~ ~ ~ tp @s @s`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
-    if (response.body.statusCode == -2147483648) return
-
-    return {
-      x: response.body.x,
-      y: response.body.y,
-      z: response.body.z,
-    }
+    return new Promise((res) => {
+      this.bewss.getCommandManager().executeCommand(`/execute "${target}" ~ ~ ~ tp ~ ~ ~`) as commandResponse
+      this.bewss.getEventManager().on('PlayerTransform', (packet) => {
+        return res({
+          x: packet.body.properties.PosX,
+          y: packet.body.properties.PosY,
+          z: packet.body.properties.PosZ,
+        })
+      })
+    })
   }
 
   async getTags(target: string): Promise<Array<string>> {
