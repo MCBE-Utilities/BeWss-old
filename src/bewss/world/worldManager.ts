@@ -25,6 +25,7 @@ class worldManager {
   async getSurfaceBlock(x: number, z: number): Promise<topBlockData> {
     const command = this.bewss.getCommandManager().executeCommand(`/gettopsolidblock ${x} 255 ${z}`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as gettopsolidblockCommand
+    if (response.body.statusCode == -2147483648) return
     
     return {
       name: response.body.blockName,
@@ -35,6 +36,7 @@ class worldManager {
   async getBlock(x: number, y: number, z: number): Promise<blockData> {
     const command = this.bewss.getCommandManager().executeCommand(`/testforblock ${x} ${y} ${z} air`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as testforblockCommand
+    if (response.body.statusCode == -2147483648) return
     if (response.body.matches) return {
       name: "Air",
       id: "air",

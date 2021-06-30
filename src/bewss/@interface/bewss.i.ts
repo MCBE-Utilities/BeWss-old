@@ -1094,14 +1094,14 @@ export type operations = (
 
 export interface genericScoreboard extends SlashCommandExecutedConsole {
   body: {
-    statusCode: string
+    statusCode: number
     statusMessage: string
   }
 }
 
 export interface getObjectives extends SlashCommandExecutedConsole {
   body: {
-    statusCode: string
+    statusCode: number
     statusMessage: string
     objectives: Array<Array<string>>
   }
@@ -1109,7 +1109,7 @@ export interface getObjectives extends SlashCommandExecutedConsole {
 
 export interface getScore extends SlashCommandExecutedConsole {
   body: {
-    statusCode: string
+    statusCode: number
     statusMessage: string
     score: number
     objective: string

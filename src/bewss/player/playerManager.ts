@@ -16,6 +16,7 @@ class playerManager {
     this.bewss.getEventManager().on('wss-connected', async () => {
       const command = this.bewss.getCommandManager().executeCommand('/getlocalplayername') as commandResponse
       const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+      if (response.body.statusCode == -2147483648) return
       this.localePlayerName = response.body.localplayername
     })
   }
@@ -33,6 +34,7 @@ class playerManager {
   async getPlayerList(): Promise<Array<string>> {
     const command = this.bewss.getCommandManager().executeCommand('/list') as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    if (response.body.statusCode == -2147483648) return
     const playersString: string = response.body.players
 
     return playersString.split(', ')
@@ -82,6 +84,7 @@ class playerManager {
   async getPlayerPosition(target: string): Promise<playerPosition> {
     const command = this.bewss.getCommandManager().executeCommand(`/querytarget "${target}"`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    if (response.body.statusCode == -2147483648) return
 
     return JSON.parse(response.body.details)[0]
   }
@@ -89,6 +92,7 @@ class playerManager {
   async getTags(target: string): Promise<Array<string>> {
     const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" list`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    if (response.body.statusCode == -2147483648) return
     const raw: Array<string> = response.body.statusMessage.split(' ')
     const tags: Array<string> = []
     for (const string of raw) {
