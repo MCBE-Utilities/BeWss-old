@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable camelcase */
 import {
   blockData,
-  commandResponse, gettopsolidblockCommand, testforblockCommand, topBlockData, 
+  commandResponse, gettopsolidblockCommand, SlashCommandExecutedConsole, testforblockCommand, topBlockData, 
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 import axios from "axios"
@@ -31,6 +32,14 @@ class worldManager {
       name: response.body.blockName,
       position: response.body.position,
     }
+  }
+
+  async setblock(x: number, y: number, z: number, block: string): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/testforblock ${x} ${y} ${z} ${block}`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    if (response.body.statusCode == -2147483648) return
+    
+    return response
   }
 
   async getBlock(x: number, y: number, z: number): Promise<blockData> {
