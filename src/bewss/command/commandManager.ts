@@ -3,7 +3,7 @@
 import bewss from "../bewss"
 import { v4 as uuidv4 } from 'uuid'
 import {
-  commandResponse, SlashCommandExecutedConsole, 
+  commandResponse, customCommandResponse, SlashCommandExecutedConsole, 
 } from "../@interface/bewss.i"
 import {
   Help,
@@ -46,7 +46,7 @@ class commandManager {
       if (commandData == undefined) return this.bewss.getEventManager().emit(parsedCommand.command, {
         sender: packet.body.properties.Sender,
         args:  parsedCommand.args,
-      })
+      } as customCommandResponse)
 
       return commandData.execute(packet.body.properties.Sender,  parsedCommand.args)
     })

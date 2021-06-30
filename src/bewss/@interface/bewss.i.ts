@@ -95,6 +95,11 @@ export interface commandManager {
   getCommandNames(): Array<string>
 }
 
+export interface customCommandResponse {
+  sender: string
+  args: Array<string>
+}
+
 export interface commandResponse {
   command: string
   requestId: string
