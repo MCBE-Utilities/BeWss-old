@@ -104,6 +104,7 @@ export interface worldManager {
   new(bewss): bewss
   getSurfaceBlock(x: number, z: number): Promise<topBlockData>
   getBlock(x: number, y: number, z: number): Promise<blockData>
+  setblock(x: number, y: number, z: number, block: string): Promise<SlashCommandExecutedConsole>
 }
 
 export interface playerManager {
