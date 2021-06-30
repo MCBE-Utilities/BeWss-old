@@ -9,7 +9,7 @@ class Reload {
     this.commandName = 'reload'
   }
 
-  async execute(args: Array<string>): Promise<void> {
+  async execute(): Promise<void> {
     await this.bewss.getPluginManager().reloadAll()
     this.bewss.getLogger().success('All plugins reloaded.')
   }

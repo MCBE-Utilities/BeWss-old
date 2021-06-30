@@ -9,7 +9,7 @@ class Reindex {
     this.commandName = 'reindex'
   }
 
-  async execute(args: Array<string>): Promise<void> {
+  async execute(): Promise<void> {
     await this.bewss.getPluginManager().reIndex()
     this.bewss.getLogger().success('Reindexed plugin folder.')
   }
