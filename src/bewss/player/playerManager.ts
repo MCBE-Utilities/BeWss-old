@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  playerPosition, titles, messageType, titlerawComponets, commandResponse,
+  playerPosition, titles, messageType, titlerawComponets, commandResponse, playerPositionRealms,
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 
@@ -87,6 +87,18 @@ class playerManager {
     if (response.body.statusCode == -2147483648) return
 
     return JSON.parse(response.body.details)[0]
+  }
+
+  async getPlayerPositionRealms(target: string): Promise<playerPositionRealms> {
+    const command = this.bewss.getCommandManager().executeCommand(`/execute "${target}" ~ ~ ~ tp @s @s`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    if (response.body.statusCode == -2147483648) return
+
+    return {
+      x: response.body.x,
+      y: response.body.y,
+      z: response.body.z,
+    }
   }
 
   async getTags(target: string): Promise<Array<string>> {

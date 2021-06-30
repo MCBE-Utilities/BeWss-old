@@ -118,7 +118,8 @@ export interface playerManager {
   getPlayerList(): Promise<Array<string>>
   sendMessage(type: messageType , target: string, content: string | Array<titlerawComponets>): void
   sendTitle(type: messageType, target: string, content: string | Array<titlerawComponets>, title: titles): void
-  getPlayerPosition(target: string): playerPosition | undefined
+  getPlayerPosition(target: string): Promise<playerPosition>
+  getPlayerPositionRealms(target: string): Promise<playerPositionRealms>
   getTags(target: string): Promise<Array<string>>
   hasTag(target: string, tag: string): Promise<boolean>
 }
@@ -167,6 +168,12 @@ export interface playerPosition {
   }
   uniqueId: string
   yRot: number
+}
+
+export interface playerPositionRealms {
+  x: number
+  y: number
+  z: number
 }
 
 export interface CommandValues {
