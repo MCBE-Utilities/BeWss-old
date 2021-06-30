@@ -14,9 +14,10 @@ export interface bewss {
   getConsoleManager(): consoleManager
   getCommandManager(): commandManager
   getEventManager(): eventManager
+  getWorldManager(): worldManager
+  getPlayerManager(): playerManager
   getAgentManager(): agentManager
   getScoreboardManager(): scoreboardManager
-  getPlayerManager(): playerManager
 }
 
 export interface pluginApi {
@@ -26,6 +27,7 @@ export interface pluginApi {
   getConsoleManager(): consoleManager
   getCommandManager(): commandManager
   getEventManager(): eventManager
+  getWorldManager(): worldManager
   getPlayerManager(): playerManager
   getAgentManager(): agentManager
   getScoreboardManager(): scoreboardManager
@@ -96,6 +98,12 @@ export interface commandManager {
 export interface commandResponse {
   command: string
   requestId: string
+}
+
+export interface worldManager {
+  new(bewss): bewss
+  getSurfaceBlock(x: number, z: number): Promise<topBlockData>
+  getBlock(x: number, y: number, z: number): Promise<blockData>
 }
 
 export interface playerManager {

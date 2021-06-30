@@ -11,6 +11,7 @@ import {
   default as Logger,
   colors,
 } from './logger'
+import worldManager from "src/bewss/world/worldManager"
 
 class pluginAPI {
   private bewss: bewss
@@ -46,6 +47,10 @@ class pluginAPI {
 
   getCommandManager(): commandManager {
     return this.bewss.getCommandManager()
+  }
+
+  getWorldManager(): worldManager {
+    return this.bewss.getWorldManager()
   }
 
   getPlayerManager(): playerManager {
