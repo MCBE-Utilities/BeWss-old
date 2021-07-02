@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  playerPosition, titles, messageType, titlerawComponets, commandResponse, playerPositionRealms,
+  playerPosition, titles, messageType, titlerawComponets, commandResponse, playerPositionRealms, SlashCommandExecutedConsole,
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 
@@ -122,6 +122,20 @@ class playerManager {
 
     return true
   }
+
+  async addTag(target: string, tag: string): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" add "${tag}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  } 
+
+  async removeTag(target: string, tag: string): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" remove "${tag}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  } 
 
 }
 

@@ -41,7 +41,7 @@ class commandManager {
     this.bewss.getEventManager().on('PlayerMessage', (packet) => {
       if (!packet.body.properties.Message.startsWith('-')) return
       const parsedCommand = this.parseCommand(packet.body.properties.Message)
-      if (!this.getCommandNames().includes(parsedCommand.command)) return this.bewss.getPlayerManager().sendMessage('text', packet.body.properties.Sender, '§dBeWss§r §l§7>§r §cThat command doesnt exsist. Do -help for a list of commands.')
+      if (!this.getCommandNames().includes(parsedCommand.command)) return this.bewss.getPlayerManager().sendMessage('text', packet.body.properties.Sender, '§dBeWss§r §l§7>§r §cThat command doesnt exist. Do -help for a list of commands.')
       const commandData = this.commands.get(parsedCommand.command)
       if (commandData == undefined) return this.bewss.getEventManager().emit(parsedCommand.command, {
         sender: packet.body.properties.Sender,
