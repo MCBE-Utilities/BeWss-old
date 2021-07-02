@@ -80,6 +80,9 @@ class worldManager {
     return response.data
   }
 
+  sendMessage(message: string): void {
+    this.bewss.getCommandManager().executeCommand(`/tellraw @a {"rawtext":[{"text":"${message}"}]}`)
+  }
 }
 
 export default worldManager
