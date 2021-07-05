@@ -158,6 +158,13 @@ class playerManager {
     return response
   }
 
+  async teleport(target: string, x: number , y: number, z: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/tp "${target}" ${x} ${y} ${z}`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
+
 }
 
 export default playerManager
