@@ -165,6 +165,13 @@ class playerManager {
     return response
   }
 
+  async give(target: string, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/give "${target}" ${item} ${amount} ${data}`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
+
 }
 
 export default playerManager
