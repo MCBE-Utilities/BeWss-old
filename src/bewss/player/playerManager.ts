@@ -151,6 +151,13 @@ class playerManager {
     return response
   } 
 
+  async kick(target: string, reason: string): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/kick "${target}" ${reason}`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
+
 }
 
 export default playerManager
