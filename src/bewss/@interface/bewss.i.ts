@@ -120,8 +120,11 @@ export interface playerManager {
   sendTitle(type: messageType, target: string, content: string | Array<titlerawComponets>, title: titles): void
   getPlayerPosition(target: string): Promise<playerPosition>
   getPlayerPositionRealms(target: string): Promise<playerPositionRealms>
+  inPosition(target: string, startX: number, startY: number, startZ: number, directionX: number, directionY: number, directionZ: number): Promise<boolean>
   getTags(target: string): Promise<Array<string>>
   hasTag(target: string, tag: string): Promise<boolean>
+  addTag(target: string, tag: string): Promise<SlashCommandExecutedConsole>
+  removeTag(target: string, tag: string): Promise<SlashCommandExecutedConsole>
 }
 
 export interface scoreboardManager {

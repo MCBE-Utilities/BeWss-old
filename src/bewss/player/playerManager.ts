@@ -18,6 +18,12 @@ class playerManager {
       const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
       if (response.body.statusCode == -2147483648) return
       this.localePlayerName = response.body.localplayername
+
+      setInterval(async () => {
+        const res = await this.inPosition(this.localePlayerName, 0, 0, 0, 10, 10, 10)
+        this.bewss.getWorldManager().sendMessage(`${res}`)
+      }, 100)
+
     })
   }
 
@@ -34,7 +40,7 @@ class playerManager {
   async getPlayerList(): Promise<Array<string>> {
     const command = this.bewss.getCommandManager().executeCommand('/list') as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
-    if (response.body.statusCode == -2147483648) return
+    if (response.body.players == undefined || response.body.statusCode == -2147483648) return
     const playersString: string = response.body.players
 
     return playersString.split(', ')
@@ -84,7 +90,7 @@ class playerManager {
   async getPlayerPosition(target: string): Promise<playerPosition> {
     const command = this.bewss.getCommandManager().executeCommand(`/querytarget "${target}"`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
-    if (response.body.statusCode == -2147483648) return
+    if (response == undefined || response.body.statusCode == -2147483648) return
 
     return JSON.parse(response.body.details)[0]
   }
@@ -102,10 +108,18 @@ class playerManager {
     })
   }
 
+  async inPosition(target: string, startX: number, startY: number, startZ: number, directionX: number, directionY: number, directionZ: number): Promise<boolean> {
+    const command = this.bewss.getCommandManager().executeCommand(`/execute @a[name="${target}",x=${startX},y=${startY},z=${startZ},dx=${directionX},dy=${directionY},dz=${directionZ}] ~ ~ ~ testfor @s`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    if (response.body.statusCode == -2147352576) return false
+
+    return true
+  }
+
   async getTags(target: string): Promise<Array<string>> {
     const command = this.bewss.getCommandManager().executeCommand(`/tag "${target}" list`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
-    if (response.body.statusCode == -2147483648) return
+    if (response == undefined || response.body.statusCode == -2147483648) return
     const raw: Array<string> = response.body.statusMessage.split(' ')
     const tags: Array<string> = []
     for (const string of raw) {
