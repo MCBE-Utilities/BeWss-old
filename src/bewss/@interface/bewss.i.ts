@@ -126,7 +126,26 @@ export interface playerManager {
   hasTag(target: string, tag: string): Promise<boolean>
   addTag(target: string, tag: string): Promise<SlashCommandExecutedConsole>
   removeTag(target: string, tag: string): Promise<SlashCommandExecutedConsole>
+  kick(target: string, reason: string): Promise<SlashCommandExecutedConsole>
+  teleport(target: string, x: number , y: number, z: number): Promise<SlashCommandExecutedConsole>
+  give(target: string, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole>
+  replaceItem(target: string, container: containers, slot: number, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole>
 }
+
+export type containers = (
+  "slot.armor" |
+  "slot.armor.chest" |
+  "slot.armor.feet" |
+  "slot.armor.head" |
+  "slot.armor.legs" |
+  "slot.chest" |
+  "slot.enderchest" |
+  "slot.hotbar" |
+  "slot.inventory" |
+  "slot.saddle" |
+  "slot.weapon.mainhand" |
+  "slot.weapon.offhand"
+)
 
 export interface scoreboardManager {
   new(bewss: bewss)

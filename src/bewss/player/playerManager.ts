@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  playerPosition, titles, messageType, titlerawComponets, commandResponse, playerPositionRealms, SlashCommandExecutedConsole,
+  playerPosition, titles, messageType, titlerawComponets, commandResponse, playerPositionRealms, SlashCommandExecutedConsole, containers,
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 
@@ -172,6 +172,12 @@ class playerManager {
     return response
   }
 
+  async replaceItem(target: string, container: containers, slot: number, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/replaceitem entity "${target}" ${container} ${slot} ${item} ${amount} ${data}`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
 }
 
 export default playerManager
