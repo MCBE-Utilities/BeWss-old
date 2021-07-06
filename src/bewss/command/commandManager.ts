@@ -123,6 +123,13 @@ class commandManager {
     return Array.from(this.commands.keys())
   }
 
+  async reloadAll(): Promise<void> {
+    this.commands = new Map<string, exampleCommand | undefined>()
+    await this.loadDefaultCommands()
+
+    return
+  }
+
 }
 
 export default commandManager

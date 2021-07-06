@@ -177,6 +177,7 @@ class pluginManager {
   }
 
   async reloadAll(): Promise<void> {
+    await this.bewss.getCommandManager().reloadAll()
     const plugins = [...this.plugins.keys()]
     for (const plugin of plugins) {
       await this.reload(plugin)
