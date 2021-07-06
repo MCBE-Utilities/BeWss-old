@@ -147,6 +147,13 @@ export type containers = (
   "slot.weapon.offhand"
 )
 
+export type gamemodes = (
+  "adventure" |
+  "creative" |
+  "survival" |
+  "default"
+)
+
 export interface scoreboardManager {
   new(bewss: bewss)
   createObjective(objective: string, displayname?: string): Promise<genericScoreboard>
