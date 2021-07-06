@@ -12,10 +12,7 @@ class entityManager {
   }
 
   async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on('PlayerMessage', async (pk) => {
-      if (pk.body.properties.Message != 'test') return
-      console.log(await this.getEntityList())
-    })
+    return
   }
 
   async onDisabled(): Promise<void> {
@@ -49,6 +46,20 @@ class entityManager {
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
 
     return response
+  }
+
+  async removeEntities(entity: string, amount: number): Promise<void> {
+    let count = 0
+    const inv = setInterval(() => {
+      if (count < amount + 1) {
+        this.bewss.getCommandManager().executeCommand(`/kill @e[type=!player,c=1,type=${entity}]`) as commandResponse
+        count ++
+      } else {
+        clearInterval(inv)
+      }
+    }, 50)
+
+    return
   }
 }
 
