@@ -130,6 +130,7 @@ export interface playerManager {
   teleport(target: string, x: number , y: number, z: number): Promise<SlashCommandExecutedConsole>
   give(target: string, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole>
   replaceItem(target: string, container: containers, slot: number, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole>
+  updateGamemode(target: string, gamemode: gamemodes): Promise<SlashCommandExecutedConsole>
 }
 
 export type containers = (
