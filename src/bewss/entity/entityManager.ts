@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { commandResponse } from "../@interface/bewss.i"
+import {
+  commandResponse, SlashCommandExecutedConsole, 
+} from "../@interface/bewss.i"
 import bewss from "../bewss"
 
 class entityManager {
@@ -26,6 +28,13 @@ class entityManager {
     if (response.body.statusCode == -2147483648) return ['']
 
     return response.body.victim
+  }
+
+  async summonEntity(entity: string, name: string, x: number, y: number, z: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/give ${entity} ${name} ${x} ${y} ${z}`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
   }
 }
 
