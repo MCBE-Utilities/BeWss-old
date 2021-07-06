@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  playerPosition, titles, messageType, titlerawComponets, commandResponse, playerPositionRealms, SlashCommandExecutedConsole, containers, gamemodes,
+  playerPosition, titles, messageType, titlerawComponets, commandResponse, playerPositionRealms, SlashCommandExecutedConsole, containers, gamemodes, abilites,
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 
@@ -181,6 +181,13 @@ class playerManager {
 
   async updateGamemode(target: string, gamemode: gamemodes): Promise<SlashCommandExecutedConsole> {
     const command = this.bewss.getCommandManager().executeCommand(`/gamemode ${gamemode} "${target}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
+
+  async updateAbility(target: string, ability: abilites, enabled: boolean): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/ability "${target}" ${ability} ${enabled}`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId)
 
     return response

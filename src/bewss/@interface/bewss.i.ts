@@ -131,6 +131,7 @@ export interface playerManager {
   give(target: string, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole>
   replaceItem(target: string, container: containers, slot: number, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole>
   updateGamemode(target: string, gamemode: gamemodes): Promise<SlashCommandExecutedConsole>
+  updateAbility(target: string, ability: abilites, enabled: boolean): Promise<SlashCommandExecutedConsole>
 }
 
 export type containers = (
@@ -153,6 +154,12 @@ export type gamemodes = (
   "creative" |
   "survival" |
   "default"
+)
+
+export type abilites = (
+  "mayfly" |
+  "mute" |
+  "worldbuilder"
 )
 
 export interface scoreboardManager {
