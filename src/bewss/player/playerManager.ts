@@ -193,6 +193,34 @@ class playerManager {
 
     return response.body.level
   }
+
+  async addXp(target: string, amount: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/xp ${amount} "${target}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
+
+  async addXpLevel(target: string, amount: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/xp ${amount}l "${target}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
+
+  async removeXp(target: string, amount: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/xp -${amount} "${target}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
+
+  async removeXpLevel(target: string, amount: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/xp -${amount}l "${target}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
+
+    return response
+  }
 }
 
 export default playerManager

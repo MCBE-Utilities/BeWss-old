@@ -133,6 +133,10 @@ export interface playerManager {
   updateGamemode(target: string, gamemode: gamemodes): Promise<SlashCommandExecutedConsole>
   updateAbility(target: string, ability: abilites, enabled: boolean): Promise<SlashCommandExecutedConsole>
   getXpLevel(target: string): Promise<number>
+  addXp(target: string, amount: number): Promise<SlashCommandExecutedConsole>
+  addXpLevel(target: string, amount: number): Promise<SlashCommandExecutedConsole>
+  removeXp(target: string, amount: number): Promise<SlashCommandExecutedConsole>
+  removeXpLevel(target: string, amount: number): Promise<SlashCommandExecutedConsole>
 }
 
 export type containers = (
