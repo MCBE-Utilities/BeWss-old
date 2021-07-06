@@ -72,7 +72,6 @@ class playerManager {
 
     if (type == "json") {
       if (target == "@s") target = this.localePlayerName
-      console.log(JSON.stringify(content))
       if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
         this.bewss.getCommandManager().executeCommand(`/titleraw ${target} ${title} {"rawtext":${JSON.stringify(content)}}`)
       } else {
