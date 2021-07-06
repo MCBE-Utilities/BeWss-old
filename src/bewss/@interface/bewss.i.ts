@@ -132,6 +132,7 @@ export interface playerManager {
   replaceItem(target: string, container: containers, slot: number, item: string, amount: number, data: number): Promise<SlashCommandExecutedConsole>
   updateGamemode(target: string, gamemode: gamemodes): Promise<SlashCommandExecutedConsole>
   updateAbility(target: string, ability: abilites, enabled: boolean): Promise<SlashCommandExecutedConsole>
+  getXpLevel(target: string): Promise<number>
 }
 
 export type containers = (

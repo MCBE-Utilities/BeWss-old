@@ -18,12 +18,6 @@ class playerManager {
       const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
       if (response.body.statusCode == -2147483648) return
       this.localePlayerName = response.body.localplayername
-
-      setInterval(async () => {
-        const res = await this.inPosition(this.localePlayerName, 0, 0, 0, 10, 10, 10)
-        this.bewss.getWorldManager().sendMessage(`${res}`)
-      }, 100)
-
     })
   }
 
@@ -191,6 +185,13 @@ class playerManager {
     const response = await this.bewss.getCommandManager().findResponse(command.requestId)
 
     return response
+  }
+
+  async getXpLevel(target: string): Promise<number> {
+    const command = this.bewss.getCommandManager().executeCommand(`/xp 0 "${target}"`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+
+    return response.body.level
   }
 }
 
