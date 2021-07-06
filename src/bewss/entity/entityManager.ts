@@ -36,6 +36,13 @@ class entityManager {
 
     return response
   }
+
+  async executeCommandAsEntity(name: string, commands: string): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/execute @e[name="${name}"] ~ ~ ~ ${commands}`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+
+    return response
+  }
 }
 
 export default entityManager
