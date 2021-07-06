@@ -43,6 +43,13 @@ class entityManager {
 
     return response
   }
+
+  async removeEntity(name: string): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/kill @e[type=!player,c=1,name="${name}"]`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+
+    return response
+  }
 }
 
 export default entityManager
