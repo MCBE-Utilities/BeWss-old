@@ -15,6 +15,7 @@ export interface bewss {
   getCommandManager(): commandManager
   getEventManager(): eventManager
   getWorldManager(): worldManager
+  getEntityManager(): entityManager
   getPlayerManager(): playerManager
   getAgentManager(): agentManager
   getScoreboardManager(): scoreboardManager
@@ -28,6 +29,7 @@ export interface pluginApi {
   getCommandManager(): commandManager
   getEventManager(): eventManager
   getWorldManager(): worldManager
+  getEntityManager(): entityManager
   getPlayerManager(): playerManager
   getAgentManager(): agentManager
   getScoreboardManager(): scoreboardManager
@@ -145,6 +147,17 @@ export interface worldManager {
   getBlock(x: number, y: number, z: number): Promise<blockData>
   setblock(x: number, y: number, z: number, block: string): Promise<SlashCommandExecutedConsole>
   sendMessage(message: string): void
+}
+
+export interface entityManager {
+  new(bewss: bewss)
+  getEntityList(): Promise<Array<string>>
+  summonEntity(entity: string, name: string, x: number, y: number, z: number): Promise<SlashCommandExecutedConsole>
+  executeCommandAsEntity(name: string, commands: string): Promise<SlashCommandExecutedConsole>
+  removeEntity(name: string): Promise<SlashCommandExecutedConsole>
+  removeEntities(entity: string, amount: number): Promise<void>
+  getTags(name: string): Promise<Array<string>>
+  hasTag(name: string, tag: string): Promise<boolean>
 }
 
 export interface playerManager {
