@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import bewss from "../bewss"
 import readline from "readline"
+import { EventEmitter } from 'events'
 import {
   Help,
   Quit,
@@ -14,12 +15,13 @@ import {
 export interface exampleCommand {
   execute(args: Array<string>): Promise<void>
 }
-class consoleManager {
+class consoleManager extends EventEmitter {
   private bewss: bewss
   private commands = new Map<string, exampleCommand | undefined>()
   private readline: readline.Interface
 
   constructor (bewss: bewss) {
+    super()
     this.bewss = bewss
   }
 
@@ -36,7 +38,7 @@ class consoleManager {
       const parsedCommand = this.parseCommand(data)
       if (!this.getCommandNames().includes(parsedCommand.command)) return this.bewss.getLogger().error('This command doesn\'t exist!')
       const commandData = this.commands.get(parsedCommand.command)
-      if (commandData == undefined) return this.bewss.getEventManager().emit(parsedCommand.command, parsedCommand.args)
+      if (commandData == undefined) return this.emit(parsedCommand.command, parsedCommand.args)
       
       return commandData.execute(parsedCommand.args)
     })
@@ -46,11 +48,6 @@ class consoleManager {
 
   async onDisabled(): Promise<void> {
     this.readline.close()
-    //for (const command of this.commands.values()) {
-    //  if (command) {
-    //    command.onDisabled()
-    //  }
-    //}
 
     return Promise.resolve()
   }
@@ -87,6 +84,7 @@ class consoleManager {
   registerCommand(command: string): void {
     if (this.getCommandNames().includes(command)) return this.bewss.getLogger().error(`The command "${command}" is an already a registered command!`)
     this.commands.set(command, undefined)
+    this.emit('CommandRegistered', { name: command })
   }
 
   getCommandNames(): Array<string> {

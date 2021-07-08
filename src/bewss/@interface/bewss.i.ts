@@ -81,10 +81,29 @@ export interface serverManager {
   getServer(): any
 }
 
+interface CommandEventValues {
+  CommandRegistered: [{ name: string }]
+}
+
 export interface consoleManager {
   new(bewss: bewss)
   getCommandName(): Array<string>
   registerCommand(command: string): void
+  on<K extends keyof CommandEventValues>(event: K, callback: (...args: CommandEventValues[K]) => void): this
+  on<S extends string | symbol>(
+    event: Exclude<S, keyof CommandEventValues>,
+    callback: (...args: unknown[]) => void,
+  ): this
+  once<K extends keyof CommandEventValues>(event: K, callback: (...args: CommandEventValues[K]) => void): this
+  once<S extends string | symbol>(
+    event: Exclude<S, keyof CommandEventValues>,
+    callback: (...args: unknown[]) => void,
+  ): this
+  emit<K extends keyof CommandEventValues>(event: K, ...args: CommandEventValues[K]): boolean
+  emit<S extends string | symbol>(
+    event: Exclude<S, keyof CommandEventValues>,
+    ...args: unknown[]
+  ): boolean
 }
 
 export interface commandManager {
