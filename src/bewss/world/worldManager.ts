@@ -5,12 +5,11 @@ import {
   commandResponse, gettopsolidblockCommand, SlashCommandExecutedConsole, testforblockCommand, topBlockData, 
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
-import axios from "axios"
+import fs from "fs"
+import path from "path"
 
 class worldManager {
   private bewss: bewss
-  private itemJSON = "https://minecraft-ids.grahamedgecombe.com/items.json"
-
   constructor(bewss: bewss) {
     this.bewss = bewss
   }
@@ -47,37 +46,42 @@ class worldManager {
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as testforblockCommand
     if (response.body.statusCode == -2147483648) return
     if (response.body.matches) return {
-      name: "Air",
-      id: "air",
-      data: 0,
+      id: 0,
+      displayName: 'Air',
+      name: 'air',
+      hardness: 0,
+      resistance: 0,
+      minStateId: 134,
+      maxStateId: 134,
+      drops: [],
+      diggable: true,
+      transparent: true,
+      filterLight: 0,
+      emitLight: 0,
+      boundingBox: 'empty',
+      stackSize: 0,
+      defaultState: 0,
       position: {
         x: x,
         y: y,
         z: z,
       },
     }
-    const blocks = await this.getBlockData()
-    let blockData: blockData
-    const blockName = response.body.statusMessage.replace(`The block at ${response.body.position.x},${response.body.position.y},${response.body.position.z} is `, '').replace(' (expected: Air)', '')
-      .replace('.', '')
-    for (const block of blocks) {
-      if (block.name == blockName) {
-        blockData = {
-          name: blockName,
-          id: block.text_type,
-          data: block.meta,
-          position: response.body.position,
-        }
-      }
-    }
 
-    return blockData
+    const blocks = await this.getBlockData()
+    const blockName = response.body.statusMessage.match(/(?<=is )(.*?)(?= \()/)[0]
+    const block = blocks.find(e => e.displayName == blockName) as blockData
+
+    block.position = response?.body?.position
+
+    return block
   } 
 
-  async getBlockData(): Promise<Array<{ type: number, meta: number, name: string, text_type: string }>> {
-    const response = await axios.get(this.itemJSON)
-
-    return response.data
+  async getBlockData(): Promise<Array<{ id: number, displayName: string, name: string, hardness: number, resistance: number, minStateId: number, maxStateId: number, drops: Array<unknown>, diggable: boolean, transparent: boolean, filterLight: number, emitLight: number, boundingBox: string, stackSize: number, defaultState: number }>> {
+    const jsonPath = path.join(__dirname, '..', '..', 'data', '1.17', 'blocks.json')
+    const response = fs.readFileSync(jsonPath, 'utf-8')
+    
+    return JSON.parse(response)
   }
 
   sendMessage(message: string): void {
