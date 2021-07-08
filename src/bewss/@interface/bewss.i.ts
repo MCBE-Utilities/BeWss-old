@@ -1119,10 +1119,22 @@ export interface genericAgent extends SlashCommandExecutedConsole {
 }
 
 // WorldManager
-export interface blockData {
+export interface blockData { 
+  id: number
+  displayName: string
   name: string
-  id: string
-  data: number
+  hardness: number
+  resistance: number
+  minStateId: number
+  maxStateId: number
+  drops: Array<unknown>
+  diggable: boolean
+  transparent: boolean
+  filterLight: number
+  emitLight: number
+  boundingBox: string
+  stackSize: number
+  defaultState: number 
   position: {
     x: number
     y: number
