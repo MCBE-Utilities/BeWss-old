@@ -9,6 +9,7 @@ import {
 import {
   Help,
   Reindex,
+  Reload,
 } from "./commands/index"
 
 export interface exampleCommand {
@@ -81,6 +82,8 @@ class commandManager extends EventEmitter {
     this.commands.set(helpCommand.commandName, helpCommand)
     const reindexCommand = new Reindex(this.bewss)
     this.commands.set(reindexCommand.commandName, reindexCommand)
+    const reloadCommand = new Reload(this.bewss)
+    this.commands.set(reloadCommand.commandName, reloadCommand)
   }
 
   findResponse(requestId: string): Promise<SlashCommandExecutedConsole> {
