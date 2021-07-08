@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import bewss from "../bewss"
 import { v4 as uuidv4 } from 'uuid'
+import { EventEmitter } from 'events'
 import {
   commandResponse, customCommandResponse, SlashCommandExecutedConsole, 
 } from "../@interface/bewss.i"
@@ -12,13 +13,14 @@ import {
 export interface exampleCommand {
   execute(sender: string, args: Array<string>): Promise<void>
 }
-class commandManager {
+class commandManager extends EventEmitter {
   private bewss: bewss
   private previousCommand: { command: string, requestId: string }
   private commandCache: Array<{ request: string, response: any }> = []
   private commands = new Map<string, exampleCommand | undefined>()
 
   constructor (bewss: bewss) {
+    super()
     this.bewss = bewss
   }
 
@@ -43,7 +45,7 @@ class commandManager {
       const parsedCommand = this.parseCommand(packet.body.properties.Message)
       if (!this.getCommandNames().includes(parsedCommand.command)) return this.bewss.getPlayerManager().sendMessage('text', packet.body.properties.Sender, '§dBeWss§r §l§7>§r §cThat command doesnt exist. Do -help for a list of commands.')
       const commandData = this.commands.get(parsedCommand.command)
-      if (commandData == undefined) return this.bewss.getEventManager().emit(parsedCommand.command, {
+      if (commandData == undefined) return this.emit(parsedCommand.command, {
         sender: packet.body.properties.Sender,
         args:  parsedCommand.args,
       } as customCommandResponse)
@@ -117,6 +119,7 @@ class commandManager {
   registerCommand(command: string): void {
     if (this.getCommandNames().includes(command)) return this.bewss.getLogger().error(`The command "${command}" is an already a registered command!`)
     this.commands.set(command, undefined)
+    this.emit('CommandRegistered', { name: command })
   }
 
   getCommandNames(): Array<string> {
