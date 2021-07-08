@@ -8,6 +8,7 @@ import {
 } from "../@interface/bewss.i"
 import {
   Help,
+  Reindex,
 } from "./commands/index"
 
 export interface exampleCommand {
@@ -78,6 +79,8 @@ class commandManager extends EventEmitter {
   private async loadDefaultCommands(): Promise<void> {
     const helpCommand = new Help(this.bewss)
     this.commands.set(helpCommand.commandName, helpCommand)
+    const reindexCommand = new Reindex(this.bewss)
+    this.commands.set(reindexCommand.commandName, reindexCommand)
   }
 
   findResponse(requestId: string): Promise<SlashCommandExecutedConsole> {
