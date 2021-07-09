@@ -1,4 +1,4 @@
-[
+export const blocks = [
   {
     "id": 0,
     "displayName": "Air",
@@ -14,7 +14,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 0
+    "defaultState": 0,
   },
   {
     "id": 1,
@@ -32,8 +32,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 1
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 1,
   },
   {
     "id": 8,
@@ -51,7 +57,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 9
+    "defaultState": 9,
   },
   {
     "id": 9,
@@ -69,7 +75,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 10
+    "defaultState": 10,
   },
   {
     "id": 11,
@@ -87,7 +93,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 13
+    "defaultState": 13,
   },
   {
     "id": 12,
@@ -105,8 +111,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 14
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 14,
   },
   {
     "id": 13,
@@ -124,7 +136,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15
+    "defaultState": 15,
   },
   {
     "id": 19,
@@ -142,7 +154,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 21
+    "defaultState": 21,
   },
   {
     "id": 25,
@@ -159,7 +171,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 33
+    "defaultState": 33,
   },
   {
     "id": 26,
@@ -176,7 +188,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 34
+    "defaultState": 34,
   },
   {
     "id": 26,
@@ -193,7 +205,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 34
+    "defaultState": 34,
   },
   {
     "id": 27,
@@ -210,7 +222,7 @@
     "emitLight": 15,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 50
+    "defaultState": 50,
   },
   {
     "id": 27,
@@ -227,7 +239,7 @@
     "emitLight": 15,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 50
+    "defaultState": 50,
   },
   {
     "id": 28,
@@ -245,7 +257,7 @@
     "boundingBox": "block",
     "stackSize": 0,
     "material": "dirt",
-    "defaultState": 66
+    "defaultState": 66,
   },
   {
     "id": 30,
@@ -263,7 +275,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 68
+    "defaultState": 68,
   },
   {
     "id": 31,
@@ -281,8 +293,11 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 69
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 69,
   },
   {
     "id": 32,
@@ -300,8 +315,12 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 70
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 70,
   },
   {
     "id": 33,
@@ -319,8 +338,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 71
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 71,
   },
   {
     "id": 34,
@@ -338,8 +363,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 72
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 72,
   },
   {
     "id": 35,
@@ -357,7 +388,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 74
+    "defaultState": 74,
   },
   {
     "id": 39,
@@ -375,7 +406,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 86
+    "defaultState": 86,
   },
   {
     "id": 41,
@@ -393,7 +424,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 92
+    "defaultState": 92,
   },
   {
     "id": 42,
@@ -411,7 +442,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 95
+    "defaultState": 95,
   },
   {
     "id": 43,
@@ -429,7 +460,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 98
+    "defaultState": 98,
   },
   {
     "id": 44,
@@ -447,7 +478,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 101
+    "defaultState": 101,
   },
   {
     "id": 45,
@@ -465,7 +496,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 104
+    "defaultState": 104,
   },
   {
     "id": 46,
@@ -483,7 +514,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 107
+    "defaultState": 107,
   },
   {
     "id": 47,
@@ -501,7 +532,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 110
+    "defaultState": 110,
   },
   {
     "id": 59,
@@ -519,7 +550,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 158
+    "defaultState": 158,
   },
   {
     "id": 63,
@@ -537,7 +568,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 214
+    "defaultState": 214,
   },
   {
     "id": 65,
@@ -555,7 +586,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 242
+    "defaultState": 242,
   },
   {
     "id": 67,
@@ -572,7 +603,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 257
+    "defaultState": 257,
   },
   {
     "id": 69,
@@ -589,7 +620,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 259
+    "defaultState": 259,
   },
   {
     "id": 70,
@@ -607,8 +638,12 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 260
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 260,
   },
   {
     "id": 71,
@@ -626,8 +661,12 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 261
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 261,
   },
   {
     "id": 72,
@@ -645,8 +684,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 263
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 263,
   },
   {
     "id": 73,
@@ -664,8 +709,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 274
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 274,
   },
   {
     "id": 76,
@@ -683,7 +734,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 278
+    "defaultState": 278,
   },
   {
     "id": 92,
@@ -700,7 +751,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 1,
-    "defaultState": 1320
+    "defaultState": 1320,
   },
   {
     "id": 93,
@@ -718,7 +769,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 1346
+    "defaultState": 1346,
   },
   {
     "id": 94,
@@ -736,7 +787,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 1370
+    "defaultState": 1370,
   },
   {
     "id": 95,
@@ -753,7 +804,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 1387
+    "defaultState": 1387,
   },
   {
     "id": 96,
@@ -771,8 +822,15 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "web",
-    "harvestTools": {"622": true, "627": true, "632": true, "637": true, "642": true, "774": true},
-    "defaultState": 1393
+    "harvestTools": {
+      "622": true,
+      "627": true,
+      "632": true,
+      "637": true,
+      "642": true,
+      "774": true, 
+    },
+    "defaultState": 1393,
   },
   {
     "id": 97,
@@ -790,7 +848,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 1394
+    "defaultState": 1394,
   },
   {
     "id": 99,
@@ -808,7 +866,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 1396
+    "defaultState": 1396,
   },
   {
     "id": 100,
@@ -826,7 +884,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 1397
+    "defaultState": 1397,
   },
   {
     "id": 102,
@@ -843,7 +901,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 1406
+    "defaultState": 1406,
   },
   {
     "id": 103,
@@ -860,7 +918,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 1414
+    "defaultState": 1414,
   },
   {
     "id": 103,
@@ -877,7 +935,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 1414
+    "defaultState": 1414,
   },
   {
     "id": 104,
@@ -895,7 +953,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wool",
-    "defaultState": 1436
+    "defaultState": 1436,
   },
   {
     "id": 120,
@@ -912,7 +970,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 1452
+    "defaultState": 1452,
   },
   {
     "id": 121,
@@ -930,7 +988,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 1464
+    "defaultState": 1464,
   },
   {
     "id": 122,
@@ -948,7 +1006,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 1465
+    "defaultState": 1465,
   },
   {
     "id": 132,
@@ -966,7 +1024,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 1475
+    "defaultState": 1475,
   },
   {
     "id": 134,
@@ -984,7 +1042,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 1477
+    "defaultState": 1477,
   },
   {
     "id": 135,
@@ -1002,7 +1060,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 1478
+    "defaultState": 1478,
   },
   {
     "id": 136,
@@ -1020,8 +1078,11 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 1479
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 1479,
   },
   {
     "id": 137,
@@ -1039,8 +1100,12 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 1480
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 1480,
   },
   {
     "id": 138,
@@ -1058,8 +1123,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 1481
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 1481,
   },
   {
     "id": 139,
@@ -1076,7 +1147,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 1483
+    "defaultState": 1483,
   },
   {
     "id": 140,
@@ -1094,7 +1165,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 1484
+    "defaultState": 1484,
   },
   {
     "id": 141,
@@ -1112,8 +1183,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 1485
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 1485,
   },
   {
     "id": 142,
@@ -1131,8 +1208,8 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"644": true},
-    "defaultState": 1486
+    "harvestTools": { "644": true },
+    "defaultState": 1486,
   },
   {
     "id": 143,
@@ -1149,7 +1226,7 @@
     "emitLight": 14,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 1487
+    "defaultState": 1487,
   },
   {
     "id": 145,
@@ -1166,7 +1243,7 @@
     "emitLight": 15,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 1523
+    "defaultState": 1523,
   },
   {
     "id": 146,
@@ -1183,7 +1260,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 2004
+    "defaultState": 2004,
   },
   {
     "id": 147,
@@ -1201,8 +1278,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 2005
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 2005,
   },
   {
     "id": 148,
@@ -1220,7 +1303,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 2017
+    "defaultState": 2017,
   },
   {
     "id": 149,
@@ -1238,7 +1321,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 2087
+    "defaultState": 2087,
   },
   {
     "id": 150,
@@ -1255,7 +1338,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 3270
+    "defaultState": 3270,
   },
   {
     "id": 151,
@@ -1273,8 +1356,11 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 3406
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 3406,
   },
   {
     "id": 152,
@@ -1292,8 +1378,11 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 3407
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 3407,
   },
   {
     "id": 153,
@@ -1311,7 +1400,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 3408
+    "defaultState": 3408,
   },
   {
     "id": 154,
@@ -1329,7 +1418,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 3409
+    "defaultState": 3409,
   },
   {
     "id": 155,
@@ -1347,7 +1436,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 3417
+    "defaultState": 3417,
   },
   {
     "id": 156,
@@ -1365,8 +1454,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 3426
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 3426,
   },
   {
     "id": 156,
@@ -1384,8 +1479,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 3426
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 3426,
   },
   {
     "id": 157,
@@ -1403,7 +1504,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 3466
+    "defaultState": 3466,
   },
   {
     "id": 158,
@@ -1421,7 +1522,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 3530
+    "defaultState": 3530,
   },
   {
     "id": 159,
@@ -1439,7 +1540,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 3594
+    "defaultState": 3594,
   },
   {
     "id": 160,
@@ -1457,7 +1558,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 3658
+    "defaultState": 3658,
   },
   {
     "id": 161,
@@ -1475,7 +1576,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 3722
+    "defaultState": 3722,
   },
   {
     "id": 162,
@@ -1493,7 +1594,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 3786
+    "defaultState": 3786,
   },
   {
     "id": 163,
@@ -1511,7 +1612,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 3828
+    "defaultState": 3828,
   },
   {
     "id": 164,
@@ -1528,7 +1629,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 3882
+    "defaultState": 3882,
   },
   {
     "id": 165,
@@ -1546,7 +1647,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 3890
+    "defaultState": 3890,
   },
   {
     "id": 166,
@@ -1564,8 +1665,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 3920
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 3920,
   },
   {
     "id": 167,
@@ -1583,7 +1690,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 3992
+    "defaultState": 3992,
   },
   {
     "id": 168,
@@ -1601,7 +1708,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 4008
+    "defaultState": 4008,
   },
   {
     "id": 169,
@@ -1619,7 +1726,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 4024
+    "defaultState": 4024,
   },
   {
     "id": 170,
@@ -1637,7 +1744,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 4040
+    "defaultState": 4040,
   },
   {
     "id": 171,
@@ -1655,7 +1762,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 4056
+    "defaultState": 4056,
   },
   {
     "id": 172,
@@ -1673,7 +1780,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 4072
+    "defaultState": 4072,
   },
   {
     "id": 173,
@@ -1690,7 +1797,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 4094
+    "defaultState": 4094,
   },
   {
     "id": 174,
@@ -1708,8 +1815,14 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 4110
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4110,
   },
   {
     "id": 175,
@@ -1727,8 +1840,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 4122
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4122,
   },
   {
     "id": 176,
@@ -1746,7 +1865,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4176
+    "defaultState": 4176,
   },
   {
     "id": 177,
@@ -1764,7 +1883,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4178
+    "defaultState": 4178,
   },
   {
     "id": 178,
@@ -1782,7 +1901,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4180
+    "defaultState": 4180,
   },
   {
     "id": 179,
@@ -1800,7 +1919,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4182
+    "defaultState": 4182,
   },
   {
     "id": 180,
@@ -1818,7 +1937,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4184
+    "defaultState": 4184,
   },
   {
     "id": 181,
@@ -1836,7 +1955,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4186
+    "defaultState": 4186,
   },
   {
     "id": 182,
@@ -1854,8 +1973,11 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 4188
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4188,
   },
   {
     "id": 182,
@@ -1873,8 +1995,11 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 4188
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4188,
   },
   {
     "id": 183,
@@ -1891,7 +2016,7 @@
     "emitLight": 7,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 4189
+    "defaultState": 4189,
   },
   {
     "id": 183,
@@ -1908,7 +2033,7 @@
     "emitLight": 7,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 4189
+    "defaultState": 4189,
   },
   {
     "id": 185,
@@ -1926,7 +2051,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 4208
+    "defaultState": 4208,
   },
   {
     "id": 186,
@@ -1944,8 +2069,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "harvestTools": {"623": true, "628": true, "633": true, "638": true, "643": true},
-    "defaultState": 4223
+    "harvestTools": {
+      "623": true,
+      "628": true,
+      "633": true,
+      "638": true,
+      "643": true, 
+    },
+    "defaultState": 4223,
   },
   {
     "id": 187,
@@ -1963,7 +2094,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 4231
+    "defaultState": 4231,
   },
   {
     "id": 188,
@@ -1981,8 +2112,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "harvestTools": {"623": true, "628": true, "633": true, "638": true, "643": true},
-    "defaultState": 4232
+    "harvestTools": {
+      "623": true,
+      "628": true,
+      "633": true,
+      "638": true,
+      "643": true, 
+    },
+    "defaultState": 4232,
   },
   {
     "id": 189,
@@ -2000,7 +2137,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 4233
+    "defaultState": 4233,
   },
   {
     "id": 190,
@@ -2018,7 +2155,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 4249
+    "defaultState": 4249,
   },
   {
     "id": 191,
@@ -2036,7 +2173,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 4250
+    "defaultState": 4250,
   },
   {
     "id": 192,
@@ -2054,7 +2191,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4267
+    "defaultState": 4267,
   },
   {
     "id": 193,
@@ -2072,7 +2209,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4299
+    "defaultState": 4299,
   },
   {
     "id": 194,
@@ -2090,7 +2227,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 4300
+    "defaultState": 4300,
   },
   {
     "id": 195,
@@ -2108,8 +2245,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 4301
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4301,
   },
   {
     "id": 196,
@@ -2127,7 +2270,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 4302
+    "defaultState": 4302,
   },
   {
     "id": 197,
@@ -2145,7 +2288,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 4303
+    "defaultState": 4303,
   },
   {
     "id": 198,
@@ -2163,8 +2306,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 4305
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4305,
   },
   {
     "id": 199,
@@ -2182,8 +2331,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 4308
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4308,
   },
   {
     "id": 200,
@@ -2200,7 +2355,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 4310
+    "defaultState": 4310,
   },
   {
     "id": 202,
@@ -2217,7 +2372,7 @@
     "emitLight": 15,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 4315
+    "defaultState": 4315,
   },
   {
     "id": 203,
@@ -2234,7 +2389,7 @@
     "emitLight": 11,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 4316
+    "defaultState": 4316,
   },
   {
     "id": 204,
@@ -2252,7 +2407,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 4318
+    "defaultState": 4318,
   },
   {
     "id": 205,
@@ -2270,7 +2425,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 4322
+    "defaultState": 4322,
   },
   {
     "id": 207,
@@ -2287,7 +2442,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 4336
+    "defaultState": 4336,
   },
   {
     "id": 207,
@@ -2304,7 +2459,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 4336
+    "defaultState": 4336,
   },
   {
     "id": 208,
@@ -2321,7 +2476,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 4397
+    "defaultState": 4397,
   },
   {
     "id": 224,
@@ -2339,7 +2494,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4428
+    "defaultState": 4428,
   },
   {
     "id": 225,
@@ -2357,7 +2512,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4492
+    "defaultState": 4492,
   },
   {
     "id": 226,
@@ -2375,7 +2530,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4556
+    "defaultState": 4556,
   },
   {
     "id": 227,
@@ -2393,7 +2548,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4620
+    "defaultState": 4620,
   },
   {
     "id": 228,
@@ -2411,7 +2566,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4684
+    "defaultState": 4684,
   },
   {
     "id": 229,
@@ -2429,7 +2584,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4748
+    "defaultState": 4748,
   },
   {
     "id": 230,
@@ -2447,8 +2602,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 4797
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4797,
   },
   {
     "id": 234,
@@ -2466,8 +2627,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 4801
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 4801,
   },
   {
     "id": 240,
@@ -2485,7 +2652,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4807
+    "defaultState": 4807,
   },
   {
     "id": 241,
@@ -2503,7 +2670,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 4871
+    "defaultState": 4871,
   },
   {
     "id": 243,
@@ -2521,8 +2688,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5030
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5030,
   },
   {
     "id": 244,
@@ -2540,8 +2713,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5034
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5034,
   },
   {
     "id": 245,
@@ -2558,7 +2737,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 5068
+    "defaultState": 5068,
   },
   {
     "id": 246,
@@ -2576,7 +2755,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 5069
+    "defaultState": 5069,
   },
   {
     "id": 247,
@@ -2594,7 +2773,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 5070
+    "defaultState": 5070,
   },
   {
     "id": 248,
@@ -2612,7 +2791,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 5074
+    "defaultState": 5074,
   },
   {
     "id": 251,
@@ -2630,7 +2809,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 5125
+    "defaultState": 5125,
   },
   {
     "id": 252,
@@ -2648,7 +2827,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 5253
+    "defaultState": 5253,
   },
   {
     "id": 253,
@@ -2666,7 +2845,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 5261
+    "defaultState": 5261,
   },
   {
     "id": 254,
@@ -2684,8 +2863,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5297
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5297,
   },
   {
     "id": 255,
@@ -2703,8 +2888,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5377
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5377,
   },
   {
     "id": 256,
@@ -2722,7 +2913,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 5447
+    "defaultState": 5447,
   },
   {
     "id": 257,
@@ -2740,7 +2931,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 5448
+    "defaultState": 5448,
   },
   {
     "id": 258,
@@ -2758,8 +2949,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5449
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5449,
   },
   {
     "id": 259,
@@ -2777,8 +2974,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5481
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5481,
   },
   {
     "id": 260,
@@ -2796,8 +2999,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5493
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5493,
   },
   {
     "id": 261,
@@ -2815,7 +3024,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 5562
+    "defaultState": 5562,
   },
   {
     "id": 262,
@@ -2833,8 +3042,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5566
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5566,
   },
   {
     "id": 263,
@@ -2852,8 +3067,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5574
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5574,
   },
   {
     "id": 264,
@@ -2871,8 +3092,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5575
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5575,
   },
   {
     "id": 268,
@@ -2889,7 +3116,7 @@
     "emitLight": 15,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 5583
+    "defaultState": 5583,
   },
   {
     "id": 269,
@@ -2906,7 +3133,7 @@
     "emitLight": 1,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 5588
+    "defaultState": 5588,
   },
   {
     "id": 270,
@@ -2924,8 +3151,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5592
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5592,
   },
   {
     "id": 271,
@@ -2942,7 +3175,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 5593
+    "defaultState": 5593,
   },
   {
     "id": 272,
@@ -2959,7 +3192,7 @@
     "emitLight": 15,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 5595
+    "defaultState": 5595,
   },
   {
     "id": 272,
@@ -2976,7 +3209,7 @@
     "emitLight": 15,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 5595
+    "defaultState": 5595,
   },
   {
     "id": 273,
@@ -2994,7 +3227,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 5596
+    "defaultState": 5596,
   },
   {
     "id": 274,
@@ -3012,8 +3245,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5619
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5619,
   },
   {
     "id": 275,
@@ -3031,8 +3270,11 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 5688
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5688,
   },
   {
     "id": 276,
@@ -3050,8 +3292,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 5690
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5690,
   },
   {
     "id": 277,
@@ -3068,7 +3316,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 5706
+    "defaultState": 5706,
   },
   {
     "id": 278,
@@ -3085,7 +3333,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 5840
+    "defaultState": 5840,
   },
   {
     "id": 279,
@@ -3103,8 +3351,11 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 5841
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 5841,
   },
   {
     "id": 280,
@@ -3122,7 +3373,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 5853
+    "defaultState": 5853,
   },
   {
     "id": 281,
@@ -3140,7 +3391,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 5933
+    "defaultState": 5933,
   },
   {
     "id": 282,
@@ -3158,7 +3409,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 6013
+    "defaultState": 6013,
   },
   {
     "id": 283,
@@ -3175,7 +3426,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 6088
+    "defaultState": 6088,
   },
   {
     "id": 284,
@@ -3192,7 +3443,7 @@
     "emitLight": 15,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 6094
+    "defaultState": 6094,
   },
   {
     "id": 285,
@@ -3210,8 +3461,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 6098
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 6098,
   },
   {
     "id": 312,
@@ -3229,7 +3486,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 6768
+    "defaultState": 6768,
   },
   {
     "id": 313,
@@ -3247,7 +3504,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 6776
+    "defaultState": 6776,
   },
   {
     "id": 314,
@@ -3265,7 +3522,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 6793
+    "defaultState": 6793,
   },
   {
     "id": 315,
@@ -3283,7 +3540,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 6817
+    "defaultState": 6817,
   },
   {
     "id": 316,
@@ -3301,7 +3558,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 6841
+    "defaultState": 6841,
   },
   {
     "id": 317,
@@ -3319,7 +3576,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 6865
+    "defaultState": 6865,
   },
   {
     "id": 318,
@@ -3337,7 +3594,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 6889
+    "defaultState": 6889,
   },
   {
     "id": 319,
@@ -3355,7 +3612,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 6913
+    "defaultState": 6913,
   },
   {
     "id": 330,
@@ -3372,7 +3629,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 7028
+    "defaultState": 7028,
   },
   {
     "id": 332,
@@ -3390,8 +3647,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7048
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7048,
   },
   {
     "id": 335,
@@ -3409,7 +3672,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 7061
+    "defaultState": 7061,
   },
   {
     "id": 336,
@@ -3427,8 +3690,14 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7084
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7084,
   },
   {
     "id": 337,
@@ -3446,8 +3715,14 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7100
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7100,
   },
   {
     "id": 338,
@@ -3464,7 +3739,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 7117
+    "defaultState": 7117,
   },
   {
     "id": 338,
@@ -3481,7 +3756,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 7117
+    "defaultState": 7117,
   },
   {
     "id": 339,
@@ -3499,7 +3774,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 7148
+    "defaultState": 7148,
   },
   {
     "id": 339,
@@ -3517,7 +3792,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 7148
+    "defaultState": 7148,
   },
   {
     "id": 340,
@@ -3535,8 +3810,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7164
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7164,
   },
   {
     "id": 341,
@@ -3554,8 +3835,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7165
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7165,
   },
   {
     "id": 342,
@@ -3573,8 +3860,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7166
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7166,
   },
   {
     "id": 343,
@@ -3592,8 +3885,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7176
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7176,
   },
   {
     "id": 346,
@@ -3611,8 +3910,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7192
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7192,
   },
   {
     "id": 347,
@@ -3630,7 +3935,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 7274
+    "defaultState": 7274,
   },
   {
     "id": 348,
@@ -3648,8 +3953,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7286
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7286,
   },
   {
     "id": 349,
@@ -3667,8 +3978,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 7297
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 7297,
   },
   {
     "id": 365,
@@ -3685,7 +4002,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 7344
+    "defaultState": 7344,
   },
   {
     "id": 381,
@@ -3703,7 +4020,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 7836
+    "defaultState": 7836,
   },
   {
     "id": 382,
@@ -3721,7 +4038,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 7916
+    "defaultState": 7916,
   },
   {
     "id": 383,
@@ -3738,7 +4055,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 7985
+    "defaultState": 7985,
   },
   {
     "id": 384,
@@ -3755,7 +4072,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 7986
+    "defaultState": 7986,
   },
   {
     "id": 385,
@@ -3773,8 +4090,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8002
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8002,
   },
   {
     "id": 386,
@@ -3792,8 +4115,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8051
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8051,
   },
   {
     "id": 389,
@@ -3811,8 +4140,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8065
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8065,
   },
   {
     "id": 390,
@@ -3830,8 +4165,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8145
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8145,
   },
   {
     "id": 391,
@@ -3849,8 +4190,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8225
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8225,
   },
   {
     "id": 392,
@@ -3868,8 +4215,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8297
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8297,
   },
   {
     "id": 392,
@@ -3887,8 +4240,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8297
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8297,
   },
   {
     "id": 395,
@@ -3905,7 +4264,7 @@
     "emitLight": 15,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 8312
+    "defaultState": 8312,
   },
   {
     "id": 396,
@@ -3922,7 +4281,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 8314
+    "defaultState": 8314,
   },
   {
     "id": 397,
@@ -3939,7 +4298,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 8316
+    "defaultState": 8316,
   },
   {
     "id": 413,
@@ -3957,8 +4316,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8332
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8332,
   },
   {
     "id": 414,
@@ -3976,8 +4341,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8333
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8333,
   },
   {
     "id": 415,
@@ -3995,7 +4366,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 8334
+    "defaultState": 8334,
   },
   {
     "id": 416,
@@ -4013,7 +4384,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 8336
+    "defaultState": 8336,
   },
   {
     "id": 437,
@@ -4031,7 +4402,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 8587
+    "defaultState": 8587,
   },
   {
     "id": 453,
@@ -4049,7 +4420,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 8663
+    "defaultState": 8663,
   },
   {
     "id": 454,
@@ -4067,8 +4438,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8667
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8667,
   },
   {
     "id": 457,
@@ -4086,8 +4463,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8681
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8681,
   },
   {
     "id": 458,
@@ -4105,8 +4488,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8753
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8753,
   },
   {
     "id": 458,
@@ -4124,8 +4513,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8753
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8753,
   },
   {
     "id": 464,
@@ -4143,8 +4538,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8789
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8789,
   },
   {
     "id": 464,
@@ -4162,8 +4563,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8789
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8789,
   },
   {
     "id": 465,
@@ -4181,8 +4588,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8795
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8795,
   },
   {
     "id": 465,
@@ -4200,8 +4613,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8795
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8795,
   },
   {
     "id": 477,
@@ -4219,8 +4638,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 8864
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 8864,
   },
   {
     "id": 481,
@@ -4238,7 +4663,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 8875
+    "defaultState": 8875,
   },
   {
     "id": 482,
@@ -4256,7 +4681,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 8907
+    "defaultState": 8907,
   },
   {
     "id": 483,
@@ -4274,7 +4699,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 8939
+    "defaultState": 8939,
   },
   {
     "id": 484,
@@ -4292,7 +4717,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 8971
+    "defaultState": 8971,
   },
   {
     "id": 485,
@@ -4310,7 +4735,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 9003
+    "defaultState": 9003,
   },
   {
     "id": 491,
@@ -4328,7 +4753,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 9199
+    "defaultState": 9199,
   },
   {
     "id": 492,
@@ -4346,7 +4771,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 9263
+    "defaultState": 9263,
   },
   {
     "id": 493,
@@ -4364,7 +4789,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 9327
+    "defaultState": 9327,
   },
   {
     "id": 494,
@@ -4382,7 +4807,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 9391
+    "defaultState": 9391,
   },
   {
     "id": 495,
@@ -4400,7 +4825,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 9455
+    "defaultState": 9455,
   },
   {
     "id": 496,
@@ -4417,7 +4842,7 @@
     "emitLight": 14,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 9512
+    "defaultState": 9512,
   },
   {
     "id": 497,
@@ -4434,7 +4859,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 9577
+    "defaultState": 9577,
   },
   {
     "id": 498,
@@ -4451,7 +4876,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 9578
+    "defaultState": 9578,
   },
   {
     "id": 499,
@@ -4468,8 +4893,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9584
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9584,
   },
   {
     "id": 501,
@@ -4487,8 +4918,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9599
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9599,
   },
   {
     "id": 502,
@@ -4506,8 +4943,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9668
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9668,
   },
   {
     "id": 503,
@@ -4524,7 +4967,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 9669
+    "defaultState": 9669,
   },
   {
     "id": 504,
@@ -4542,7 +4985,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 9673
+    "defaultState": 9673,
   },
   {
     "id": 505,
@@ -4559,7 +5002,7 @@
     "emitLight": 15,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 9674
+    "defaultState": 9674,
   },
   {
     "id": 506,
@@ -4576,7 +5019,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 9681
+    "defaultState": 9681,
   },
   {
     "id": 507,
@@ -4593,7 +5036,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 9693
+    "defaultState": 9693,
   },
   {
     "id": 508,
@@ -4610,7 +5053,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 0,
-    "defaultState": 9699
+    "defaultState": 9699,
   },
   {
     "id": 509,
@@ -4627,8 +5070,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9703
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9703,
   },
   {
     "id": 510,
@@ -4645,7 +5094,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 9704
+    "defaultState": 9704,
   },
   {
     "id": 511,
@@ -4662,8 +5111,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9705
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9705,
   },
   {
     "id": 512,
@@ -4680,8 +5135,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9707
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9707,
   },
   {
     "id": 513,
@@ -4698,7 +5159,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 9709
+    "defaultState": 9709,
   },
   {
     "id": 514,
@@ -4715,8 +5176,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9715
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9715,
   },
   {
     "id": 515,
@@ -4733,7 +5200,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 1,
-    "defaultState": 9726
+    "defaultState": 9726,
   },
   {
     "id": 516,
@@ -4750,7 +5217,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 1,
-    "defaultState": 9732
+    "defaultState": 9732,
   },
   {
     "id": 532,
@@ -4768,8 +5235,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9824
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9824,
   },
   {
     "id": 533,
@@ -4787,8 +5260,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9828
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9828,
   },
   {
     "id": 534,
@@ -4806,8 +5285,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9832
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9832,
   },
   {
     "id": 535,
@@ -4825,8 +5310,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9836
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9836,
   },
   {
     "id": 536,
@@ -4844,8 +5335,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9840
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9840,
   },
   {
     "id": 537,
@@ -4863,8 +5360,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9844
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9844,
   },
   {
     "id": 538,
@@ -4882,8 +5385,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9848
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9848,
   },
   {
     "id": 539,
@@ -4901,8 +5410,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9852
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9852,
   },
   {
     "id": 540,
@@ -4920,8 +5435,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9856
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9856,
   },
   {
     "id": 541,
@@ -4939,8 +5460,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9860
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9860,
   },
   {
     "id": 542,
@@ -4958,8 +5485,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9864
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9864,
   },
   {
     "id": 543,
@@ -4977,8 +5510,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9868
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9868,
   },
   {
     "id": 544,
@@ -4996,8 +5535,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9872
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9872,
   },
   {
     "id": 545,
@@ -5015,8 +5560,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9876
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9876,
   },
   {
     "id": 546,
@@ -5034,8 +5585,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9880
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9880,
   },
   {
     "id": 547,
@@ -5053,8 +5610,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9884
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9884,
   },
   {
     "id": 548,
@@ -5072,8 +5635,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9888
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9888,
   },
   {
     "id": 564,
@@ -5091,7 +5660,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "dirt",
-    "defaultState": 9904
+    "defaultState": 9904,
   },
   {
     "id": 581,
@@ -5108,7 +5677,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 9946
+    "defaultState": 9946,
   },
   {
     "id": 582,
@@ -5125,7 +5694,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 9947
+    "defaultState": 9947,
   },
   {
     "id": 583,
@@ -5142,7 +5711,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 9948
+    "defaultState": 9948,
   },
   {
     "id": 584,
@@ -5160,8 +5729,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 9960
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 9960,
   },
   {
     "id": 594,
@@ -5178,7 +5753,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 9970
+    "defaultState": 9970,
   },
   {
     "id": 604,
@@ -5195,7 +5770,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 9990
+    "defaultState": 9990,
   },
   {
     "id": 609,
@@ -5212,7 +5787,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 10000
+    "defaultState": 10000,
   },
   {
     "id": 614,
@@ -5229,7 +5804,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 10010
+    "defaultState": 10010,
   },
   {
     "id": 616,
@@ -5246,7 +5821,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 10026
+    "defaultState": 10026,
   },
   {
     "id": 618,
@@ -5263,7 +5838,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 10042
+    "defaultState": 10042,
   },
   {
     "id": 625,
@@ -5280,7 +5855,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 10098
+    "defaultState": 10098,
   },
   {
     "id": 626,
@@ -5298,7 +5873,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10099
+    "defaultState": 10099,
   },
   {
     "id": 627,
@@ -5316,7 +5891,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 10101
+    "defaultState": 10101,
   },
   {
     "id": 628,
@@ -5334,7 +5909,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 10102
+    "defaultState": 10102,
   },
   {
     "id": 632,
@@ -5351,7 +5926,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 0,
-    "defaultState": 10117
+    "defaultState": 10117,
   },
   {
     "id": 633,
@@ -5369,7 +5944,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10130
+    "defaultState": 10130,
   },
   {
     "id": 634,
@@ -5387,7 +5962,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10210
+    "defaultState": 10210,
   },
   {
     "id": 635,
@@ -5405,7 +5980,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10290
+    "defaultState": 10290,
   },
   {
     "id": 636,
@@ -5423,7 +5998,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10370
+    "defaultState": 10370,
   },
   {
     "id": 637,
@@ -5441,7 +6016,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10450
+    "defaultState": 10450,
   },
   {
     "id": 638,
@@ -5459,7 +6034,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10530
+    "defaultState": 10530,
   },
   {
     "id": 639,
@@ -5477,7 +6052,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10610
+    "defaultState": 10610,
   },
   {
     "id": 640,
@@ -5495,7 +6070,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10690
+    "defaultState": 10690,
   },
   {
     "id": 641,
@@ -5513,7 +6088,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10770
+    "defaultState": 10770,
   },
   {
     "id": 642,
@@ -5531,7 +6106,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10850
+    "defaultState": 10850,
   },
   {
     "id": 643,
@@ -5549,7 +6124,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 10930
+    "defaultState": 10930,
   },
   {
     "id": 644,
@@ -5567,8 +6142,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 11010
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 11010,
   },
   {
     "id": 645,
@@ -5586,7 +6167,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 11090
+    "defaultState": 11090,
   },
   {
     "id": 646,
@@ -5604,7 +6185,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 11170
+    "defaultState": 11170,
   },
   {
     "id": 647,
@@ -5622,8 +6203,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 11242
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 11242,
   },
   {
     "id": 647,
@@ -5641,8 +6228,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 11242
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 11242,
   },
   {
     "id": 672,
@@ -5659,7 +6252,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 15236
+    "defaultState": 15236,
   },
   {
     "id": 673,
@@ -5677,7 +6270,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15237
+    "defaultState": 15237,
   },
   {
     "id": 674,
@@ -5695,7 +6288,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15242
+    "defaultState": 15242,
   },
   {
     "id": 675,
@@ -5713,8 +6306,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15254
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15254,
   },
   {
     "id": 675,
@@ -5732,8 +6331,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15254
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15254,
   },
   {
     "id": 676,
@@ -5751,8 +6356,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15262
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15262,
   },
   {
     "id": 676,
@@ -5770,8 +6381,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15262
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15262,
   },
   {
     "id": 677,
@@ -5789,7 +6406,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15269
+    "defaultState": 15269,
   },
   {
     "id": 678,
@@ -5807,7 +6424,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15270
+    "defaultState": 15270,
   },
   {
     "id": 679,
@@ -5825,8 +6442,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15275
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15275,
   },
   {
     "id": 680,
@@ -5844,7 +6467,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15286
+    "defaultState": 15286,
   },
   {
     "id": 681,
@@ -5862,7 +6485,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15299
+    "defaultState": 15299,
   },
   {
     "id": 682,
@@ -5880,7 +6503,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 15300
+    "defaultState": 15300,
   },
   {
     "id": 683,
@@ -5898,7 +6521,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "defaultState": 15305
+    "defaultState": 15305,
   },
   {
     "id": 684,
@@ -5916,8 +6539,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15339
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15339,
   },
   {
     "id": 685,
@@ -5935,8 +6564,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15343
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15343,
   },
   {
     "id": 686,
@@ -5954,7 +6589,7 @@
     "boundingBox": "block",
     "stackSize": 1,
     "material": "wood",
-    "defaultState": 15347
+    "defaultState": 15347,
   },
   {
     "id": 687,
@@ -5972,7 +6607,7 @@
     "boundingBox": "block",
     "stackSize": 1,
     "material": "wood",
-    "defaultState": 15379
+    "defaultState": 15379,
   },
   {
     "id": 688,
@@ -5989,7 +6624,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15408
+    "defaultState": 15408,
   },
   {
     "id": 689,
@@ -6007,7 +6642,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15413
+    "defaultState": 15413,
   },
   {
     "id": 690,
@@ -6025,7 +6660,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15416
+    "defaultState": 15416,
   },
   {
     "id": 691,
@@ -6043,7 +6678,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15419
+    "defaultState": 15419,
   },
   {
     "id": 692,
@@ -6061,7 +6696,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15422
+    "defaultState": 15422,
   },
   {
     "id": 693,
@@ -6079,8 +6714,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15424
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15424,
   },
   {
     "id": 694,
@@ -6097,7 +6738,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15425
+    "defaultState": 15425,
   },
   {
     "id": 695,
@@ -6115,7 +6756,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "harvestTools": {},
-    "defaultState": 15426
+    "defaultState": 15426,
   },
   {
     "id": 696,
@@ -6132,7 +6773,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15427
+    "defaultState": 15427,
   },
   {
     "id": 697,
@@ -6150,7 +6791,7 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "plant",
-    "defaultState": 15428
+    "defaultState": 15428,
   },
   {
     "id": 698,
@@ -6168,7 +6809,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15430
+    "defaultState": 15430,
   },
   {
     "id": 699,
@@ -6186,7 +6827,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15433
+    "defaultState": 15433,
   },
   {
     "id": 700,
@@ -6204,7 +6845,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15436
+    "defaultState": 15436,
   },
   {
     "id": 701,
@@ -6222,7 +6863,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15439
+    "defaultState": 15439,
   },
   {
     "id": 702,
@@ -6240,8 +6881,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15441
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15441,
   },
   {
     "id": 703,
@@ -6258,7 +6905,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15442
+    "defaultState": 15442,
   },
   {
     "id": 704,
@@ -6276,7 +6923,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "harvestTools": {},
-    "defaultState": 15443
+    "defaultState": 15443,
   },
   {
     "id": 706,
@@ -6293,7 +6940,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15470
+    "defaultState": 15470,
   },
   {
     "id": 708,
@@ -6310,7 +6957,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15497
+    "defaultState": 15497,
   },
   {
     "id": 709,
@@ -6327,7 +6974,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15498
+    "defaultState": 15498,
   },
   {
     "id": 710,
@@ -6345,7 +6992,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15499
+    "defaultState": 15499,
   },
   {
     "id": 711,
@@ -6363,7 +7010,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15500
+    "defaultState": 15500,
   },
   {
     "id": 712,
@@ -6381,7 +7028,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15504
+    "defaultState": 15504,
   },
   {
     "id": 712,
@@ -6399,7 +7046,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15504
+    "defaultState": 15504,
   },
   {
     "id": 713,
@@ -6417,7 +7064,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15510
+    "defaultState": 15510,
   },
   {
     "id": 713,
@@ -6435,7 +7082,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15510
+    "defaultState": 15510,
   },
   {
     "id": 714,
@@ -6453,8 +7100,14 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15514
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15514,
   },
   {
     "id": 715,
@@ -6472,8 +7125,14 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 15516
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 15516,
   },
   {
     "id": 716,
@@ -6491,7 +7150,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15548
+    "defaultState": 15548,
   },
   {
     "id": 717,
@@ -6509,7 +7168,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15580
+    "defaultState": 15580,
   },
   {
     "id": 718,
@@ -6527,7 +7186,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15596
+    "defaultState": 15596,
   },
   {
     "id": 719,
@@ -6545,7 +7204,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15660
+    "defaultState": 15660,
   },
   {
     "id": 720,
@@ -6563,7 +7222,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15716
+    "defaultState": 15716,
   },
   {
     "id": 721,
@@ -6581,7 +7240,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15748
+    "defaultState": 15748,
   },
   {
     "id": 722,
@@ -6599,7 +7258,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15784
+    "defaultState": 15784,
   },
   {
     "id": 723,
@@ -6617,7 +7276,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15864
+    "defaultState": 15864,
   },
   {
     "id": 724,
@@ -6634,7 +7293,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15942
+    "defaultState": 15942,
   },
   {
     "id": 725,
@@ -6651,7 +7310,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 15966
+    "defaultState": 15966,
   },
   {
     "id": 726,
@@ -6669,7 +7328,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 15992
+    "defaultState": 15992,
   },
   {
     "id": 727,
@@ -6687,7 +7346,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16056
+    "defaultState": 16056,
   },
   {
     "id": 728,
@@ -6705,7 +7364,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 16142
+    "defaultState": 16142,
   },
   {
     "id": 729,
@@ -6723,7 +7382,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 16206
+    "defaultState": 16206,
   },
   {
     "id": 730,
@@ -6741,7 +7400,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 16240
+    "defaultState": 16240,
   },
   {
     "id": 731,
@@ -6759,7 +7418,7 @@
     "boundingBox": "empty",
     "stackSize": 16,
     "material": "wood",
-    "defaultState": 16256
+    "defaultState": 16256,
   },
   {
     "id": 732,
@@ -6776,7 +7435,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 16269
+    "defaultState": 16269,
   },
   {
     "id": 733,
@@ -6793,7 +7452,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 16283
+    "defaultState": 16283,
   },
   {
     "id": 734,
@@ -6811,7 +7470,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16285
+    "defaultState": 16285,
   },
   {
     "id": 735,
@@ -6829,7 +7488,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "harvestTools": {},
-    "defaultState": 16294
+    "defaultState": 16294,
   },
   {
     "id": 736,
@@ -6847,7 +7506,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16310
+    "defaultState": 16310,
   },
   {
     "id": 737,
@@ -6865,7 +7524,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16334
+    "defaultState": 16334,
   },
   {
     "id": 738,
@@ -6882,7 +7541,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 16358
+    "defaultState": 16358,
   },
   {
     "id": 739,
@@ -6899,7 +7558,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 64,
-    "defaultState": 16359
+    "defaultState": 16359,
   },
   {
     "id": 740,
@@ -6917,8 +7576,8 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"644": true},
-    "defaultState": 16360
+    "harvestTools": { "644": true },
+    "defaultState": 16360,
   },
   {
     "id": 741,
@@ -6936,8 +7595,8 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"644": true},
-    "defaultState": 16361
+    "harvestTools": { "644": true },
+    "defaultState": 16361,
   },
   {
     "id": 742,
@@ -6955,8 +7614,8 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"644": true},
-    "defaultState": 16362
+    "harvestTools": { "644": true },
+    "defaultState": 16362,
   },
   {
     "id": 743,
@@ -6974,8 +7633,8 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"644": true},
-    "defaultState": 16363
+    "harvestTools": { "644": true },
+    "defaultState": 16363,
   },
   {
     "id": 748,
@@ -6993,8 +7652,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 16372
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 16372,
   },
   {
     "id": 749,
@@ -7012,8 +7677,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 16373
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 16373,
   },
   {
     "id": 750,
@@ -7031,7 +7702,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16385
+    "defaultState": 16385,
   },
   {
     "id": 751,
@@ -7049,8 +7720,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 16457
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 16457,
   },
   {
     "id": 752,
@@ -7068,7 +7745,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16781
+    "defaultState": 16781,
   },
   {
     "id": 752,
@@ -7086,7 +7763,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16781
+    "defaultState": 16781,
   },
   {
     "id": 753,
@@ -7104,8 +7781,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 16784
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 16784,
   },
   {
     "id": 754,
@@ -7123,8 +7806,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 16785
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 16785,
   },
   {
     "id": 755,
@@ -7142,8 +7831,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 16786
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 16786,
   },
   {
     "id": 756,
@@ -7160,7 +7855,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "stackSize": 0,
-    "defaultState": 16787
+    "defaultState": 16787,
   },
   {
     "id": 757,
@@ -7178,7 +7873,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16791
+    "defaultState": 16791,
   },
   {
     "id": 757,
@@ -7196,7 +7891,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16791
+    "defaultState": 16791,
   },
   {
     "id": 758,
@@ -7214,7 +7909,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 16805
+    "defaultState": 16805,
   },
   {
     "id": 759,
@@ -7232,8 +7927,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 16877
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 16877,
   },
   {
     "id": 760,
@@ -7251,8 +7952,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 17198
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 17198,
   },
   {
     "id": 761,
@@ -7270,7 +7977,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 17210
+    "defaultState": 17210,
   },
   {
     "id": 762,
@@ -7288,7 +7995,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 17282
+    "defaultState": 17282,
   },
   {
     "id": 762,
@@ -7306,7 +8013,7 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "wood",
-    "defaultState": 17282
+    "defaultState": 17282,
   },
   {
     "id": 763,
@@ -7324,8 +8031,14 @@
     "boundingBox": "empty",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 17286
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 17286,
   },
   {
     "id": 764,
@@ -7342,7 +8055,7 @@
     "emitLight": 0,
     "boundingBox": "empty",
     "stackSize": 64,
-    "defaultState": 17296
+    "defaultState": 17296,
   },
   {
     "id": 765,
@@ -7360,8 +8073,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 17314
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 17314,
   },
   {
     "id": 766,
@@ -7379,8 +8098,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 17635
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 17635,
   },
   {
     "id": 767,
@@ -7398,8 +8123,14 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 17636
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 17636,
   },
   {
     "id": 768,
@@ -7417,11 +8148,39 @@
     "boundingBox": "block",
     "stackSize": 64,
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 17637
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 17637,
   },
-  {"id": 785, "displayName": "Black Candle", "name": "sea_pickle", "hardness": 0.1, "resistance": 0.1, "minStateId": 6571, "maxStateId": 6578, "drops": [], "diggable": true, "defaultState": 17897},
-  {"id": 802, "displayName": "Black Candle Cake", "name": "cake", "hardness": 0, "resistance": 0, "minStateId": 906, "maxStateId": 912, "drops": [], "diggable": true, "defaultState": 17943},
+  {
+    "id": 785,
+    "displayName": "Black Candle",
+    "name": "sea_pickle",
+    "hardness": 0.1,
+    "resistance": 0.1,
+    "minStateId": 6571,
+    "maxStateId": 6578,
+    "drops": [],
+    "diggable": true,
+    "defaultState": 17897, 
+  },
+  {
+    "id": 802,
+    "displayName": "Black Candle Cake",
+    "name": "cake",
+    "hardness": 0,
+    "resistance": 0,
+    "minStateId": 906,
+    "maxStateId": 912,
+    "drops": [],
+    "diggable": true,
+    "defaultState": 17943, 
+  },
   {
     "id": 803,
     "displayName": "Block of Amethyst",
@@ -7438,8 +8197,11 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"639": true, "644": true},
-    "defaultState": 17944
+    "harvestTools": {
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 17944,
   },
   {
     "id": 804,
@@ -7457,7 +8219,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 17945
+    "defaultState": 17945,
   },
   {
     "id": 805,
@@ -7475,7 +8237,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 17963
+    "defaultState": 17963,
   },
   {
     "id": 806,
@@ -7493,7 +8255,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 17987
+    "defaultState": 17987,
   },
   {
     "id": 807,
@@ -7511,7 +8273,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18011
+    "defaultState": 18011,
   },
   {
     "id": 808,
@@ -7529,7 +8291,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18035
+    "defaultState": 18035,
   },
   {
     "id": 809,
@@ -7547,8 +8309,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18042
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18042,
   },
   {
     "id": 810,
@@ -7566,8 +8334,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18043
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18043,
   },
   {
     "id": 811,
@@ -7584,7 +8358,7 @@
     "filterLight": 15,
     "emitLight": 0,
     "boundingBox": "block",
-    "defaultState": 18044
+    "defaultState": 18044,
   },
   {
     "id": 812,
@@ -7602,7 +8376,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 18045
+    "defaultState": 18045,
   },
   {
     "id": 813,
@@ -7620,7 +8394,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 18047
+    "defaultState": 18047,
   },
   {
     "id": 814,
@@ -7632,7 +8406,7 @@
     "maxStateId": 5607,
     "drops": [],
     "diggable": true,
-    "defaultState": 18142
+    "defaultState": 18142,
   },
   {
     "id": 815,
@@ -7644,9 +8418,20 @@
     "maxStateId": 7495,
     "drops": [],
     "diggable": true,
-    "defaultState": 18143
+    "defaultState": 18143,
   },
-  {"id": 816, "displayName": "Exposed Copper", "name": "exposed_copper", "hardness": 3, "resistance": 6, "minStateId": 4701, "maxStateId": 4701, "drops": [], "diggable": true, "defaultState": 18144},
+  {
+    "id": 816,
+    "displayName": "Exposed Copper",
+    "name": "exposed_copper",
+    "hardness": 3,
+    "resistance": 6,
+    "minStateId": 4701,
+    "maxStateId": 4701,
+    "drops": [],
+    "diggable": true,
+    "defaultState": 18144, 
+  },
   {
     "id": 817,
     "displayName": "Block of Copper",
@@ -7663,8 +8448,12 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 18145
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18145,
   },
   {
     "id": 818,
@@ -7682,8 +8471,12 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 18146
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18146,
   },
   {
     "id": 819,
@@ -7695,7 +8488,7 @@
     "maxStateId": 5608,
     "drops": [],
     "diggable": true,
-    "defaultState": 18147
+    "defaultState": 18147,
   },
   {
     "id": 820,
@@ -7713,8 +8506,12 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 18148
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18148,
   },
   {
     "id": 821,
@@ -7726,7 +8523,7 @@
     "maxStateId": 4702,
     "drops": [],
     "diggable": true,
-    "defaultState": 18149
+    "defaultState": 18149,
   },
   {
     "id": 822,
@@ -7744,8 +8541,12 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 18150
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18150,
   },
   {
     "id": 823,
@@ -7763,7 +8564,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18162
+    "defaultState": 18162,
   },
   {
     "id": 824,
@@ -7781,7 +8582,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18242
+    "defaultState": 18242,
   },
   {
     "id": 825,
@@ -7799,7 +8600,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18322
+    "defaultState": 18322,
   },
   {
     "id": 826,
@@ -7817,7 +8618,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18402
+    "defaultState": 18402,
   },
   {
     "id": 827,
@@ -7835,8 +8636,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18474
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18474,
   },
   {
     "id": 827,
@@ -7854,8 +8661,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18474
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18474,
   },
   {
     "id": 828,
@@ -7873,8 +8686,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18480
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18480,
   },
   {
     "id": 828,
@@ -7892,8 +8711,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18480
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18480,
   },
   {
     "id": 829,
@@ -7911,8 +8736,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18486
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18486,
   },
   {
     "id": 829,
@@ -7930,8 +8761,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18486
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18486,
   },
   {
     "id": 830,
@@ -7949,8 +8786,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18492
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18492,
   },
   {
     "id": 830,
@@ -7968,8 +8811,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18492
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18492,
   },
   {
     "id": 831,
@@ -7981,7 +8830,7 @@
     "maxStateId": 7439,
     "drops": [],
     "diggable": true,
-    "defaultState": 18495
+    "defaultState": 18495,
   },
   {
     "id": 832,
@@ -7993,7 +8842,7 @@
     "maxStateId": 7481,
     "drops": [],
     "diggable": true,
-    "defaultState": 18496
+    "defaultState": 18496,
   },
   {
     "id": 833,
@@ -8005,7 +8854,7 @@
     "maxStateId": 7453,
     "drops": [],
     "diggable": true,
-    "defaultState": 18497
+    "defaultState": 18497,
   },
   {
     "id": 834,
@@ -8017,7 +8866,7 @@
     "maxStateId": 7482,
     "drops": [],
     "diggable": true,
-    "defaultState": 18498
+    "defaultState": 18498,
   },
   {
     "id": 835,
@@ -8029,7 +8878,7 @@
     "maxStateId": 7454,
     "drops": [],
     "diggable": true,
-    "defaultState": 18499
+    "defaultState": 18499,
   },
   {
     "id": 836,
@@ -8047,8 +8896,12 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 18500
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18500,
   },
   {
     "id": 837,
@@ -8066,7 +8919,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18512
+    "defaultState": 18512,
   },
   {
     "id": 838,
@@ -8084,7 +8937,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18592
+    "defaultState": 18592,
   },
   {
     "id": 839,
@@ -8102,7 +8955,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18672
+    "defaultState": 18672,
   },
   {
     "id": 840,
@@ -8120,8 +8973,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18744
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18744,
   },
   {
     "id": 840,
@@ -8139,8 +8998,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18744
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18744,
   },
   {
     "id": 841,
@@ -8158,8 +9023,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18750
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18750,
   },
   {
     "id": 841,
@@ -8177,8 +9048,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18750
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18750,
   },
   {
     "id": 842,
@@ -8196,8 +9073,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18756
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18756,
   },
   {
     "id": 842,
@@ -8215,8 +9098,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18756
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18756,
   },
   {
     "id": 843,
@@ -8234,8 +9123,12 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"629": true, "639": true, "644": true},
-    "defaultState": 18768
+    "harvestTools": {
+      "629": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18768,
   },
   {
     "id": 844,
@@ -8253,7 +9146,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "rock",
-    "defaultState": 18776
+    "defaultState": 18776,
   },
   {
     "id": 845,
@@ -8271,8 +9164,14 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "harvestTools": {"624": true, "629": true, "634": true, "639": true, "644": true},
-    "defaultState": 18791
+    "harvestTools": {
+      "624": true,
+      "629": true,
+      "634": true,
+      "639": true,
+      "644": true, 
+    },
+    "defaultState": 18791,
   },
   {
     "id": 848,
@@ -8289,7 +9188,7 @@
     "filterLight": 15,
     "emitLight": 0,
     "boundingBox": "block",
-    "defaultState": 18846
+    "defaultState": 18846,
   },
   {
     "id": 849,
@@ -8306,7 +9205,7 @@
     "filterLight": 0,
     "emitLight": 0,
     "boundingBox": "block",
-    "defaultState": 18847
+    "defaultState": 18847,
   },
   {
     "id": 850,
@@ -8323,7 +9222,7 @@
     "filterLight": 0,
     "emitLight": 0,
     "boundingBox": "block",
-    "defaultState": 18848
+    "defaultState": 18848,
   },
   {
     "id": 851,
@@ -8340,7 +9239,7 @@
     "filterLight": 0,
     "emitLight": 0,
     "boundingBox": "block",
-    "defaultState": 18849
+    "defaultState": 18849,
   },
   {
     "id": 852,
@@ -8358,7 +9257,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 18850
+    "defaultState": 18850,
   },
   {
     "id": 853,
@@ -8376,7 +9275,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 18852
+    "defaultState": 18852,
   },
   {
     "id": 855,
@@ -8394,7 +9293,7 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 18894
+    "defaultState": 18894,
   },
   {
     "id": 856,
@@ -8411,7 +9310,7 @@
     "filterLight": 15,
     "emitLight": 0,
     "boundingBox": "block",
-    "defaultState": 18895
+    "defaultState": 18895,
   },
   {
     "id": 857,
@@ -8429,198 +9328,1158 @@
     "emitLight": 0,
     "boundingBox": "block",
     "material": "UNKNOWN_MATERIAL",
-    "defaultState": 18896
+    "defaultState": 18896,
   },
-  {"name": "waxed_oxidized_double_cut_copper_slab", "minStateId": 7479, "maxStateId": 7480, "displayName": "Waxed Oxidized Double Cut Copper Slab"},
-  {"name": "waxed_oxidized_cut_copper_stairs", "minStateId": 7471, "maxStateId": 7478, "displayName": "Waxed Oxidized Cut Copper Stairs"},
-  {"name": "waxed_oxidized_cut_copper_slab", "minStateId": 7469, "maxStateId": 7470, "displayName": "Waxed Oxidized Cut Copper Slab"},
-  {"name": "waxed_oxidized_cut_copper", "minStateId": 7468, "maxStateId": 7468, "displayName": "Waxed Oxidized Cut Copper"},
-  {"name": "waxed_oxidized_copper", "minStateId": 7467, "maxStateId": 7467, "displayName": "Waxed Oxidized Copper"},
-  {"name": "unknown", "minStateId": 7217, "maxStateId": 7217, "displayName": "Unknown"},
-  {"name": "underwater_torch", "minStateId": 7210, "maxStateId": 7215, "displayName": "Underwater Torch"},
-  {"name": "stonecutter", "minStateId": 7048, "maxStateId": 7048, "displayName": "Stonecutter"},
-  {"name": "smooth_basalt", "minStateId": 6640, "maxStateId": 6640, "displayName": "Smooth Basalt"},
-  {"name": "reserved6", "minStateId": 6521, "maxStateId": 6521, "displayName": "Reserved6"},
-  {"name": "raw_iron_block", "minStateId": 6412, "maxStateId": 6412, "displayName": "Raw Iron Block"},
-  {"name": "raw_gold_block", "minStateId": 6411, "maxStateId": 6411, "displayName": "Raw Gold Block"},
-  {"name": "raw_copper_block", "minStateId": 6410, "maxStateId": 6410, "displayName": "Raw Copper Block"},
-  {"name": "polished_deepslate_wall", "minStateId": 6059, "maxStateId": 6220, "displayName": "Polished Deepslate Wall"},
-  {"name": "polished_deepslate_stairs", "minStateId": 6051, "maxStateId": 6058, "displayName": "Polished Deepslate Stairs"},
-  {"name": "polished_deepslate_slab", "minStateId": 6049, "maxStateId": 6050, "displayName": "Polished Deepslate Slab"},
-  {"name": "polished_deepslate_double_slab", "minStateId": 6047, "maxStateId": 6048, "displayName": "Polished Deepslate Double Slab"},
-  {"name": "polished_deepslate", "minStateId": 6046, "maxStateId": 6046, "displayName": "Polished Deepslate"},
-  {"name": "netherreactor", "minStateId": 5570, "maxStateId": 5570, "displayName": "Netherreactor"},
-  {"name": "lit_deepslate_redstone_ore", "minStateId": 5419, "maxStateId": 5419, "displayName": "Lit Deepslate Redstone Ore"},
-  {"name": "light_block", "minStateId": 5363, "maxStateId": 5378, "displayName": "Light Block"},
-  {"name": "lava_cauldron", "minStateId": 5294, "maxStateId": 5314, "displayName": "Lava Cauldron"},
-  {"name": "invisibleBedrock", "minStateId": 5037, "maxStateId": 5037, "displayName": "InvisibleBedrock"},
-  {"name": "info_update2", "minStateId": 5036, "maxStateId": 5036, "displayName": "Info Update2"},
-  {"name": "info_update", "minStateId": 5035, "maxStateId": 5035, "displayName": "Info Update"},
-  {"name": "infested_deepslate", "minStateId": 5032, "maxStateId": 5034, "displayName": "Infested Deepslate"},
-  {"name": "hard_stained_glass_pane", "minStateId": 4972, "maxStateId": 4987, "displayName": "Hard Stained Glass Pane"},
-  {"name": "hard_stained_glass", "minStateId": 4956, "maxStateId": 4971, "displayName": "Hard Stained Glass"},
-  {"name": "hard_glass_pane", "minStateId": 4955, "maxStateId": 4955, "displayName": "Hard Glass Pane"},
-  {"name": "hard_glass", "minStateId": 4954, "maxStateId": 4954, "displayName": "Hard Glass"},
-  {"name": "glowingobsidian", "minStateId": 4898, "maxStateId": 4898, "displayName": "Glowingobsidian"},
-  {"name": "glow_frame", "minStateId": 4822, "maxStateId": 4833, "displayName": "Glow Frame"},
-  {"name": "frame", "minStateId": 4797, "maxStateId": 4808, "displayName": "Frame"},
-  {"name": "flower_pot", "minStateId": 4762, "maxStateId": 4763, "displayName": "Flower Pot"},
-  {"name": "element_99", "minStateId": 4665, "maxStateId": 4665, "displayName": "Element 99"},
-  {"name": "element_98", "minStateId": 4664, "maxStateId": 4664, "displayName": "Element 98"},
-  {"name": "element_97", "minStateId": 4663, "maxStateId": 4663, "displayName": "Element 97"},
-  {"name": "element_96", "minStateId": 4662, "maxStateId": 4662, "displayName": "Element 96"},
-  {"name": "element_95", "minStateId": 4661, "maxStateId": 4661, "displayName": "Element 95"},
-  {"name": "element_94", "minStateId": 4660, "maxStateId": 4660, "displayName": "Element 94"},
-  {"name": "element_93", "minStateId": 4659, "maxStateId": 4659, "displayName": "Element 93"},
-  {"name": "element_92", "minStateId": 4658, "maxStateId": 4658, "displayName": "Element 92"},
-  {"name": "element_91", "minStateId": 4657, "maxStateId": 4657, "displayName": "Element 91"},
-  {"name": "element_90", "minStateId": 4656, "maxStateId": 4656, "displayName": "Element 90"},
-  {"name": "element_9", "minStateId": 4655, "maxStateId": 4655, "displayName": "Element 9"},
-  {"name": "element_89", "minStateId": 4654, "maxStateId": 4654, "displayName": "Element 89"},
-  {"name": "element_88", "minStateId": 4653, "maxStateId": 4653, "displayName": "Element 88"},
-  {"name": "element_87", "minStateId": 4652, "maxStateId": 4652, "displayName": "Element 87"},
-  {"name": "element_86", "minStateId": 4651, "maxStateId": 4651, "displayName": "Element 86"},
-  {"name": "element_85", "minStateId": 4650, "maxStateId": 4650, "displayName": "Element 85"},
-  {"name": "element_84", "minStateId": 4649, "maxStateId": 4649, "displayName": "Element 84"},
-  {"name": "element_83", "minStateId": 4648, "maxStateId": 4648, "displayName": "Element 83"},
-  {"name": "element_82", "minStateId": 4647, "maxStateId": 4647, "displayName": "Element 82"},
-  {"name": "element_81", "minStateId": 4646, "maxStateId": 4646, "displayName": "Element 81"},
-  {"name": "element_80", "minStateId": 4645, "maxStateId": 4645, "displayName": "Element 80"},
-  {"name": "element_8", "minStateId": 4644, "maxStateId": 4644, "displayName": "Element 8"},
-  {"name": "element_79", "minStateId": 4643, "maxStateId": 4643, "displayName": "Element 79"},
-  {"name": "element_78", "minStateId": 4642, "maxStateId": 4642, "displayName": "Element 78"},
-  {"name": "element_77", "minStateId": 4641, "maxStateId": 4641, "displayName": "Element 77"},
-  {"name": "element_76", "minStateId": 4640, "maxStateId": 4640, "displayName": "Element 76"},
-  {"name": "element_75", "minStateId": 4639, "maxStateId": 4639, "displayName": "Element 75"},
-  {"name": "element_74", "minStateId": 4638, "maxStateId": 4638, "displayName": "Element 74"},
-  {"name": "element_73", "minStateId": 4637, "maxStateId": 4637, "displayName": "Element 73"},
-  {"name": "element_72", "minStateId": 4636, "maxStateId": 4636, "displayName": "Element 72"},
-  {"name": "element_71", "minStateId": 4635, "maxStateId": 4635, "displayName": "Element 71"},
-  {"name": "element_70", "minStateId": 4634, "maxStateId": 4634, "displayName": "Element 70"},
-  {"name": "element_7", "minStateId": 4633, "maxStateId": 4633, "displayName": "Element 7"},
-  {"name": "element_69", "minStateId": 4632, "maxStateId": 4632, "displayName": "Element 69"},
-  {"name": "element_68", "minStateId": 4631, "maxStateId": 4631, "displayName": "Element 68"},
-  {"name": "element_67", "minStateId": 4630, "maxStateId": 4630, "displayName": "Element 67"},
-  {"name": "element_66", "minStateId": 4629, "maxStateId": 4629, "displayName": "Element 66"},
-  {"name": "element_65", "minStateId": 4628, "maxStateId": 4628, "displayName": "Element 65"},
-  {"name": "element_64", "minStateId": 4627, "maxStateId": 4627, "displayName": "Element 64"},
-  {"name": "element_63", "minStateId": 4626, "maxStateId": 4626, "displayName": "Element 63"},
-  {"name": "element_62", "minStateId": 4625, "maxStateId": 4625, "displayName": "Element 62"},
-  {"name": "element_61", "minStateId": 4624, "maxStateId": 4624, "displayName": "Element 61"},
-  {"name": "element_60", "minStateId": 4623, "maxStateId": 4623, "displayName": "Element 60"},
-  {"name": "element_6", "minStateId": 4622, "maxStateId": 4622, "displayName": "Element 6"},
-  {"name": "element_59", "minStateId": 4621, "maxStateId": 4621, "displayName": "Element 59"},
-  {"name": "element_58", "minStateId": 4620, "maxStateId": 4620, "displayName": "Element 58"},
-  {"name": "element_57", "minStateId": 4619, "maxStateId": 4619, "displayName": "Element 57"},
-  {"name": "element_56", "minStateId": 4618, "maxStateId": 4618, "displayName": "Element 56"},
-  {"name": "element_55", "minStateId": 4617, "maxStateId": 4617, "displayName": "Element 55"},
-  {"name": "element_54", "minStateId": 4616, "maxStateId": 4616, "displayName": "Element 54"},
-  {"name": "element_53", "minStateId": 4615, "maxStateId": 4615, "displayName": "Element 53"},
-  {"name": "element_52", "minStateId": 4614, "maxStateId": 4614, "displayName": "Element 52"},
-  {"name": "element_51", "minStateId": 4613, "maxStateId": 4613, "displayName": "Element 51"},
-  {"name": "element_50", "minStateId": 4612, "maxStateId": 4612, "displayName": "Element 50"},
-  {"name": "element_5", "minStateId": 4611, "maxStateId": 4611, "displayName": "Element 5"},
-  {"name": "element_49", "minStateId": 4610, "maxStateId": 4610, "displayName": "Element 49"},
-  {"name": "element_48", "minStateId": 4609, "maxStateId": 4609, "displayName": "Element 48"},
-  {"name": "element_47", "minStateId": 4608, "maxStateId": 4608, "displayName": "Element 47"},
-  {"name": "element_46", "minStateId": 4607, "maxStateId": 4607, "displayName": "Element 46"},
-  {"name": "element_45", "minStateId": 4606, "maxStateId": 4606, "displayName": "Element 45"},
-  {"name": "element_44", "minStateId": 4605, "maxStateId": 4605, "displayName": "Element 44"},
-  {"name": "element_43", "minStateId": 4604, "maxStateId": 4604, "displayName": "Element 43"},
-  {"name": "element_42", "minStateId": 4603, "maxStateId": 4603, "displayName": "Element 42"},
-  {"name": "element_41", "minStateId": 4602, "maxStateId": 4602, "displayName": "Element 41"},
-  {"name": "element_40", "minStateId": 4601, "maxStateId": 4601, "displayName": "Element 40"},
-  {"name": "element_4", "minStateId": 4600, "maxStateId": 4600, "displayName": "Element 4"},
-  {"name": "element_39", "minStateId": 4599, "maxStateId": 4599, "displayName": "Element 39"},
-  {"name": "element_38", "minStateId": 4598, "maxStateId": 4598, "displayName": "Element 38"},
-  {"name": "element_37", "minStateId": 4597, "maxStateId": 4597, "displayName": "Element 37"},
-  {"name": "element_36", "minStateId": 4596, "maxStateId": 4596, "displayName": "Element 36"},
-  {"name": "element_35", "minStateId": 4595, "maxStateId": 4595, "displayName": "Element 35"},
-  {"name": "element_34", "minStateId": 4594, "maxStateId": 4594, "displayName": "Element 34"},
-  {"name": "element_33", "minStateId": 4593, "maxStateId": 4593, "displayName": "Element 33"},
-  {"name": "element_32", "minStateId": 4592, "maxStateId": 4592, "displayName": "Element 32"},
-  {"name": "element_31", "minStateId": 4591, "maxStateId": 4591, "displayName": "Element 31"},
-  {"name": "element_30", "minStateId": 4590, "maxStateId": 4590, "displayName": "Element 30"},
-  {"name": "element_3", "minStateId": 4589, "maxStateId": 4589, "displayName": "Element 3"},
-  {"name": "element_29", "minStateId": 4588, "maxStateId": 4588, "displayName": "Element 29"},
-  {"name": "element_28", "minStateId": 4587, "maxStateId": 4587, "displayName": "Element 28"},
-  {"name": "element_27", "minStateId": 4586, "maxStateId": 4586, "displayName": "Element 27"},
-  {"name": "element_26", "minStateId": 4585, "maxStateId": 4585, "displayName": "Element 26"},
-  {"name": "element_25", "minStateId": 4584, "maxStateId": 4584, "displayName": "Element 25"},
-  {"name": "element_24", "minStateId": 4583, "maxStateId": 4583, "displayName": "Element 24"},
-  {"name": "element_23", "minStateId": 4582, "maxStateId": 4582, "displayName": "Element 23"},
-  {"name": "element_22", "minStateId": 4581, "maxStateId": 4581, "displayName": "Element 22"},
-  {"name": "element_21", "minStateId": 4580, "maxStateId": 4580, "displayName": "Element 21"},
-  {"name": "element_20", "minStateId": 4579, "maxStateId": 4579, "displayName": "Element 20"},
-  {"name": "element_2", "minStateId": 4578, "maxStateId": 4578, "displayName": "Element 2"},
-  {"name": "element_19", "minStateId": 4577, "maxStateId": 4577, "displayName": "Element 19"},
-  {"name": "element_18", "minStateId": 4576, "maxStateId": 4576, "displayName": "Element 18"},
-  {"name": "element_17", "minStateId": 4575, "maxStateId": 4575, "displayName": "Element 17"},
-  {"name": "element_16", "minStateId": 4574, "maxStateId": 4574, "displayName": "Element 16"},
-  {"name": "element_15", "minStateId": 4573, "maxStateId": 4573, "displayName": "Element 15"},
-  {"name": "element_14", "minStateId": 4572, "maxStateId": 4572, "displayName": "Element 14"},
-  {"name": "element_13", "minStateId": 4571, "maxStateId": 4571, "displayName": "Element 13"},
-  {"name": "element_12", "minStateId": 4570, "maxStateId": 4570, "displayName": "Element 12"},
-  {"name": "element_118", "minStateId": 4569, "maxStateId": 4569, "displayName": "Element 118"},
-  {"name": "element_117", "minStateId": 4568, "maxStateId": 4568, "displayName": "Element 117"},
-  {"name": "element_116", "minStateId": 4567, "maxStateId": 4567, "displayName": "Element 116"},
-  {"name": "element_115", "minStateId": 4566, "maxStateId": 4566, "displayName": "Element 115"},
-  {"name": "element_114", "minStateId": 4565, "maxStateId": 4565, "displayName": "Element 114"},
-  {"name": "element_113", "minStateId": 4564, "maxStateId": 4564, "displayName": "Element 113"},
-  {"name": "element_112", "minStateId": 4563, "maxStateId": 4563, "displayName": "Element 112"},
-  {"name": "element_111", "minStateId": 4562, "maxStateId": 4562, "displayName": "Element 111"},
-  {"name": "element_110", "minStateId": 4561, "maxStateId": 4561, "displayName": "Element 110"},
-  {"name": "element_11", "minStateId": 4560, "maxStateId": 4560, "displayName": "Element 11"},
-  {"name": "element_109", "minStateId": 4559, "maxStateId": 4559, "displayName": "Element 109"},
-  {"name": "element_108", "minStateId": 4558, "maxStateId": 4558, "displayName": "Element 108"},
-  {"name": "element_107", "minStateId": 4557, "maxStateId": 4557, "displayName": "Element 107"},
-  {"name": "element_106", "minStateId": 4556, "maxStateId": 4556, "displayName": "Element 106"},
-  {"name": "element_105", "minStateId": 4555, "maxStateId": 4555, "displayName": "Element 105"},
-  {"name": "element_104", "minStateId": 4554, "maxStateId": 4554, "displayName": "Element 104"},
-  {"name": "element_103", "minStateId": 4553, "maxStateId": 4553, "displayName": "Element 103"},
-  {"name": "element_102", "minStateId": 4552, "maxStateId": 4552, "displayName": "Element 102"},
-  {"name": "element_101", "minStateId": 4551, "maxStateId": 4551, "displayName": "Element 101"},
-  {"name": "element_100", "minStateId": 4550, "maxStateId": 4550, "displayName": "Element 100"},
-  {"name": "element_10", "minStateId": 4549, "maxStateId": 4549, "displayName": "Element 10"},
-  {"name": "element_1", "minStateId": 4548, "maxStateId": 4548, "displayName": "Element 1"},
-  {"name": "element_0", "minStateId": 4547, "maxStateId": 4547, "displayName": "Element 0"},
-  {"name": "deny", "minStateId": 4410, "maxStateId": 4410, "displayName": "Deny"},
-  {"name": "deepslate_tiles", "minStateId": 4409, "maxStateId": 4409, "displayName": "Deepslate Tiles"},
-  {"name": "deepslate_tile_wall", "minStateId": 4247, "maxStateId": 4408, "displayName": "Deepslate Tile Wall"},
-  {"name": "deepslate_tile_stairs", "minStateId": 4239, "maxStateId": 4246, "displayName": "Deepslate Tile Stairs"},
-  {"name": "deepslate_tile_slab", "minStateId": 4237, "maxStateId": 4238, "displayName": "Deepslate Tile Slab"},
-  {"name": "deepslate_tile_double_slab", "minStateId": 4235, "maxStateId": 4236, "displayName": "Deepslate Tile Double Slab"},
-  {"name": "deepslate_redstone_ore", "minStateId": 4234, "maxStateId": 4234, "displayName": "Deepslate Redstone Ore"},
-  {"name": "deepslate_lapis_ore", "minStateId": 4233, "maxStateId": 4233, "displayName": "Deepslate Lapis Ore"},
-  {"name": "deepslate_iron_ore", "minStateId": 4232, "maxStateId": 4232, "displayName": "Deepslate Iron Ore"},
-  {"name": "deepslate_gold_ore", "minStateId": 4231, "maxStateId": 4231, "displayName": "Deepslate Gold Ore"},
-  {"name": "deepslate_emerald_ore", "minStateId": 4230, "maxStateId": 4230, "displayName": "Deepslate Emerald Ore"},
-  {"name": "deepslate_diamond_ore", "minStateId": 4229, "maxStateId": 4229, "displayName": "Deepslate Diamond Ore"},
-  {"name": "deepslate_copper_ore", "minStateId": 4228, "maxStateId": 4228, "displayName": "Deepslate Copper Ore"},
-  {"name": "deepslate_coal_ore", "minStateId": 4227, "maxStateId": 4227, "displayName": "Deepslate Coal Ore"},
-  {"name": "deepslate_bricks", "minStateId": 4226, "maxStateId": 4226, "displayName": "Deepslate Bricks"},
-  {"name": "deepslate_brick_wall", "minStateId": 4064, "maxStateId": 4225, "displayName": "Deepslate Brick Wall"},
-  {"name": "deepslate_brick_stairs", "minStateId": 4056, "maxStateId": 4063, "displayName": "Deepslate Brick Stairs"},
-  {"name": "deepslate_brick_slab", "minStateId": 4054, "maxStateId": 4055, "displayName": "Deepslate Brick Slab"},
-  {"name": "deepslate_brick_double_slab", "minStateId": 4052, "maxStateId": 4053, "displayName": "Deepslate Brick Double Slab"},
-  {"name": "deepslate", "minStateId": 4049, "maxStateId": 4051, "displayName": "Deepslate"},
-  {"name": "cracked_deepslate_tiles", "minStateId": 3727, "maxStateId": 3727, "displayName": "Cracked Deepslate Tiles"},
-  {"name": "cracked_deepslate_bricks", "minStateId": 3726, "maxStateId": 3726, "displayName": "Cracked Deepslate Bricks"},
-  {"name": "colored_torch_rg", "minStateId": 3570, "maxStateId": 3581, "displayName": "Colored Torch Rg"},
-  {"name": "colored_torch_bp", "minStateId": 3558, "maxStateId": 3569, "displayName": "Colored Torch Bp"},
-  {"name": "cobbled_deepslate_wall", "minStateId": 1115, "maxStateId": 1276, "displayName": "Cobbled Deepslate Wall"},
-  {"name": "cobbled_deepslate_stairs", "minStateId": 1107, "maxStateId": 1114, "displayName": "Cobbled Deepslate Stairs"},
-  {"name": "cobbled_deepslate_slab", "minStateId": 1105, "maxStateId": 1106, "displayName": "Cobbled Deepslate Slab"},
-  {"name": "cobbled_deepslate_double_slab", "minStateId": 1103, "maxStateId": 1104, "displayName": "Cobbled Deepslate Double Slab"},
-  {"name": "cobbled_deepslate", "minStateId": 1102, "maxStateId": 1102, "displayName": "Cobbled Deepslate"},
-  {"name": "chiseled_deepslate", "minStateId": 1089, "maxStateId": 1089, "displayName": "Chiseled Deepslate"},
-  {"name": "chemistry_table", "minStateId": 1067, "maxStateId": 1082, "displayName": "Chemistry Table"},
-  {"name": "chemical_heat", "minStateId": 1066, "maxStateId": 1066, "displayName": "Chemical Heat"},
-  {"name": "cave_vines_head_with_berries", "minStateId": 1025, "maxStateId": 1050, "displayName": "Cave Vines Head With Berries"},
-  {"name": "cave_vines_body_with_berries", "minStateId": 999, "maxStateId": 1024, "displayName": "Cave Vines Body With Berries"},
-  {"name": "cave_vines", "minStateId": 973, "maxStateId": 998, "displayName": "Cave Vines"},
-  {"name": "camera", "minStateId": 914, "maxStateId": 914, "displayName": "Camera"},
-  {"name": "border_block", "minStateId": 685, "maxStateId": 846, "displayName": "Border Block"},
-  {"name": "azalea_leaves_flowered", "minStateId": 173, "maxStateId": 176, "displayName": "Azalea Leaves Flowered"},
-  {"name": "allow", "minStateId": 135, "maxStateId": 135, "displayName": "Allow"}
+  {
+    "name": "waxed_oxidized_double_cut_copper_slab",
+    "minStateId": 7479,
+    "maxStateId": 7480,
+    "displayName": "Waxed Oxidized Double Cut Copper Slab", 
+  },
+  {
+    "name": "waxed_oxidized_cut_copper_stairs",
+    "minStateId": 7471,
+    "maxStateId": 7478,
+    "displayName": "Waxed Oxidized Cut Copper Stairs", 
+  },
+  {
+    "name": "waxed_oxidized_cut_copper_slab",
+    "minStateId": 7469,
+    "maxStateId": 7470,
+    "displayName": "Waxed Oxidized Cut Copper Slab", 
+  },
+  {
+    "name": "waxed_oxidized_cut_copper",
+    "minStateId": 7468,
+    "maxStateId": 7468,
+    "displayName": "Waxed Oxidized Cut Copper", 
+  },
+  {
+    "name": "waxed_oxidized_copper",
+    "minStateId": 7467,
+    "maxStateId": 7467,
+    "displayName": "Waxed Oxidized Copper", 
+  },
+  {
+    "name": "unknown",
+    "minStateId": 7217,
+    "maxStateId": 7217,
+    "displayName": "Unknown", 
+  },
+  {
+    "name": "underwater_torch",
+    "minStateId": 7210,
+    "maxStateId": 7215,
+    "displayName": "Underwater Torch", 
+  },
+  {
+    "name": "stonecutter",
+    "minStateId": 7048,
+    "maxStateId": 7048,
+    "displayName": "Stonecutter", 
+  },
+  {
+    "name": "smooth_basalt",
+    "minStateId": 6640,
+    "maxStateId": 6640,
+    "displayName": "Smooth Basalt", 
+  },
+  {
+    "name": "reserved6",
+    "minStateId": 6521,
+    "maxStateId": 6521,
+    "displayName": "Reserved6", 
+  },
+  {
+    "name": "raw_iron_block",
+    "minStateId": 6412,
+    "maxStateId": 6412,
+    "displayName": "Raw Iron Block", 
+  },
+  {
+    "name": "raw_gold_block",
+    "minStateId": 6411,
+    "maxStateId": 6411,
+    "displayName": "Raw Gold Block", 
+  },
+  {
+    "name": "raw_copper_block",
+    "minStateId": 6410,
+    "maxStateId": 6410,
+    "displayName": "Raw Copper Block", 
+  },
+  {
+    "name": "polished_deepslate_wall",
+    "minStateId": 6059,
+    "maxStateId": 6220,
+    "displayName": "Polished Deepslate Wall", 
+  },
+  {
+    "name": "polished_deepslate_stairs",
+    "minStateId": 6051,
+    "maxStateId": 6058,
+    "displayName": "Polished Deepslate Stairs", 
+  },
+  {
+    "name": "polished_deepslate_slab",
+    "minStateId": 6049,
+    "maxStateId": 6050,
+    "displayName": "Polished Deepslate Slab", 
+  },
+  {
+    "name": "polished_deepslate_double_slab",
+    "minStateId": 6047,
+    "maxStateId": 6048,
+    "displayName": "Polished Deepslate Double Slab", 
+  },
+  {
+    "name": "polished_deepslate",
+    "minStateId": 6046,
+    "maxStateId": 6046,
+    "displayName": "Polished Deepslate", 
+  },
+  {
+    "name": "netherreactor",
+    "minStateId": 5570,
+    "maxStateId": 5570,
+    "displayName": "Netherreactor", 
+  },
+  {
+    "name": "lit_deepslate_redstone_ore",
+    "minStateId": 5419,
+    "maxStateId": 5419,
+    "displayName": "Lit Deepslate Redstone Ore", 
+  },
+  {
+    "name": "light_block",
+    "minStateId": 5363,
+    "maxStateId": 5378,
+    "displayName": "Light Block", 
+  },
+  {
+    "name": "lava_cauldron",
+    "minStateId": 5294,
+    "maxStateId": 5314,
+    "displayName": "Lava Cauldron", 
+  },
+  {
+    "name": "invisibleBedrock",
+    "minStateId": 5037,
+    "maxStateId": 5037,
+    "displayName": "InvisibleBedrock", 
+  },
+  {
+    "name": "info_update2",
+    "minStateId": 5036,
+    "maxStateId": 5036,
+    "displayName": "Info Update2", 
+  },
+  {
+    "name": "info_update",
+    "minStateId": 5035,
+    "maxStateId": 5035,
+    "displayName": "Info Update", 
+  },
+  {
+    "name": "infested_deepslate",
+    "minStateId": 5032,
+    "maxStateId": 5034,
+    "displayName": "Infested Deepslate", 
+  },
+  {
+    "name": "hard_stained_glass_pane",
+    "minStateId": 4972,
+    "maxStateId": 4987,
+    "displayName": "Hard Stained Glass Pane", 
+  },
+  {
+    "name": "hard_stained_glass",
+    "minStateId": 4956,
+    "maxStateId": 4971,
+    "displayName": "Hard Stained Glass", 
+  },
+  {
+    "name": "hard_glass_pane",
+    "minStateId": 4955,
+    "maxStateId": 4955,
+    "displayName": "Hard Glass Pane", 
+  },
+  {
+    "name": "hard_glass",
+    "minStateId": 4954,
+    "maxStateId": 4954,
+    "displayName": "Hard Glass", 
+  },
+  {
+    "name": "glowingobsidian",
+    "minStateId": 4898,
+    "maxStateId": 4898,
+    "displayName": "Glowingobsidian", 
+  },
+  {
+    "name": "glow_frame",
+    "minStateId": 4822,
+    "maxStateId": 4833,
+    "displayName": "Glow Frame", 
+  },
+  {
+    "name": "frame",
+    "minStateId": 4797,
+    "maxStateId": 4808,
+    "displayName": "Frame", 
+  },
+  {
+    "name": "flower_pot",
+    "minStateId": 4762,
+    "maxStateId": 4763,
+    "displayName": "Flower Pot", 
+  },
+  {
+    "name": "element_99",
+    "minStateId": 4665,
+    "maxStateId": 4665,
+    "displayName": "Element 99", 
+  },
+  {
+    "name": "element_98",
+    "minStateId": 4664,
+    "maxStateId": 4664,
+    "displayName": "Element 98", 
+  },
+  {
+    "name": "element_97",
+    "minStateId": 4663,
+    "maxStateId": 4663,
+    "displayName": "Element 97", 
+  },
+  {
+    "name": "element_96",
+    "minStateId": 4662,
+    "maxStateId": 4662,
+    "displayName": "Element 96", 
+  },
+  {
+    "name": "element_95",
+    "minStateId": 4661,
+    "maxStateId": 4661,
+    "displayName": "Element 95", 
+  },
+  {
+    "name": "element_94",
+    "minStateId": 4660,
+    "maxStateId": 4660,
+    "displayName": "Element 94", 
+  },
+  {
+    "name": "element_93",
+    "minStateId": 4659,
+    "maxStateId": 4659,
+    "displayName": "Element 93", 
+  },
+  {
+    "name": "element_92",
+    "minStateId": 4658,
+    "maxStateId": 4658,
+    "displayName": "Element 92", 
+  },
+  {
+    "name": "element_91",
+    "minStateId": 4657,
+    "maxStateId": 4657,
+    "displayName": "Element 91", 
+  },
+  {
+    "name": "element_90",
+    "minStateId": 4656,
+    "maxStateId": 4656,
+    "displayName": "Element 90", 
+  },
+  {
+    "name": "element_9",
+    "minStateId": 4655,
+    "maxStateId": 4655,
+    "displayName": "Element 9", 
+  },
+  {
+    "name": "element_89",
+    "minStateId": 4654,
+    "maxStateId": 4654,
+    "displayName": "Element 89", 
+  },
+  {
+    "name": "element_88",
+    "minStateId": 4653,
+    "maxStateId": 4653,
+    "displayName": "Element 88", 
+  },
+  {
+    "name": "element_87",
+    "minStateId": 4652,
+    "maxStateId": 4652,
+    "displayName": "Element 87", 
+  },
+  {
+    "name": "element_86",
+    "minStateId": 4651,
+    "maxStateId": 4651,
+    "displayName": "Element 86", 
+  },
+  {
+    "name": "element_85",
+    "minStateId": 4650,
+    "maxStateId": 4650,
+    "displayName": "Element 85", 
+  },
+  {
+    "name": "element_84",
+    "minStateId": 4649,
+    "maxStateId": 4649,
+    "displayName": "Element 84", 
+  },
+  {
+    "name": "element_83",
+    "minStateId": 4648,
+    "maxStateId": 4648,
+    "displayName": "Element 83", 
+  },
+  {
+    "name": "element_82",
+    "minStateId": 4647,
+    "maxStateId": 4647,
+    "displayName": "Element 82", 
+  },
+  {
+    "name": "element_81",
+    "minStateId": 4646,
+    "maxStateId": 4646,
+    "displayName": "Element 81", 
+  },
+  {
+    "name": "element_80",
+    "minStateId": 4645,
+    "maxStateId": 4645,
+    "displayName": "Element 80", 
+  },
+  {
+    "name": "element_8",
+    "minStateId": 4644,
+    "maxStateId": 4644,
+    "displayName": "Element 8", 
+  },
+  {
+    "name": "element_79",
+    "minStateId": 4643,
+    "maxStateId": 4643,
+    "displayName": "Element 79", 
+  },
+  {
+    "name": "element_78",
+    "minStateId": 4642,
+    "maxStateId": 4642,
+    "displayName": "Element 78", 
+  },
+  {
+    "name": "element_77",
+    "minStateId": 4641,
+    "maxStateId": 4641,
+    "displayName": "Element 77", 
+  },
+  {
+    "name": "element_76",
+    "minStateId": 4640,
+    "maxStateId": 4640,
+    "displayName": "Element 76", 
+  },
+  {
+    "name": "element_75",
+    "minStateId": 4639,
+    "maxStateId": 4639,
+    "displayName": "Element 75", 
+  },
+  {
+    "name": "element_74",
+    "minStateId": 4638,
+    "maxStateId": 4638,
+    "displayName": "Element 74", 
+  },
+  {
+    "name": "element_73",
+    "minStateId": 4637,
+    "maxStateId": 4637,
+    "displayName": "Element 73", 
+  },
+  {
+    "name": "element_72",
+    "minStateId": 4636,
+    "maxStateId": 4636,
+    "displayName": "Element 72", 
+  },
+  {
+    "name": "element_71",
+    "minStateId": 4635,
+    "maxStateId": 4635,
+    "displayName": "Element 71", 
+  },
+  {
+    "name": "element_70",
+    "minStateId": 4634,
+    "maxStateId": 4634,
+    "displayName": "Element 70", 
+  },
+  {
+    "name": "element_7",
+    "minStateId": 4633,
+    "maxStateId": 4633,
+    "displayName": "Element 7", 
+  },
+  {
+    "name": "element_69",
+    "minStateId": 4632,
+    "maxStateId": 4632,
+    "displayName": "Element 69", 
+  },
+  {
+    "name": "element_68",
+    "minStateId": 4631,
+    "maxStateId": 4631,
+    "displayName": "Element 68", 
+  },
+  {
+    "name": "element_67",
+    "minStateId": 4630,
+    "maxStateId": 4630,
+    "displayName": "Element 67", 
+  },
+  {
+    "name": "element_66",
+    "minStateId": 4629,
+    "maxStateId": 4629,
+    "displayName": "Element 66", 
+  },
+  {
+    "name": "element_65",
+    "minStateId": 4628,
+    "maxStateId": 4628,
+    "displayName": "Element 65", 
+  },
+  {
+    "name": "element_64",
+    "minStateId": 4627,
+    "maxStateId": 4627,
+    "displayName": "Element 64", 
+  },
+  {
+    "name": "element_63",
+    "minStateId": 4626,
+    "maxStateId": 4626,
+    "displayName": "Element 63", 
+  },
+  {
+    "name": "element_62",
+    "minStateId": 4625,
+    "maxStateId": 4625,
+    "displayName": "Element 62", 
+  },
+  {
+    "name": "element_61",
+    "minStateId": 4624,
+    "maxStateId": 4624,
+    "displayName": "Element 61", 
+  },
+  {
+    "name": "element_60",
+    "minStateId": 4623,
+    "maxStateId": 4623,
+    "displayName": "Element 60", 
+  },
+  {
+    "name": "element_6",
+    "minStateId": 4622,
+    "maxStateId": 4622,
+    "displayName": "Element 6", 
+  },
+  {
+    "name": "element_59",
+    "minStateId": 4621,
+    "maxStateId": 4621,
+    "displayName": "Element 59", 
+  },
+  {
+    "name": "element_58",
+    "minStateId": 4620,
+    "maxStateId": 4620,
+    "displayName": "Element 58", 
+  },
+  {
+    "name": "element_57",
+    "minStateId": 4619,
+    "maxStateId": 4619,
+    "displayName": "Element 57", 
+  },
+  {
+    "name": "element_56",
+    "minStateId": 4618,
+    "maxStateId": 4618,
+    "displayName": "Element 56", 
+  },
+  {
+    "name": "element_55",
+    "minStateId": 4617,
+    "maxStateId": 4617,
+    "displayName": "Element 55", 
+  },
+  {
+    "name": "element_54",
+    "minStateId": 4616,
+    "maxStateId": 4616,
+    "displayName": "Element 54", 
+  },
+  {
+    "name": "element_53",
+    "minStateId": 4615,
+    "maxStateId": 4615,
+    "displayName": "Element 53", 
+  },
+  {
+    "name": "element_52",
+    "minStateId": 4614,
+    "maxStateId": 4614,
+    "displayName": "Element 52", 
+  },
+  {
+    "name": "element_51",
+    "minStateId": 4613,
+    "maxStateId": 4613,
+    "displayName": "Element 51", 
+  },
+  {
+    "name": "element_50",
+    "minStateId": 4612,
+    "maxStateId": 4612,
+    "displayName": "Element 50", 
+  },
+  {
+    "name": "element_5",
+    "minStateId": 4611,
+    "maxStateId": 4611,
+    "displayName": "Element 5", 
+  },
+  {
+    "name": "element_49",
+    "minStateId": 4610,
+    "maxStateId": 4610,
+    "displayName": "Element 49", 
+  },
+  {
+    "name": "element_48",
+    "minStateId": 4609,
+    "maxStateId": 4609,
+    "displayName": "Element 48", 
+  },
+  {
+    "name": "element_47",
+    "minStateId": 4608,
+    "maxStateId": 4608,
+    "displayName": "Element 47", 
+  },
+  {
+    "name": "element_46",
+    "minStateId": 4607,
+    "maxStateId": 4607,
+    "displayName": "Element 46", 
+  },
+  {
+    "name": "element_45",
+    "minStateId": 4606,
+    "maxStateId": 4606,
+    "displayName": "Element 45", 
+  },
+  {
+    "name": "element_44",
+    "minStateId": 4605,
+    "maxStateId": 4605,
+    "displayName": "Element 44", 
+  },
+  {
+    "name": "element_43",
+    "minStateId": 4604,
+    "maxStateId": 4604,
+    "displayName": "Element 43", 
+  },
+  {
+    "name": "element_42",
+    "minStateId": 4603,
+    "maxStateId": 4603,
+    "displayName": "Element 42", 
+  },
+  {
+    "name": "element_41",
+    "minStateId": 4602,
+    "maxStateId": 4602,
+    "displayName": "Element 41", 
+  },
+  {
+    "name": "element_40",
+    "minStateId": 4601,
+    "maxStateId": 4601,
+    "displayName": "Element 40", 
+  },
+  {
+    "name": "element_4",
+    "minStateId": 4600,
+    "maxStateId": 4600,
+    "displayName": "Element 4", 
+  },
+  {
+    "name": "element_39",
+    "minStateId": 4599,
+    "maxStateId": 4599,
+    "displayName": "Element 39", 
+  },
+  {
+    "name": "element_38",
+    "minStateId": 4598,
+    "maxStateId": 4598,
+    "displayName": "Element 38", 
+  },
+  {
+    "name": "element_37",
+    "minStateId": 4597,
+    "maxStateId": 4597,
+    "displayName": "Element 37", 
+  },
+  {
+    "name": "element_36",
+    "minStateId": 4596,
+    "maxStateId": 4596,
+    "displayName": "Element 36", 
+  },
+  {
+    "name": "element_35",
+    "minStateId": 4595,
+    "maxStateId": 4595,
+    "displayName": "Element 35", 
+  },
+  {
+    "name": "element_34",
+    "minStateId": 4594,
+    "maxStateId": 4594,
+    "displayName": "Element 34", 
+  },
+  {
+    "name": "element_33",
+    "minStateId": 4593,
+    "maxStateId": 4593,
+    "displayName": "Element 33", 
+  },
+  {
+    "name": "element_32",
+    "minStateId": 4592,
+    "maxStateId": 4592,
+    "displayName": "Element 32", 
+  },
+  {
+    "name": "element_31",
+    "minStateId": 4591,
+    "maxStateId": 4591,
+    "displayName": "Element 31", 
+  },
+  {
+    "name": "element_30",
+    "minStateId": 4590,
+    "maxStateId": 4590,
+    "displayName": "Element 30", 
+  },
+  {
+    "name": "element_3",
+    "minStateId": 4589,
+    "maxStateId": 4589,
+    "displayName": "Element 3", 
+  },
+  {
+    "name": "element_29",
+    "minStateId": 4588,
+    "maxStateId": 4588,
+    "displayName": "Element 29", 
+  },
+  {
+    "name": "element_28",
+    "minStateId": 4587,
+    "maxStateId": 4587,
+    "displayName": "Element 28", 
+  },
+  {
+    "name": "element_27",
+    "minStateId": 4586,
+    "maxStateId": 4586,
+    "displayName": "Element 27", 
+  },
+  {
+    "name": "element_26",
+    "minStateId": 4585,
+    "maxStateId": 4585,
+    "displayName": "Element 26", 
+  },
+  {
+    "name": "element_25",
+    "minStateId": 4584,
+    "maxStateId": 4584,
+    "displayName": "Element 25", 
+  },
+  {
+    "name": "element_24",
+    "minStateId": 4583,
+    "maxStateId": 4583,
+    "displayName": "Element 24", 
+  },
+  {
+    "name": "element_23",
+    "minStateId": 4582,
+    "maxStateId": 4582,
+    "displayName": "Element 23", 
+  },
+  {
+    "name": "element_22",
+    "minStateId": 4581,
+    "maxStateId": 4581,
+    "displayName": "Element 22", 
+  },
+  {
+    "name": "element_21",
+    "minStateId": 4580,
+    "maxStateId": 4580,
+    "displayName": "Element 21", 
+  },
+  {
+    "name": "element_20",
+    "minStateId": 4579,
+    "maxStateId": 4579,
+    "displayName": "Element 20", 
+  },
+  {
+    "name": "element_2",
+    "minStateId": 4578,
+    "maxStateId": 4578,
+    "displayName": "Element 2", 
+  },
+  {
+    "name": "element_19",
+    "minStateId": 4577,
+    "maxStateId": 4577,
+    "displayName": "Element 19", 
+  },
+  {
+    "name": "element_18",
+    "minStateId": 4576,
+    "maxStateId": 4576,
+    "displayName": "Element 18", 
+  },
+  {
+    "name": "element_17",
+    "minStateId": 4575,
+    "maxStateId": 4575,
+    "displayName": "Element 17", 
+  },
+  {
+    "name": "element_16",
+    "minStateId": 4574,
+    "maxStateId": 4574,
+    "displayName": "Element 16", 
+  },
+  {
+    "name": "element_15",
+    "minStateId": 4573,
+    "maxStateId": 4573,
+    "displayName": "Element 15", 
+  },
+  {
+    "name": "element_14",
+    "minStateId": 4572,
+    "maxStateId": 4572,
+    "displayName": "Element 14", 
+  },
+  {
+    "name": "element_13",
+    "minStateId": 4571,
+    "maxStateId": 4571,
+    "displayName": "Element 13", 
+  },
+  {
+    "name": "element_12",
+    "minStateId": 4570,
+    "maxStateId": 4570,
+    "displayName": "Element 12", 
+  },
+  {
+    "name": "element_118",
+    "minStateId": 4569,
+    "maxStateId": 4569,
+    "displayName": "Element 118", 
+  },
+  {
+    "name": "element_117",
+    "minStateId": 4568,
+    "maxStateId": 4568,
+    "displayName": "Element 117", 
+  },
+  {
+    "name": "element_116",
+    "minStateId": 4567,
+    "maxStateId": 4567,
+    "displayName": "Element 116", 
+  },
+  {
+    "name": "element_115",
+    "minStateId": 4566,
+    "maxStateId": 4566,
+    "displayName": "Element 115", 
+  },
+  {
+    "name": "element_114",
+    "minStateId": 4565,
+    "maxStateId": 4565,
+    "displayName": "Element 114", 
+  },
+  {
+    "name": "element_113",
+    "minStateId": 4564,
+    "maxStateId": 4564,
+    "displayName": "Element 113", 
+  },
+  {
+    "name": "element_112",
+    "minStateId": 4563,
+    "maxStateId": 4563,
+    "displayName": "Element 112", 
+  },
+  {
+    "name": "element_111",
+    "minStateId": 4562,
+    "maxStateId": 4562,
+    "displayName": "Element 111", 
+  },
+  {
+    "name": "element_110",
+    "minStateId": 4561,
+    "maxStateId": 4561,
+    "displayName": "Element 110", 
+  },
+  {
+    "name": "element_11",
+    "minStateId": 4560,
+    "maxStateId": 4560,
+    "displayName": "Element 11", 
+  },
+  {
+    "name": "element_109",
+    "minStateId": 4559,
+    "maxStateId": 4559,
+    "displayName": "Element 109", 
+  },
+  {
+    "name": "element_108",
+    "minStateId": 4558,
+    "maxStateId": 4558,
+    "displayName": "Element 108", 
+  },
+  {
+    "name": "element_107",
+    "minStateId": 4557,
+    "maxStateId": 4557,
+    "displayName": "Element 107", 
+  },
+  {
+    "name": "element_106",
+    "minStateId": 4556,
+    "maxStateId": 4556,
+    "displayName": "Element 106", 
+  },
+  {
+    "name": "element_105",
+    "minStateId": 4555,
+    "maxStateId": 4555,
+    "displayName": "Element 105", 
+  },
+  {
+    "name": "element_104",
+    "minStateId": 4554,
+    "maxStateId": 4554,
+    "displayName": "Element 104", 
+  },
+  {
+    "name": "element_103",
+    "minStateId": 4553,
+    "maxStateId": 4553,
+    "displayName": "Element 103", 
+  },
+  {
+    "name": "element_102",
+    "minStateId": 4552,
+    "maxStateId": 4552,
+    "displayName": "Element 102", 
+  },
+  {
+    "name": "element_101",
+    "minStateId": 4551,
+    "maxStateId": 4551,
+    "displayName": "Element 101", 
+  },
+  {
+    "name": "element_100",
+    "minStateId": 4550,
+    "maxStateId": 4550,
+    "displayName": "Element 100", 
+  },
+  {
+    "name": "element_10",
+    "minStateId": 4549,
+    "maxStateId": 4549,
+    "displayName": "Element 10", 
+  },
+  {
+    "name": "element_1",
+    "minStateId": 4548,
+    "maxStateId": 4548,
+    "displayName": "Element 1", 
+  },
+  {
+    "name": "element_0",
+    "minStateId": 4547,
+    "maxStateId": 4547,
+    "displayName": "Element 0", 
+  },
+  {
+    "name": "deny",
+    "minStateId": 4410,
+    "maxStateId": 4410,
+    "displayName": "Deny", 
+  },
+  {
+    "name": "deepslate_tiles",
+    "minStateId": 4409,
+    "maxStateId": 4409,
+    "displayName": "Deepslate Tiles", 
+  },
+  {
+    "name": "deepslate_tile_wall",
+    "minStateId": 4247,
+    "maxStateId": 4408,
+    "displayName": "Deepslate Tile Wall", 
+  },
+  {
+    "name": "deepslate_tile_stairs",
+    "minStateId": 4239,
+    "maxStateId": 4246,
+    "displayName": "Deepslate Tile Stairs", 
+  },
+  {
+    "name": "deepslate_tile_slab",
+    "minStateId": 4237,
+    "maxStateId": 4238,
+    "displayName": "Deepslate Tile Slab", 
+  },
+  {
+    "name": "deepslate_tile_double_slab",
+    "minStateId": 4235,
+    "maxStateId": 4236,
+    "displayName": "Deepslate Tile Double Slab", 
+  },
+  {
+    "name": "deepslate_redstone_ore",
+    "minStateId": 4234,
+    "maxStateId": 4234,
+    "displayName": "Deepslate Redstone Ore", 
+  },
+  {
+    "name": "deepslate_lapis_ore",
+    "minStateId": 4233,
+    "maxStateId": 4233,
+    "displayName": "Deepslate Lapis Ore", 
+  },
+  {
+    "name": "deepslate_iron_ore",
+    "minStateId": 4232,
+    "maxStateId": 4232,
+    "displayName": "Deepslate Iron Ore", 
+  },
+  {
+    "name": "deepslate_gold_ore",
+    "minStateId": 4231,
+    "maxStateId": 4231,
+    "displayName": "Deepslate Gold Ore", 
+  },
+  {
+    "name": "deepslate_emerald_ore",
+    "minStateId": 4230,
+    "maxStateId": 4230,
+    "displayName": "Deepslate Emerald Ore", 
+  },
+  {
+    "name": "deepslate_diamond_ore",
+    "minStateId": 4229,
+    "maxStateId": 4229,
+    "displayName": "Deepslate Diamond Ore", 
+  },
+  {
+    "name": "deepslate_copper_ore",
+    "minStateId": 4228,
+    "maxStateId": 4228,
+    "displayName": "Deepslate Copper Ore", 
+  },
+  {
+    "name": "deepslate_coal_ore",
+    "minStateId": 4227,
+    "maxStateId": 4227,
+    "displayName": "Deepslate Coal Ore", 
+  },
+  {
+    "name": "deepslate_bricks",
+    "minStateId": 4226,
+    "maxStateId": 4226,
+    "displayName": "Deepslate Bricks", 
+  },
+  {
+    "name": "deepslate_brick_wall",
+    "minStateId": 4064,
+    "maxStateId": 4225,
+    "displayName": "Deepslate Brick Wall", 
+  },
+  {
+    "name": "deepslate_brick_stairs",
+    "minStateId": 4056,
+    "maxStateId": 4063,
+    "displayName": "Deepslate Brick Stairs", 
+  },
+  {
+    "name": "deepslate_brick_slab",
+    "minStateId": 4054,
+    "maxStateId": 4055,
+    "displayName": "Deepslate Brick Slab", 
+  },
+  {
+    "name": "deepslate_brick_double_slab",
+    "minStateId": 4052,
+    "maxStateId": 4053,
+    "displayName": "Deepslate Brick Double Slab", 
+  },
+  {
+    "name": "deepslate",
+    "minStateId": 4049,
+    "maxStateId": 4051,
+    "displayName": "Deepslate", 
+  },
+  {
+    "name": "cracked_deepslate_tiles",
+    "minStateId": 3727,
+    "maxStateId": 3727,
+    "displayName": "Cracked Deepslate Tiles", 
+  },
+  {
+    "name": "cracked_deepslate_bricks",
+    "minStateId": 3726,
+    "maxStateId": 3726,
+    "displayName": "Cracked Deepslate Bricks", 
+  },
+  {
+    "name": "colored_torch_rg",
+    "minStateId": 3570,
+    "maxStateId": 3581,
+    "displayName": "Colored Torch Rg", 
+  },
+  {
+    "name": "colored_torch_bp",
+    "minStateId": 3558,
+    "maxStateId": 3569,
+    "displayName": "Colored Torch Bp", 
+  },
+  {
+    "name": "cobbled_deepslate_wall",
+    "minStateId": 1115,
+    "maxStateId": 1276,
+    "displayName": "Cobbled Deepslate Wall", 
+  },
+  {
+    "name": "cobbled_deepslate_stairs",
+    "minStateId": 1107,
+    "maxStateId": 1114,
+    "displayName": "Cobbled Deepslate Stairs", 
+  },
+  {
+    "name": "cobbled_deepslate_slab",
+    "minStateId": 1105,
+    "maxStateId": 1106,
+    "displayName": "Cobbled Deepslate Slab", 
+  },
+  {
+    "name": "cobbled_deepslate_double_slab",
+    "minStateId": 1103,
+    "maxStateId": 1104,
+    "displayName": "Cobbled Deepslate Double Slab", 
+  },
+  {
+    "name": "cobbled_deepslate",
+    "minStateId": 1102,
+    "maxStateId": 1102,
+    "displayName": "Cobbled Deepslate", 
+  },
+  {
+    "name": "chiseled_deepslate",
+    "minStateId": 1089,
+    "maxStateId": 1089,
+    "displayName": "Chiseled Deepslate", 
+  },
+  {
+    "name": "chemistry_table",
+    "minStateId": 1067,
+    "maxStateId": 1082,
+    "displayName": "Chemistry Table", 
+  },
+  {
+    "name": "chemical_heat",
+    "minStateId": 1066,
+    "maxStateId": 1066,
+    "displayName": "Chemical Heat", 
+  },
+  {
+    "name": "cave_vines_head_with_berries",
+    "minStateId": 1025,
+    "maxStateId": 1050,
+    "displayName": "Cave Vines Head With Berries", 
+  },
+  {
+    "name": "cave_vines_body_with_berries",
+    "minStateId": 999,
+    "maxStateId": 1024,
+    "displayName": "Cave Vines Body With Berries", 
+  },
+  {
+    "name": "cave_vines",
+    "minStateId": 973,
+    "maxStateId": 998,
+    "displayName": "Cave Vines", 
+  },
+  {
+    "name": "camera",
+    "minStateId": 914,
+    "maxStateId": 914,
+    "displayName": "Camera", 
+  },
+  {
+    "name": "border_block",
+    "minStateId": 685,
+    "maxStateId": 846,
+    "displayName": "Border Block", 
+  },
+  {
+    "name": "azalea_leaves_flowered",
+    "minStateId": 173,
+    "maxStateId": 176,
+    "displayName": "Azalea Leaves Flowered", 
+  },
+  {
+    "name": "allow",
+    "minStateId": 135,
+    "maxStateId": 135,
+    "displayName": "Allow", 
+  },
 ]

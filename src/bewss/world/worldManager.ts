@@ -5,8 +5,7 @@ import {
   commandResponse, gettopsolidblockCommand, SlashCommandExecutedConsole, testforblockCommand, topBlockData, 
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
-import fs from "fs"
-import path from "path"
+import { blocks } from '../../data/1.17/blocks'
 
 class worldManager {
   private bewss: bewss
@@ -68,7 +67,6 @@ class worldManager {
       },
     }
 
-    const blocks = await this.getBlockData()
     const blockName = response.body.statusMessage.match(/(?<=is )(.*?)(?= \()/)[0]
     const block = blocks.find(e => e.displayName == blockName) as blockData
 
@@ -77,12 +75,6 @@ class worldManager {
     return block
   } 
 
-  async getBlockData(): Promise<Array<{ id: number, displayName: string, name: string, hardness: number, resistance: number, minStateId: number, maxStateId: number, drops: Array<unknown>, diggable: boolean, transparent: boolean, filterLight: number, emitLight: number, boundingBox: string, stackSize: number, defaultState: number }>> {
-    const jsonPath = path.join(__dirname, '..', '..', 'data', '1.17', 'blocks.json')
-    const response = fs.readFileSync(jsonPath, 'utf-8')
-    
-    return JSON.parse(response)
-  }
 
   sendMessage(message: string): void {
     this.bewss.getCommandManager().executeCommand(`/tellraw @a {"rawtext":[{"text":"${message}"}]}`)
