@@ -44,7 +44,7 @@ this.api.getCommandManager().on('CommandRegistered', (command) => {})
 this.api.getCommandManager().on('testcommand', (data: customCommandResponse) => {})
 ```
 
-# Creating a simple Command command
+# Creating a simple Command
 ```ts
 import {
   customCommandResponse,
