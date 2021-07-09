@@ -5,6 +5,12 @@
 this.api.getPlayerManager()
 ```
 
+## getLocalPlayerName
+- Returns the name of the connected user
+```ts
+this.api.getPlayerManager().getLocalPlayerName()
+```
+
 ## getPlayerList
 - Returns an array of player names on the world
 ```ts
