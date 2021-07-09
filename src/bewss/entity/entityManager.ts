@@ -61,6 +61,27 @@ class entityManager {
 
     return
   }
+
+  async getTags(name: string): Promise<Array<string>> {
+    const command = this.bewss.getCommandManager().executeCommand(`/tag @e[name="${name}"] list`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    if (response == undefined || response.body.statusCode == -2147483648) return
+    const raw: Array<string> = response.body.statusMessage.split(' ')
+    const tags: Array<string> = []
+    for (const string of raw) {
+      if (string.startsWith("§a")) tags.push(string.replace('§a', '').replace('§r', '')
+        .replace(',', ''))
+    }
+
+    return tags
+  }
+
+  async hasTag(name: string, tag: string): Promise<boolean> {
+    const tags = await this.getTags(name)
+    if (!tags.includes(tag)) return false
+
+    return true
+  }
 }
 
 export default entityManager
