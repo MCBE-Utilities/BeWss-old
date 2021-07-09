@@ -1,15 +1,14 @@
-## PluginAPI Documentation
-
-## Package.json
-# Basic Info
+# Package.json
+## Basic Info
 - The BeWss pluginManager allows for any node modules to be used with your plugin.
 - Plugins in BeWss can be written in TypeScript or JavaScript. TypeScript allows for more helpfull documentations and auto-typings.
+- [examplePlugin](https://github.com/PMK744/Node-BEWSS/tree/main/docs/examplePlugin)
 
-# Dev Mode
+## Dev Mode
 - Dev mode is boolean option in the package.json that allows for a plugin to be rebuilt each time it is loaded.
-- If the option is set to true, BeWss will build the plugin each time BeWss starts up, or when -reload is executed in-game or within the terminal.
+- If the option is set to true, BeWss will build the plugin each time BeWss starts up, or when -reload is executed in-game or within the terminal. If the option is set to false, BeWss will not build the plugin on start up.
 
-# Example package.json
+## Example package.json
 ```json
 {
   "name": "exampleplugin",
@@ -34,14 +33,14 @@
 }
 ```
 
-## Creating a plugin
-# Basic Info
+# Creating a plugin
+## Basic Info
 - Creating plugins for BeWss can be very simple, but yet can get very complicated by the type of project you are creating.
 - When you run your plugin for the first time, BeWss will automatically create a folder called ```@interface``` and install a file called ```bewss.i.ts``` within that folder.
 - The file that it installed is the BeWss interface that includes all typings for BeWss. This will allow autofill for functions and events, which is very helpfull for development.
 - Each time your plugin is ran, BeWss will automatically update the interface to the latest version, so you don't have to update it each time BeWss get a update.
 
-# Index.ts
+## Index.ts
 - This is where your source code will go. Index.ts is normally found in the src folder of your project.
 
 ```ts
