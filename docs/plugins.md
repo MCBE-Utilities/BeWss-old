@@ -73,12 +73,12 @@ export = examplePlugin
 ```
 
 # Using BeWss PluginAPI
-- [ServerManager]()
-- [ConsoleManager]()
-- [CommandManager]()
-- [WorldManager]()
-- [EntityManager]()
-- [PlayerManager]()
-- [AgentManager]()
-- [ScoreboardManager]()
-- [EventManager]()
+- [ServerManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/server.md)
+- [ConsoleManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/console.md)
+- [CommandManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/command.md)
+- [WorldManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/world.md)
+- [EntityManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/entity.md)
+- [PlayerManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/player.md)
+- [AgentManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/agent.md)
+- [ScoreboardManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/scoreboard.md)
+- [EventManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/event.md)
