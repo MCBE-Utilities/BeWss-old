@@ -73,6 +73,7 @@ export = examplePlugin
 ```
 
 # Using BeWss PluginAPI
+- [Logger](https://github.com/PMK744/Node-BEWSS/blob/main/docs/logger.md)
 - [ServerManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/server.md)
 - [ConsoleManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/console.md)
 - [CommandManager](https://github.com/PMK744/Node-BEWSS/blob/main/docs/command.md)
