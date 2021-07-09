@@ -1,12 +1,13 @@
 # Package.json
 ## Basic Info
-- The BeWss pluginManager allows for any node modules to be used with your plugin.
+- The BeWss pluginManager allows for any node modules to be used with your plugin via npm or yarn.
 - Plugins in BeWss can be written in TypeScript or JavaScript. TypeScript allows for more helpfull documentations and auto-typings.
 - [examplePlugin](https://github.com/PMK744/Node-BEWSS/tree/main/docs/examplePlugin)
 
 ## Dev Mode
-- Dev mode is boolean option in the package.json that allows for a plugin to be rebuilt each time it is loaded.
+- Dev mode is boolean option in the package.json that allows for a plugin to be rebuilt each time it is loaded or reloaded.
 - If the option is set to true, BeWss will build the plugin each time BeWss starts up, or when -reload is executed in-game or within the terminal. If the option is set to false, BeWss will not build the plugin on start up.
+- It is recommended to disabled Dev Mode for a production release.
 
 ## Example package.json
 ```json
@@ -70,3 +71,14 @@ class examplePlugin {
 export = examplePlugin
 
 ```
+
+# Using BeWss PluginAPI
+- [ServerManager]()
+- [ConsoleManager]()
+- [CommandManager]()
+- [WorldManager]()
+- [EntityManager]()
+- [PlayerManager]()
+- [AgentManager]()
+- [ScoreboardManager]()
+- [EventManager]()
