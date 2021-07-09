@@ -11,6 +11,7 @@ import {
   Start,
   Stop,
 } from "./commands/index"
+import { customCommandResponse } from "../@interface/bewss.i"
 
 export interface exampleCommand {
   execute(args: Array<string>): Promise<void>
@@ -38,7 +39,10 @@ class consoleManager extends EventEmitter {
       const parsedCommand = this.parseCommand(data)
       if (!this.getCommandNames().includes(parsedCommand.command)) return this.bewss.getLogger().error('This command doesn\'t exist!')
       const commandData = this.commands.get(parsedCommand.command)
-      if (commandData == undefined) return this.emit(parsedCommand.command, parsedCommand.args)
+      if (commandData == undefined) return this.emit(parsedCommand.command, {
+        sender: "CONSOLE",
+        args:  parsedCommand.args,
+      } as customCommandResponse)
       
       return commandData.execute(parsedCommand.args)
     })
