@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
+import Websocket from 'ws'
+
 
 export interface bewssOptions {
   /**
@@ -89,7 +91,7 @@ export interface serverManager {
   new(bewss: bewss)
   sendJSON(json: JSON): void
   sendBuffer(buffer: Buffer): void
-  getServer(): WebSocket
+  getServer(): Websocket
   on<K extends keyof ServerEventValues>(event: K, callback: (...args: ServerEventValues[K]) => void): this
   on<S extends string | symbol>(
     event: Exclude<S, keyof ServerEventValues>,
