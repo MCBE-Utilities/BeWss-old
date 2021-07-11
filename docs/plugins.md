@@ -13,6 +13,7 @@
 ```json
 {
   "name": "exampleplugin",
+  "displayName": "ExamplePlugin",
   "version": "1.0.0",
   "description": "examplePlugin for BeWss",
   "devMode": false,
