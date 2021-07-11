@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
+import Websocket from 'ws'
+
 
 export interface bewssOptions {
   /**
@@ -78,9 +80,33 @@ export interface logger {
   error(...content: unknown[]): void
 }
 
+interface ServerEventValues {
+  wsslistening: []
+  wssconnected: []
+  wssclosed: []
+  wsserror: [Error]
+}
+
 export interface serverManager {
   new(bewss: bewss)
-  getServer(): any
+  sendJSON(json: JSON): void
+  sendBuffer(buffer: Buffer): void
+  getServer(): Websocket
+  on<K extends keyof ServerEventValues>(event: K, callback: (...args: ServerEventValues[K]) => void): this
+  on<S extends string | symbol>(
+    event: Exclude<S, keyof ServerEventValues>,
+    callback: (...args: unknown[]) => void,
+  ): this
+  once<K extends keyof ServerEventValues>(event: K, callback: (...args: ServerEventValues[K]) => void): this
+  once<S extends string | symbol>(
+    event: Exclude<S, keyof ServerEventValues>,
+    callback: (...args: unknown[]) => void,
+  ): this
+  emit<K extends keyof ServerEventValues>(event: K, ...args: ServerEventValues[K]): boolean
+  emit<S extends string | symbol>(
+    event: Exclude<S, keyof ServerEventValues>,
+    ...args: unknown[]
+  ): boolean
 }
 
 interface CommandEventValues {
@@ -389,6 +415,9 @@ interface SlashCommandExecuted {
 }
 export interface SlashCommandExecutedConsole {
   header: eventHeader
+  body: {
+    statusCode: number
+  }
 }
 
 interface BlockBroken {
