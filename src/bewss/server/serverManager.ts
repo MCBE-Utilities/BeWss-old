@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import bewss from "../bewss"
-import { Server } from 'ws'
+import Websocket from 'ws'
 
 class serverManager {
   private bewss: bewss
-  private ws: Server
-  private server: any
+  private ws: Websocket.Server
+  private server: Websocket
   private port: number
 
   constructor (bewss: bewss, port: number) {
@@ -30,14 +30,14 @@ class serverManager {
 
   private async createServer(): Promise<void> {
     return new Promise((res) => {
-      this.ws = new Server({ port: this.port })
+      this.ws = new Websocket.Server({ port: this.port })
 
       this.ws.once('listening', () => {
         this.bewss.getEventManager().emit('wss-listening')
         this.bewss.getLogger().info(`Websocket server started! To connect to your server do "/connect 127.0.0.1:${this.port}" in your Minecraft world.`)
       })
-      this.ws.once('connection', (wss: Server) => {
-        this.server = wss
+      this.ws.once('connection', (server: Websocket) => {
+        this.server = server
         this.server.setMaxListeners(50)
         this.bewss.getEventManager().emit('wss-connected')
         this.bewss.getEventManager().emit('wssconnected', this.server)
@@ -56,7 +56,7 @@ class serverManager {
     })
   }
 
-  getServer(): any {
+  getServer(): Websocket {
     return this.server
   }
 
