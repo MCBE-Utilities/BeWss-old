@@ -325,9 +325,6 @@ export interface EventValues {
   RawEvent: [unknown] // Fires when any event is fired.
   AgentCommand: [AgentCommand]
   AgentCreated: [AgentCreated]
-  wssconnected: [unknown]
-  wssclosed: [unknown]
-
 }
 
 interface eventHeader {
