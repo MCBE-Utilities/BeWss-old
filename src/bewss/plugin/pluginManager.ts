@@ -91,6 +91,7 @@ class pluginManager {
         const request = await axios.get(this.latestInterface)
         if (!fs.existsSync(resolve(path, "src", "@interface"))) fs.mkdirSync(resolve(path, "src", "@interface"))
         fs.writeFileSync(resolve(path, "src", "@interface", "bewss.i.ts"), request.data)
+        if (config.displayName == undefined) this.warn(`@${config.author}, your plugin is missing "displayName" in your package.json. Your plugin will be refered as "${path}"`)
 
         let neededUpdate = false
         let succeededUpdate = false
