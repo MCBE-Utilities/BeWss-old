@@ -13,6 +13,7 @@ class SlashCommandExecuted {
     this.bewss.getEventManager().registerEvent('SlashCommandExecuted')
     this.bewss.getServerManager().getServer()
       .on('message', (packet: string) => {
+        if (!packet.includes('header')) return
         const parsedPacket = JSON.parse(packet)
         if (parsedPacket.header.requestId == '00000000-0000-0000-0000-000000000000') {
           this.bewss.getEventManager().emit('SlashCommandExecuted', parsedPacket)

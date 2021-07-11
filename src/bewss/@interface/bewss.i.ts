@@ -389,6 +389,9 @@ interface SlashCommandExecuted {
 }
 export interface SlashCommandExecutedConsole {
   header: eventHeader
+  body: {
+    statusCode: number
+  }
 }
 
 interface BlockBroken {

@@ -13,6 +13,7 @@ class RawEvent {
     this.bewss.getEventManager().registerEvent('RawEvent')
     this.bewss.getServerManager().getServer()
       .on('message', (packet: string) => {
+        if (!packet.includes('header')) return
         const parsedPacket = JSON.parse(packet)
         this.bewss.getEventManager().emit('RawEvent', parsedPacket)
       })
