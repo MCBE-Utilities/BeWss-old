@@ -83,7 +83,6 @@ interface ServerEventValues {
   wssconnected: []
   wssclosed: []
   wsserror: [Error]
-  wssmessage: [string]
 }
 
 export interface serverManager {
