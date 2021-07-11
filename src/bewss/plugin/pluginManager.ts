@@ -21,6 +21,7 @@ interface examplePlugin {
 class pluginManager {
   private bewss: bewss
   private plugins = new Map<string, { config: examplePluginConfig, plugin: examplePlugin }>() // path: { config, plugin }
+  private pluginNames: Array<string> = []
   private latestInterface = "https://raw.githubusercontent.com/PMK744/Node-BEWSS/main/src/bewss/%40interface/bewss.i.ts"
   public root = path.resolve(process.cwd())
   public pluginsPath = path.resolve(this.root, './plugins')
@@ -123,6 +124,7 @@ class pluginManager {
           const plugin: examplePlugin = require(entryPoint)
           const newPlugin: examplePlugin = new plugin(new pluginApi(this.bewss, config, path))
           this.info(`Successfully loaded plugin "${config.displayName || path}"`)
+          this.pluginNames.push(config.displayName || config.name || path)
           this.plugins.set(path, {
             config,
             plugin: newPlugin, 
@@ -332,6 +334,9 @@ class pluginManager {
     return true
   }
 
+  getPlugins(): Array<string> {
+    return this.pluginNames
+  }
 
   private info(...content: unknown[]): void {
     console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginManager]")} ${chalk.cyan("[Info]")}`, ...content)

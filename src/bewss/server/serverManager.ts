@@ -7,6 +7,7 @@ class serverManager extends EventEmitter {
   private ws: Websocket.Server
   private server: Websocket
   private port: number
+  private inv
 
   constructor (bewss: bewss, port: number) {
     super()
@@ -15,11 +16,12 @@ class serverManager extends EventEmitter {
   }
 
   async onEnabled(): Promise<void> {
-    process.title = 'Minecraft Bedrock Edition - BeWss'
+    this.startProcessTitle()
     await this.createServer()
   }
 
   async onDisabled(): Promise<void> {
+    clearInterval(this.inv)
     this.ws.close()
     this.emit('wssclosed')
     this.bewss.getLogger().info('Websocket server closed.')
@@ -54,6 +56,16 @@ class serverManager extends EventEmitter {
         res()
       })
     })
+  }
+
+  private startProcessTitle(): void {
+    this.inv = setInterval(() => {
+      const plugins = this.bewss.getPluginManager().getPlugins()
+      let pluginDisplay = plugins.join(', ')
+      if (plugins.length == 0) pluginDisplay = 'None'
+
+      process.title = `Minecraft Bedrock Edition - BeWss | Plugins Loaded - ${pluginDisplay}`
+    }, 10)
   }
 
   sendJSON(json: JSON): void {
