@@ -55,6 +55,14 @@ class serverManager {
     })
   }
 
+  sendJSON(json: JSON): void {
+    this.server.send(JSON.stringify(json))
+  }
+
+  sendBuffer(buffer: Buffer): void {
+    this.server.send(buffer)
+  }
+
   getServer(): Websocket {
     return this.server
   }

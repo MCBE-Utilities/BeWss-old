@@ -80,6 +80,8 @@ export interface logger {
 
 export interface serverManager {
   new(bewss: bewss)
+  sendJSON(json: JSON): void
+  sendBuffer(buffer: Buffer): void
   getServer(): any
 }
 
