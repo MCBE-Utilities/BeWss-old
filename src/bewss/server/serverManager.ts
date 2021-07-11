@@ -42,6 +42,9 @@ class serverManager extends EventEmitter {
         this.server.setMaxListeners(50)
         this.bewss.getLogger().info('User connected to the server!')
         this.bewss.getLogger().info('Do -help for a list of BeWss commands, do /help for a list of Bedrock commands.')
+        this.server.on('message', (data) => {
+          this.emit('wssmessage', data)
+        })
       })
       this.ws.on('error', (err) => {
         this.emit('wsserror', err)
@@ -52,9 +55,6 @@ class serverManager extends EventEmitter {
         }, 5000)
 
         res()
-      })
-      this.server.on('message', (data) => {
-        this.emit('wssmessage', data)
       })
     })
   }
