@@ -40,6 +40,7 @@ export interface pluginApi {
 
 export interface examplePluginConfig {
   name: string
+  displayName: string
   version: string
   description: string
   devMode: boolean
