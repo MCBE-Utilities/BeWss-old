@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable camelcase */
 import {
   blockData,
   commandResponse, gettopsolidblockCommand, SlashCommandExecutedConsole, testforblockCommand, topBlockData, 
@@ -14,11 +12,11 @@ class worldManager {
   }
 
   async onEnabled(): Promise<void> {
-    //
+    return
   }
 
   async onDisabled(): Promise<void> {
-    //
+    return
   }
 
   async getSurfaceBlock(x: number, z: number): Promise<topBlockData> {
@@ -34,7 +32,7 @@ class worldManager {
 
   async setblock(x: number, y: number, z: number, block: string): Promise<SlashCommandExecutedConsole> {
     const command = this.bewss.getCommandManager().executeCommand(`/testforblock ${x} ${y} ${z} ${block}`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
     if (response.body.statusCode == -2147483648) return
     
     return response

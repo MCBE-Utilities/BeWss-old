@@ -67,7 +67,7 @@ class eventManager extends EventEmitter {
   }
 
   async onEnabled(): Promise<void> {
-    this.on('wss-connected', async () => {
+    this.bewss.getServerManager().on('wssconnected', async () => {
       this.setMaxListeners(100)
       await this.loadDefaultEvents()
       for (const event of this.events.values()) {

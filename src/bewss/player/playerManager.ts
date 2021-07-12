@@ -13,7 +13,7 @@ class playerManager {
   }
 
   async onEnabled(): Promise<void> {
-    this.bewss.getEventManager().on('wss-connected', async () => {
+    this.bewss.getServerManager().on('wssconnected', async () => {
       const command = this.bewss.getCommandManager().executeCommand('/getlocalplayername') as commandResponse
       const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
       if (response.body.statusCode == -2147483648) return

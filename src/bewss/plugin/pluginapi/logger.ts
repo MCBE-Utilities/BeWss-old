@@ -24,19 +24,19 @@ class logger {
   }
 
   public success(...content: unknown[]): void {
-    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginApi]")} ${chalk[this.color](`[${this.pluginAPI.config.name || this.pluginAPI.path}]`)} ${chalk.green("[Success]")}`, ...content)
+    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginApi]")} ${chalk[this.color](`[${this.pluginAPI.config.displayName || this.pluginAPI.path}]`)} ${chalk.green("[Success]")}`, ...content)
   }
 
   public info(...content: unknown[]): void {
-    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginApi]")} ${chalk[this.color](`[${this.pluginAPI.config.name || this.pluginAPI.path}]`)} ${chalk.cyan("[Info]")}`, ...content)
+    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginApi]")} ${chalk[this.color](`[${this.pluginAPI.config.displayName || this.pluginAPI.path}]`)} ${chalk.cyan("[Info]")}`, ...content)
   }
 
   public warn(...content: unknown[]): void {
-    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginApi]")} ${chalk[this.color](`[${this.pluginAPI.config.name || this.pluginAPI.path}]`)} ${chalk.yellow("[Warn]")}`, ...content)
+    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginApi]")} ${chalk[this.color](`[${this.pluginAPI.config.displayName || this.pluginAPI.path}]`)} ${chalk.yellow("[Warn]")}`, ...content)
   }
 
   public error(...content: unknown[]): void {
-    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginApi]")} ${chalk[this.color](`[${this.pluginAPI.config.name || this.pluginAPI.path}]`)} ${chalk.red("[Error]")}`, ...content)
+    console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginApi]")} ${chalk[this.color](`[${this.pluginAPI.config.displayName || this.pluginAPI.path}]`)} ${chalk.red("[Error]")}`, ...content)
   }
 
 }

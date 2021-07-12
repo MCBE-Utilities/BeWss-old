@@ -26,7 +26,7 @@ class scoreboardManager {
     return response
   }
 
-  async removeObject(objective: string): Promise<genericScoreboard> {
+  async removeObjective(objective: string): Promise<genericScoreboard> {
     const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives remove ${objective}`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId) as genericScoreboard
     if (response.body.statusCode == -2147483648) return

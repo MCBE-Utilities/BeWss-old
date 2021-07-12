@@ -21,6 +21,7 @@ interface examplePlugin {
 class pluginManager {
   private bewss: bewss
   private plugins = new Map<string, { config: examplePluginConfig, plugin: examplePlugin }>() // path: { config, plugin }
+  private pluginNames: Array<string> = []
   private latestInterface = "https://raw.githubusercontent.com/PMK744/Node-BEWSS/main/src/bewss/%40interface/bewss.i.ts"
   public root = path.resolve(process.cwd())
   public pluginsPath = path.resolve(this.root, './plugins')
@@ -102,7 +103,7 @@ class pluginManager {
           succeededUpdate = await this.update(path, config)
         }
         if (neededUpdate && !succeededUpdate) {
-          this.error(`Skipping plugin "${config.name || path}". Failed to install dependencies.`)
+          this.error(`Skipping plugin "${config.displayName || path}". Failed to install dependencies.`)
           
           return res()
         }
@@ -111,18 +112,19 @@ class pluginManager {
           alreadyBuilt = true
         }
         if (config.devMode !== false && !alreadyBuilt) {
-          this.warn(`Plugin "${config.name || path}" is in dev mode. Set devMode to false in package.json to disable`)
+          this.warn(`Plugin "${config.displayName || path}" is in dev mode. Set devMode to false in package.json to disable`)
           buildSuccess = await this.build(path, config)
         }
         if (!buildSuccess) {
-          this.error(`Skipping plugin "${config.name || path}". Failed to build.`)
+          this.error(`Skipping plugin "${config.displayName || path}". Failed to build.`)
 
           return res()
         }
         try {
           const plugin: examplePlugin = require(entryPoint)
           const newPlugin: examplePlugin = new plugin(new pluginApi(this.bewss, config, path))
-          this.info(`Successfully loaded plugin "${config.name || path}"`)
+          this.info(`Successfully loaded plugin "${config.displayName || path}"`)
+          this.pluginNames.push(config.displayName || config.name || path)
           this.plugins.set(path, {
             config,
             plugin: newPlugin, 
@@ -131,11 +133,11 @@ class pluginManager {
           try {
             newPlugin.onEnabled()
           } catch (error) {
-            this.error(`Plugin "${config.name || path}". Uncaught Exception(s):\n`, error)
+            this.error(`Plugin "${config.displayName || path}". Uncaught Exception(s):\n`, error)
           }
 
         } catch (error) {
-          this.error(`Plugin "${config.name || path}". Uncaught Exception(s):\n`, error)
+          this.error(`Plugin "${config.displayName || path}". Uncaught Exception(s):\n`, error)
         }
 
       } catch (error) {
@@ -235,15 +237,15 @@ class pluginManager {
 
   private async update(path: string, config: examplePluginConfig): Promise<boolean> {
     return new Promise((res) => {
-      this.info(`Installing dependencies for "${config.name || path}"`)
+      this.info(`Installing dependencies for "${config.displayName || path}"`)
       childProcess.exec('npm i', {
         cwd: path,
       }, (err, out, s) => {
         if (err) {
-          this.error(`Failed to install dependencies for "${config.name || path}". Recieved Error(s):\n`, out, s)
+          this.error(`Failed to install dependencies for "${config.displayName || path}". Recieved Error(s):\n`, out, s)
           res(false)
         } else {
-          this.info(`Finished installing dependencies for "${config.name || path}"`)
+          this.info(`Finished installing dependencies for "${config.displayName || path}"`)
           res(true)
         }
       })
@@ -251,15 +253,15 @@ class pluginManager {
   }
   private async build(path: string, config: examplePluginConfig): Promise<boolean> {
     return new Promise((res) => {
-      this.info(`Attempting to build "${config.name || path}"`)
+      this.info(`Attempting to build "${config.displayName || path}"`)
       childProcess.exec('npm run build', {
         cwd: path,
       }, (err, out) => {
         if (err) {
-          this.error(`Failed to build "${config.name || path}". Recieved Error(s):\n`, out)
+          this.error(`Failed to build "${config.displayName || path}". Recieved Error(s):\n`, out)
           res(false)
         } else {
-          this.info(`Successfully built "${config.name || path}"`)
+          this.info(`Successfully built "${config.displayName || path}"`)
           res(true)
         }
       })
@@ -267,21 +269,21 @@ class pluginManager {
   }
 
   verifyConfig(path: string, config: examplePluginConfig): boolean {
-    if (!config.name) this.warn(`plugin "${path}" missing name prop in package.json. Will be refered to as "${path}"`)
-    if (!config.version) this.warn(`plugin "${config.name || path}" missing version prop in package.json`)
-    if (config.devMode === undefined) this.info(`plugin "${config.name || path}" missing devMode prop in package.json. Auto defaults to true!`)
+    if (config.displayName == undefined) this.warn(`@${config.author}, your plugin is missing "displayName" in your package.json. Your plugin will be refered as "${path}"`)
+    if (!config.version) this.warn(`plugin "${config.displayName || path}" missing version prop in package.json`)
+    if (config.devMode === undefined) this.info(`plugin "${config.displayName || path}" missing devMode prop in package.json. Auto defaults to true!`)
     if (!config.main) {
-      this.error(`plugin "${config.name || path}" missing main prop in package.json. Cannot start plugin without valid path to main file!`)
+      this.error(`plugin "${config.displayName || path}" missing main prop in package.json. Cannot start plugin without valid path to main file!`)
       
       return false
     }
     if (!config.scripts) {
-      this.error(`plugin "${config.name || path}" missing scripts in package.json. Cannot start plugin without needed scripts!`)
+      this.error(`plugin "${config.displayName || path}" missing scripts in package.json. Cannot start plugin without needed scripts!`)
 
       return false
     }
     if (!config.scripts.build) {
-      this.error(`plugin "${config.name || path}" missing scripts.build in package.json. Cannot start plugin without needed scripts!`)
+      this.error(`plugin "${config.displayName || path}" missing scripts.build in package.json. Cannot start plugin without needed scripts!`)
 
       return false
     }
@@ -291,17 +293,17 @@ class pluginManager {
     //   return false
     // }
     if (!config.dependencies && !config.devDependencies) {
-      this.info(`WOW @${config.author || config.name || path}, your plugin has absolutely no depedencies! However, you should probably add "@types/node" as a devdependency.`)
+      this.info(`WOW @${config.author || config.displayName || path}, your plugin has absolutely no depedencies! However, you should probably add "@types/node" as a devdependency.`)
     }
 
     if (!config.devDependencies) {
-      this.warn(`plugin "${config.name || path}" does not have @types/node. This is known to cause issues for some people. Please add "@types/node" as a devdependency to your project`)
+      this.warn(`plugin "${config.displayName || path}" does not have @types/node. This is known to cause issues for some people. Please add "@types/node" as a devdependency to your project`)
     }
 
     if (config.devDependencies) {
       const devDependencies = Object.keys(config.devDependencies)
       if (!devDependencies.includes("@types/node")) {
-        this.warn(`plugin "${config.name || path}" does not have @types/node. This is known to cause issues for some people. Please add "@types/node" as a devdependency to your project`)
+        this.warn(`plugin "${config.displayName || path}" does not have @types/node. This is known to cause issues for some people. Please add "@types/node" as a devdependency to your project`)
       }
     }
 
@@ -309,7 +311,7 @@ class pluginManager {
       const devDependencies = Object.keys(config.devDependencies)
       const filterTypes = devDependencies.filter(d => d !== "@types/node")
       if (filterTypes.length < 1) {
-        this.info(`Great job @${config.author || config.name || path}! your plugin has absolutely no depedencies!`)
+        this.info(`Great job @${config.author || config.displayName || path}! your plugin has absolutely no depedencies!`)
       }
     }
 
@@ -325,13 +327,16 @@ class pluginManager {
         }
       }
       if (dependencyFilter.length < 1 && onlyTypes) {
-        this.info(`Congrats @${config.author || config.name || path}, your plugin does not use any dependencies other than the needed ones!`)
+        this.info(`Congrats @${config.author || config.displayName || path}, your plugin does not use any dependencies other than the needed ones!`)
       }
     } 
 
     return true
   }
 
+  getPlugins(): Array<string> {
+    return this.pluginNames
+  }
 
   private info(...content: unknown[]): void {
     console.log(`${chalk.gray(moment().format("HH:mm:ss"))} ${chalk.blue("[PluginManager]")} ${chalk.cyan("[Info]")}`, ...content)

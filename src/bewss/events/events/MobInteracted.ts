@@ -13,6 +13,7 @@ class MobInteracted {
     this.bewss.getEventManager().registerEvent('MobInteracted')
     this.bewss.getServerManager().getServer()
       .on('message', (packet: string) => {
+        if (!packet.includes('header')) return
         const parsedPacket = JSON.parse(packet)
         if (parsedPacket.header.messagePurpose != 'event') return
         if (parsedPacket.body.eventName != 'MobInteracted') return

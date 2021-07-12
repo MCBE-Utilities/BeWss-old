@@ -1,27 +1,29 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import bewss from "../bewss"
-import { Server } from 'ws'
+import Websocket from 'ws'
+import { EventEmitter } from 'events'
 
-class serverManager {
+class serverManager extends EventEmitter {
   private bewss: bewss
-  private ws: Server
-  private server: any
+  private ws: Websocket.Server
+  private server: Websocket
   private port: number
+  private inv
 
   constructor (bewss: bewss, port: number) {
+    super()
     this.bewss = bewss
     this.port = port
   }
 
   async onEnabled(): Promise<void> {
-    process.title = 'Minecraft Bedrock Edition - BeWss'
+    this.startProcessTitle()
     await this.createServer()
   }
 
   async onDisabled(): Promise<void> {
+    clearInterval(this.inv)
     this.ws.close()
-    this.bewss.getEventManager().emit('wss-closed')
-    this.bewss.getEventManager().emit('wssclosed', this.server)
+    this.emit('wssclosed')
     this.bewss.getLogger().info('Websocket server closed.')
     this.server = undefined
     
@@ -30,21 +32,21 @@ class serverManager {
 
   private async createServer(): Promise<void> {
     return new Promise((res) => {
-      this.ws = new Server({ port: this.port })
+      this.ws = new Websocket.Server({ port: this.port })
 
-      this.ws.once('listening', () => {
-        this.bewss.getEventManager().emit('wss-listening')
+      this.ws.on('listening', () => {
+        this.emit('wsslistening')
         this.bewss.getLogger().info(`Websocket server started! To connect to your server do "/connect 127.0.0.1:${this.port}" in your Minecraft world.`)
       })
-      this.ws.once('connection', (wss: Server) => {
-        this.server = wss
+      this.ws.on('connection', (server: Websocket) => {
+        this.server = server
+        this.emit('wssconnected')
         this.server.setMaxListeners(50)
-        this.bewss.getEventManager().emit('wss-connected')
-        this.bewss.getEventManager().emit('wssconnected', this.server)
         this.bewss.getLogger().info('User connected to the server!')
         this.bewss.getLogger().info('Do -help for a list of BeWss commands, do /help for a list of Bedrock commands.')
       })
-      this.ws.once('error', () => {
+      this.ws.on('error', (err) => {
+        this.emit('wsserror', err)
         this.bewss.getLogger().error("Failed to open ws server on port", this.port + ".", "Incrementing port by 1 and attempting again in 5.00s")
         setTimeout(() => {
           this.port++
@@ -56,7 +58,25 @@ class serverManager {
     })
   }
 
-  getServer(): any {
+  private startProcessTitle(): void {
+    this.inv = setInterval(() => {
+      const plugins = this.bewss.getPluginManager().getPlugins()
+      let pluginDisplay = plugins.join(', ')
+      if (plugins.length == 0) pluginDisplay = 'None'
+
+      process.title = `Minecraft Bedrock Edition - BeWss | Plugins Loaded - ${pluginDisplay}`
+    }, 10)
+  }
+
+  sendJSON(json: JSON): void {
+    this.server.send(JSON.stringify(json))
+  }
+
+  sendBuffer(buffer: Buffer): void {
+    this.server.send(buffer)
+  }
+
+  getServer(): Websocket {
     return this.server
   }
 
