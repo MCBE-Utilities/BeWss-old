@@ -43,7 +43,7 @@ class playerManager {
   sendMessage(type: messageType , target: string, content: string | Array<titlerawComponets>): void {
     if (type == "text") {
       if (target == "@s") target = this.localePlayerName
-      if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
+      if (/^@s$|^@a$|^@p$|^@r$|^@e$/.test(target)) {
         this.bewss.getCommandManager().executeCommand(`/tellraw ${target} {"rawtext":[{"text":"${content}"}]}`)
       } else {
         this.bewss.getCommandManager().executeCommand(`/tellraw "${target}" {"rawtext":[{"text":"${content}"}]}`)
@@ -52,7 +52,7 @@ class playerManager {
 
     if (type == "json") {
       if (target == "@s") target = this.localePlayerName
-      if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
+      if (/^@s$|^@a$|^@p$|^@r$|^@e$/.test(target)) {
         this.bewss.getCommandManager().executeCommand(`/tellraw ${target} {"rawtext":${JSON.stringify(content)}}`)
       } else {
         this.bewss.getCommandManager().executeCommand(`/tellraw "${target}" {"rawtext":${JSON.stringify(content)}}`)
@@ -63,7 +63,7 @@ class playerManager {
   sendTitle(type: messageType, target: string, content: string | Array<titlerawComponets>, title: titles): void {
     if (type == "text") {
       if (target == "@s") target = this.localePlayerName
-      if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
+      if (/^@s$|^@a$|^@p$|^@r$|^@e$/.test(target)) {
         this.bewss.getCommandManager().executeCommand(`/titleraw ${target} ${title} {"rawtext":[{"text":"${content}"}]}`)
       } else {
         this.bewss.getCommandManager().executeCommand(`/titleraw "${target}" ${title} {"rawtext":[{"text":"${content}"}]}`)
@@ -72,7 +72,7 @@ class playerManager {
 
     if (type == "json") {
       if (target == "@s") target = this.localePlayerName
-      if (target.includes("@s" || "@p" || "@r" || "@a" || "@e")) {
+      if (/^@s$|^@a$|^@p$|^@r$|^@e$/.test(target)) {
         this.bewss.getCommandManager().executeCommand(`/titleraw ${target} ${title} {"rawtext":${JSON.stringify(content)}}`)
       } else {
         this.bewss.getCommandManager().executeCommand(`/titleraw "${target}" ${title} {"rawtext":${JSON.stringify(content)}}`)
