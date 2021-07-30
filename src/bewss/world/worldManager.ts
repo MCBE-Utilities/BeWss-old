@@ -30,8 +30,8 @@ class worldManager {
     }
   }
 
-  async setblock(x: number, y: number, z: number, block: string): Promise<SlashCommandExecutedConsole> {
-    const command = this.bewss.getCommandManager().executeCommand(`/setblock ${x} ${y} ${z} ${block}`) as commandResponse
+  async setblock(x: number, y: number, z: number, block: string, data: number): Promise<SlashCommandExecutedConsole> {
+    const command = this.bewss.getCommandManager().executeCommand(`/setblock ${x} ${y} ${z} ${block} ${data}`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId)
     if (response.body.statusCode == -2147483648) return
     
