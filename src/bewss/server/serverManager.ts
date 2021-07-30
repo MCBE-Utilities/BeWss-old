@@ -27,7 +27,7 @@ class serverManager extends EventEmitter {
     this.bewss.getLogger().info('Websocket server closed.')
     this.server = undefined
     
-    return Promise.resolve()
+    return
   }
 
   private async createServer(): Promise<void> {

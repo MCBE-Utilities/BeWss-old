@@ -11,11 +11,11 @@ class agentManager {
   }
 
   async onEnabled(): Promise<void> {
-    //
+    return
   }
 
   async onDisabled(): Promise<void> {
-    return Promise.resolve()
+    return
   }
 
   create(): Promise<createAgent> {

@@ -11,11 +11,11 @@ class scoreboardManager {
   }
 
   async onEnabled(): Promise<void> {
-    //
+    return
   }
 
   async onDisabled(): Promise<void> {
-    return Promise.resolve()
+    return
   }
 
   async createObjective(objective: string, displayname?: string): Promise<genericScoreboard> {

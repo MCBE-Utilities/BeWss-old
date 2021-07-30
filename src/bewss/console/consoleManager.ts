@@ -53,7 +53,7 @@ class consoleManager extends EventEmitter {
   async onDisabled(): Promise<void> {
     this.readline.close()
 
-    return Promise.resolve()
+    return
   }
 
   private parseCommand(content: string): {command: string, args: Array<string>} {

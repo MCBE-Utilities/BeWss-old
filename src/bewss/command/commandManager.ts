@@ -57,7 +57,7 @@ class commandManager extends EventEmitter {
   }
 
   async onDisabled(): Promise<void> {
-    return Promise.resolve()
+    return
   }
 
   private cacheCommand(packet: any): void {

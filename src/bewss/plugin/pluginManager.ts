@@ -45,7 +45,7 @@ class pluginManager {
       }
     }
 
-    return Promise.resolve()
+    return
   }
 
   async loadAll(): Promise<void> {
