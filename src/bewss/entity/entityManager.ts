@@ -28,7 +28,7 @@ class entityManager {
   }
 
   async summonEntity(entity: string, name: string, x: number, y: number, z: number): Promise<SlashCommandExecutedConsole> {
-    const command = this.bewss.getCommandManager().executeCommand(`/give ${entity} ${name} ${x} ${y} ${z}`) as commandResponse
+    const command = this.bewss.getCommandManager().executeCommand(`/summon ${entity} ${name} ${x} ${y} ${z}`) as commandResponse
     const response = await this.bewss.getCommandManager().findResponse(command.requestId)
 
     return response
