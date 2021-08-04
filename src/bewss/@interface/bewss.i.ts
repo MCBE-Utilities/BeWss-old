@@ -210,6 +210,7 @@ export interface playerManager {
   addXpLevel(target: string, amount: number): Promise<SlashCommandExecutedConsole>
   removeXp(target: string, amount: number): Promise<SlashCommandExecutedConsole>
   removeXpLevel(target: string, amount: number): Promise<SlashCommandExecutedConsole>
+  getItemCount(target: string, item: string): Promise<number>
 }
 
 export type containers = (

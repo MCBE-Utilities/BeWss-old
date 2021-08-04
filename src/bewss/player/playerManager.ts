@@ -220,6 +220,14 @@ class playerManager {
 
     return response
   }
+
+  async getItemCount(target: string, item: string): Promise<number> {
+    const command = this.bewss.getCommandManager().executeCommand(`/clear "${target}" ${item} 0 0`) as commandResponse
+    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as any
+    if (response.body.statusMessage.includes('no items to remove')) return 0
+
+    return parseInt(response.body.statusMessage.replace(`${target} has `, '').replace(' items that match the criteria', ''))
+  }
 }
 
 export default playerManager
