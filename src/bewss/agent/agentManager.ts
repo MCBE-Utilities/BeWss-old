@@ -1,5 +1,9 @@
 import {
-  commandResponse, createAgent, directions, getPositionAgent, genericAgent, teleportAgent, 
+  createAgent,
+  directions,
+  getPositionAgent,
+  genericAgent,
+  teleportAgent, 
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 
@@ -18,191 +22,106 @@ class agentManager {
     return
   }
 
-  create(): Promise<createAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand('/agent create') as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: createAgent) => {
-        if (command == undefined) return res(undefined)
-  
-        return res(packet)
-      })
-    })
+  async create(): Promise<createAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand('/agent create')
+
+    return command
   }
 
-  getPosition(): Promise<getPositionAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand('/agent getposition') as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: getPositionAgent) => {
-        if (command == undefined) return res(undefined)
+  async getPosition(): Promise<getPositionAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand('/agent getposition')
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  teleport(x: number, y: number, z: number): Promise<teleportAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent tp ${x} ${y} ${z}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: teleportAgent) => {
-        if (command == undefined) return res(undefined)
+  async teleport(x: number, y: number, z: number): Promise<teleportAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent tp ${x} ${y} ${z}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  inspect(direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent inspect ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async inspect(direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent inspect ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  inspectData(direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent inspectdata ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async inspectData(direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent inspectdata ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  setItem(slot: number, item: string, amount: number, data: number): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent setitem ${slot} ${item} ${amount} ${data}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async setItem(slot: number, item: string, amount: number, data: number): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent setitem ${slot} ${item} ${amount} ${data}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  getItem(slot: number): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent getitemdetail ${slot}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async getItem(slot: number): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent getitemdetail ${slot}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  getItemCount(slot: number): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent getitemcount ${slot}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async  getItemCount(slot: number): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent getitemcount ${slot}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  transferItem(slot: number, amount: number, destslot: number): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent transfer ${slot} ${amount} ${destslot}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async transferItem(slot: number, amount: number, destslot: number): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent transfer ${slot} ${amount} ${destslot}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  dropItem(slot: number, amount: number, direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent drop ${slot} ${amount} ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async dropItem(slot: number, amount: number, direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent drop ${slot} ${amount} ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  turn(direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent turn ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async turn(direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent turn ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  move(direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent move ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async move(direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent move ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  attack(direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent attack ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async attack(direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent attack ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  place(slot: number, direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent place ${slot} ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async place(slot: number, direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent place ${slot} ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  destroy(direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent destroy ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async destroy(direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent destroy ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  collect(item: string): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent collect ${item}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async collect(item: string): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent collect ${item}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
-  till(direction: directions): Promise<genericAgent> {
-    return new Promise((res) => {
-      const command = this.bewss.getCommandManager().executeCommand(`/agent till ${direction}`) as commandResponse
-      this.bewss.getEventManager().once('SlashCommandExecutedConsole', (packet: genericAgent) => {
-        if (command == undefined) return res(undefined)
+  async till(direction: directions): Promise<genericAgent> {
+    const command = await this.bewss.getCommandManager().executeCommand(`/agent till ${direction}`)
 
-        return res(packet)
-      })
-    })
+    return command
   }
 
 }

@@ -1,5 +1,5 @@
 import {
-  commandResponse, displays, genericScoreboard, getObjectives, getScore, layouts, operations,
+  displays, genericScoreboard, getObjectives, getScore, layouts, operations,
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 
@@ -19,34 +19,30 @@ class scoreboardManager {
   }
 
   async createObjective(objective: string, displayname?: string): Promise<genericScoreboard> {
-    const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives add ${objective} dummy "${displayname}"`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as genericScoreboard
-    if (response.body.statusCode == -2147483648) return
+    const command = await this.bewss.getCommandManager().executeCommand(`/scoreboard objectives add ${objective} dummy "${displayname}"`)
+    if (command.body.statusCode == -2147483648) return
     
-    return response
+    return command
   }
 
   async removeObjective(objective: string): Promise<genericScoreboard> {
-    const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives remove ${objective}`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as genericScoreboard
-    if (response.body.statusCode == -2147483648) return
+    const command = await this.bewss.getCommandManager().executeCommand(`/scoreboard objectives remove ${objective}`)
+    if (command.body.statusCode == -2147483648) return
   
-    return response
+    return command
   }
 
   async setdisplay(objective: string, display: displays, layout?: layouts | ""): Promise<genericScoreboard> {
-    const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives setdisplay ${display} ${objective} ${layout}`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as genericScoreboard
-    if (response.body.statusCode == -2147483648) return
+    const command = await this.bewss.getCommandManager().executeCommand(`/scoreboard objectives setdisplay ${display} ${objective} ${layout}`)
+    if (command.body.statusCode == -2147483648) return
 
-    return response
+    return command
   }
 
   async getObjectives(): Promise<getObjectives> {
-    const command = this.bewss.getCommandManager().executeCommand(`/scoreboard objectives list`) as commandResponse
-    const response: getObjectives = await this.bewss.getCommandManager().findResponse(command.requestId) as getObjectives
-    if (response.body.statusCode == -2147483648) return
-    const raw: Array<string> = response.body.statusMessage.split('\n')
+    const command = await this.bewss.getCommandManager().executeCommand(`/scoreboard objectives list`)
+    if (command.body.statusCode == -2147483648) return
+    const raw: Array<string> = command.body.statusMessage.split('\n')
     const objectives: Array<Array<string>> = []
     for await (const string of raw) {
       if (!string.startsWith("§a")) {
@@ -54,9 +50,9 @@ class scoreboardManager {
         objectives.push([rawString[1].replace(':', ''), string.replace(`- ${rawString[1].replace(':', '')}: displays as '`, '').replace(`' and is type 'dummy'`, '')])
       }
     }
-    response.body.objectives = objectives
+    command.body.objectives = objectives
 
-    return response
+    return command
   }
 
   async getObjectiveName(objective: string): Promise<string> {
@@ -73,31 +69,29 @@ class scoreboardManager {
   }
 
   async updateScore(target: string, operation: operations, objective: string, amount: number): Promise<genericScoreboard> {
-    const command = this.bewss.getCommandManager().executeCommand(`/scoreboard players ${operation} "${target}" ${objective} ${amount}`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as genericScoreboard
-    if (response.body.statusCode == -2147483648) return
+    const command = await this.bewss.getCommandManager().executeCommand(`/scoreboard players ${operation} "${target}" ${objective} ${amount}`)
+    if (command.body.statusCode == -2147483648) return
 
-    return response
+    return command
   }
 
   async getScore(target: string, objective: string): Promise<getScore> {
-    const command = this.bewss.getCommandManager().executeCommand(`/scoreboard players list "${target}"`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as getScore
-    if (response.body.statusCode == -2147483648) return
+    const command = await this.bewss.getCommandManager().executeCommand(`/scoreboard players list "${target}"`)
+    if (command.body.statusCode == -2147483648) return
     const objectiveName = await this.getObjectiveName(objective)
     let score: number
-    const raw: Array<string> = response.body.statusMessage.split('\n')
+    const raw: Array<string> = command.body.statusMessage.split('\n')
     for (const string of raw) {
       if (!string.startsWith("§a") && string.includes(objectiveName)) {
         const rawString: Array<string> = string.split(' ').reverse()
         score = parseInt(rawString[1])
       }
     }
-    response.body.score = score
-    response.body.objective = objective
-    response.body.objectiveName = objectiveName
+    command.body.score = score
+    command.body.objective = objective
+    command.body.objectiveName = objectiveName
 
-    return response
+    return command
   }
 
 }

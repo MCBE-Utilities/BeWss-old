@@ -4,7 +4,7 @@ import bewss from "../bewss"
 import { v4 as uuidv4 } from 'uuid'
 import { EventEmitter } from 'events'
 import {
-  commandResponse, customCommandResponse, SlashCommandExecutedConsole, 
+  customCommandResponse, SlashCommandExecutedConsole, 
 } from "../@interface/bewss.i"
 import {
   Help,
@@ -17,9 +17,11 @@ export interface exampleCommand {
 }
 class commandManager extends EventEmitter {
   private bewss: bewss
-  private previousCommand: { command: string, requestId: string }
+  private previousCommand: any
   private commandCache: Array<{ request: string, response: any }> = []
   private commands = new Map<string, exampleCommand | undefined>()
+  private _requests = new Map<string, string>()
+  private _inv
 
   constructor (bewss: bewss) {
     super()
@@ -31,7 +33,7 @@ class commandManager extends EventEmitter {
 
     this.bewss.getEventManager().on('ConsoleCommandExecuted', (data: string) => {
       const res = this.executeCommand(data)
-      this.previousCommand = res || undefined
+      this.previousCommand = res
     })
     this.bewss.getEventManager().on('SlashCommandExecutedConsole', (packet: any) => {
       this.cacheCommand(packet)
@@ -54,9 +56,33 @@ class commandManager extends EventEmitter {
 
       return commandData.execute(packet.body.properties.Sender,  parsedCommand.args)
     })
+    this._inv = setInterval(() => {
+      if (this._requests.size > 0) {
+        const [uuid, command] = Array.from(this._requests.entries())[0]
+        if (uuid) {
+          this._requests.delete(uuid)
+          this.bewss.getServerManager().getServer()
+            .send(JSON.stringify(
+              {
+                "body": {
+                  "commandLine": command,
+                  "version": 1,
+                },
+                "header": {
+                  "requestId": uuid,
+                  "messagePurpose": "commandRequest",
+                  "version": 1,
+                },
+              },
+            ))
+        }
+      }
+    })
   }
 
   async onDisabled(): Promise<void> {
+    clearInterval(this._inv)
+
     return
   }
 
@@ -98,29 +124,54 @@ class commandManager extends EventEmitter {
     })
   }
 
-  executeCommand(command: string): commandResponse | void {
+  async executeCommand(command: string): Promise<any>
+  async executeCommand(command: string, callback: (err: any, res: SlashCommandExecutedConsole) => void): Promise<void>
+  async executeCommand(command: string, callback?: (err: any, res: SlashCommandExecutedConsole) => void): Promise<SlashCommandExecutedConsole | void> {
     if (this.bewss.getServerManager().getServer() == undefined) return this.bewss.getLogger().error('A user must be connect before running a Bedrock command.')
-    const requestId = uuidv4()
-    this.bewss.getServerManager().getServer()
-      .send(JSON.stringify(
-        {
-          "body": {
-            "commandLine": command,
-            "version": 1,
-          },
-          "header": {
-            "requestId": requestId,
-            "messagePurpose": "commandRequest",
-            "version": 1,
-          },
-        },
-      ))
-
-    return {
-      command: command,
-      requestId: requestId,
-    } as commandResponse
+    try {
+      const requestId = uuidv4()
+      this._requests.set(requestId, command)
+      const response = await this.findResponse(requestId)
+      if (callback) {
+        return callback(undefined, response)
+      } else {
+        return new Promise((res) => {
+          res(response)
+        })
+      }
+    } catch (error) {
+      if (callback) {
+        return callback(error, undefined)
+      } else {
+        return new Promise((res, rej) => {
+          rej(error)
+        })
+      }
+    }
   }
+  //executeCommand(command: string): commandResponse | void {
+  //  if (this.bewss.getServerManager().getServer() == undefined) return this.bewss.getLogger().error('A user must be connect before running a Bedrock command.')
+  //  const requestId = uuidv4()
+  //  this.bewss.getServerManager().getServer()
+  //    .send(JSON.stringify(
+  //      {
+  //        "body": {
+  //          "commandLine": command,
+  //          "version": 1,
+  //        },
+  //        "header": {
+  //          "requestId": requestId,
+  //          "messagePurpose": "commandRequest",
+  //          "version": 1,
+  //        },
+  //      },
+  //    ))
+  //
+  //  return {
+  //    command: command,
+  //    requestId: requestId,
+  //  } as commandResponse
+  //}
 
   registerCommand(command: string): void {
     if (this.getCommandNames().includes(command)) return this.bewss.getLogger().error(`The command "${command}" is an already a registered command!`)

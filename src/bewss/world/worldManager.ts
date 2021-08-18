@@ -1,6 +1,7 @@
 import {
   blockData,
-  commandResponse, gettopsolidblockCommand, SlashCommandExecutedConsole, testforblockCommand, topBlockData, 
+  SlashCommandExecutedConsole,
+  topBlockData, 
 } from "../@interface/bewss.i"
 import bewss from "../bewss"
 import { blocks } from '../../data/1.17/blocks'
@@ -20,29 +21,26 @@ class worldManager {
   }
 
   async getSurfaceBlock(x: number, z: number): Promise<topBlockData> {
-    const command = this.bewss.getCommandManager().executeCommand(`/gettopsolidblock ${x} 255 ${z}`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as gettopsolidblockCommand
-    if (response.body.statusCode == -2147483648) return
+    const command = await this.bewss.getCommandManager().executeCommand(`/gettopsolidblock ${x} 255 ${z}`)
+    if (command.body.statusCode == -2147483648) return
     
     return {
-      name: response.body.blockName,
-      position: response.body.position,
+      name: command.body.blockName,
+      position: command.body.position,
     }
   }
 
   async setblock(x: number, y: number, z: number, block: string, data: number): Promise<SlashCommandExecutedConsole> {
-    const command = this.bewss.getCommandManager().executeCommand(`/setblock ${x} ${y} ${z} ${block} ${data}`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId)
-    if (response.body.statusCode == -2147483648) return
+    const command = await this.bewss.getCommandManager().executeCommand(`/setblock ${x} ${y} ${z} ${block} ${data}`)
+    if (command.body.statusCode == -2147483648) return
     
-    return response
+    return command
   }
 
   async getBlock(x: number, y: number, z: number): Promise<blockData> {
-    const command = this.bewss.getCommandManager().executeCommand(`/testforblock ${x} ${y} ${z} air`) as commandResponse
-    const response = await this.bewss.getCommandManager().findResponse(command.requestId) as testforblockCommand
-    if (response.body.statusCode == -2147483648) return
-    if (response.body.matches) return {
+    const command = await this.bewss.getCommandManager().executeCommand(`/testforblock ${x} ${y} ${z} air`)
+    if (command.body.statusCode == -2147483648) return
+    if (command.body.matches) return {
       id: 0,
       displayName: 'Air',
       name: 'air',
@@ -65,10 +63,10 @@ class worldManager {
       },
     }
 
-    const blockName = response.body.statusMessage.match(/(?<=is )(.*?)(?= \()/)[0]
+    const blockName = command.body.statusMessage.match(/(?<=is )(.*?)(?= \()/)[0]
     const block = blocks.find(e => e.displayName == blockName) as blockData
 
-    block.position = response?.body?.position
+    block.position = command?.body?.position
 
     return block
   } 
