@@ -136,7 +136,9 @@ export interface consoleManager {
 
 export interface commandManager {
   new(bewss: bewss)
-  executeCommand(command: string): commandResponse
+  executeCommand(command: string): Promise<any>
+  executeCommand(command: string, callback: (err: any, res: SlashCommandExecutedConsole) => void): Promise<void>
+  executeCommand(command: string, callback?: (err: any, res: SlashCommandExecutedConsole) => void): Promise<SlashCommandExecutedConsole | void>
   findResponse(requestId: string): Promise<SlashCommandExecutedConsole>
   registerCommand(command: string): void
   getCommandNames(): Array<string>
