@@ -149,29 +149,6 @@ class commandManager extends EventEmitter {
       }
     }
   }
-  //executeCommand(command: string): commandResponse | void {
-  //  if (this.bewss.getServerManager().getServer() == undefined) return this.bewss.getLogger().error('A user must be connect before running a Bedrock command.')
-  //  const requestId = uuidv4()
-  //  this.bewss.getServerManager().getServer()
-  //    .send(JSON.stringify(
-  //      {
-  //        "body": {
-  //          "commandLine": command,
-  //          "version": 1,
-  //        },
-  //        "header": {
-  //          "requestId": requestId,
-  //          "messagePurpose": "commandRequest",
-  //          "version": 1,
-  //        },
-  //      },
-  //    ))
-  //
-  //  return {
-  //    command: command,
-  //    requestId: requestId,
-  //  } as commandResponse
-  //}
 
   registerCommand(command: string): void {
     if (this.getCommandNames().includes(command)) return this.bewss.getLogger().error(`The command "${command}" is an already a registered command!`)
